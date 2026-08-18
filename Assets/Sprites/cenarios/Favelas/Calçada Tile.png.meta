@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Cal\xE7ada Tile_0": 5793877597800053715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
