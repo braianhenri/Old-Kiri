@@ -27,6 +27,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector3 movePosition = (velocidade * Time.fixedDeltaTime * direção.normalized) + rb.position;   
+        Vector3 movePosition = (velocidade * Time.fixedDeltaTime * direção.normalized) + rb.position;
+        rb.MovePosition(movePosition);
     }
 }
