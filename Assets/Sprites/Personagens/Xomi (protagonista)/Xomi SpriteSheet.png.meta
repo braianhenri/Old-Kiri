@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: 791f52a4bfb72244bb9e67585b3b2e31
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7633639721760559006
+    second: Xomi SpriteSheet_0
+  - first:
+      213: 2409859079049607464
+    second: Xomi SpriteSheet_1
+  - first:
+      213: -9055015005743291326
+    second: Xomi SpriteSheet_2
+  - first:
+      213: 6623225359144120237
+    second: Xomi SpriteSheet_3
+  - first:
+      213: -2691175592438690383
+    second: Xomi SpriteSheet_4
+  - first:
+      213: 3070844040844444740
+    second: Xomi SpriteSheet_5
+  - first:
+      213: -4717067126079269846
+    second: Xomi SpriteSheet_6
+  - first:
+      213: -931032738205435578
+    second: Xomi SpriteSheet_7
+  - first:
+      213: 768913120936400279
+    second: Xomi SpriteSheet_8
+  - first:
+      213: -8376998856144241223
+    second: Xomi SpriteSheet_9
+  - first:
+      213: -5000152565889620351
+    second: Xomi SpriteSheet_10
+  - first:
+      213: -6280496280782887848
+    second: Xomi SpriteSheet_11
+  - first:
+      213: 9173925951906845662
+    second: Xomi SpriteSheet_12
+  - first:
+      213: 549494073735114278
+    second: Xomi SpriteSheet_13
+  - first:
+      213: 5942623150781128270
+    second: Xomi SpriteSheet_14
+  - first:
+      213: -2464507627355935997
+    second: Xomi SpriteSheet_15
+  - first:
+      213: 2690595210057549597
+    second: Xomi SpriteSheet_16
+  - first:
+      213: 3595093368470326769
+    second: Xomi SpriteSheet_17
+  - first:
+      213: -3456650546972768089
+    second: Xomi SpriteSheet_18
+  - first:
+      213: -865334663300534701
+    second: Xomi SpriteSheet_19
+  - first:
+      213: -3717709121378386273
+    second: Xomi SpriteSheet_20
+  - first:
+      213: 2613420167991455563
+    second: Xomi SpriteSheet_21
+  - first:
+      213: -5994730424599482585
+    second: Xomi SpriteSheet_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 119
+        width: 130
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26076292e1ddf0690800000000000000
+      internalID: -7633639721760559006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 119
+        width: 130
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829708d701a817120800000000000000
+      internalID: 2409859079049607464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 119
+        width: 130
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244e6dae3df165280800000000000000
+      internalID: -9055015005743291326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 111
+        width: 122
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dafe42f6f5c6aeb50800000000000000
+      internalID: 6623225359144120237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 111
+        width: 138
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd8d70ae0607aad0800000000000000
+      internalID: -2691175592438690383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 111
+        width: 138
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44488279264dd9a20800000000000000
+      internalID: 3070844040844444740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 3271
+        y: 111
+        width: 122
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a245f50e07c998eb0800000000000000
+      internalID: -4717067126079269846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 3775
+        y: 111
+        width: 130
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649710d48ae4413f0800000000000000
+      internalID: -931032738205435578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 4287
+        y: 119
+        width: 130
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7951d8cd86abbaa00800000000000000
+      internalID: 768913120936400279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 4791
+        y: 119
+        width: 146
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd3baf6cebeebb80800000000000000
+      internalID: -8376998856144241223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 5303
+        y: 119
+        width: 146
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1862467bbb3eb9ab0800000000000000
+      internalID: -5000152565889620351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 5815
+        y: 119
+        width: 146
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85426ca78e137d8a0800000000000000
+      internalID: -6280496280782887848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 6319
+        y: 119
+        width: 154
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed315273c05505f70800000000000000
+      internalID: 9173925951906845662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 6831
+        y: 119
+        width: 162
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ee92fd2f130a700800000000000000
+      internalID: 549494073735114278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 7367
+        y: 119
+        width: 114
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e52503540787250800000000000000
+      internalID: 5942623150781128270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 7879
+        y: 119
+        width: 114
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b6535de5f4ccdd0800000000000000
+      internalID: -2464507627355935997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 8367
+        y: 119
+        width: 162
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1709d1961ae65520800000000000000
+      internalID: 2690595210057549597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 8903
+        y: 119
+        width: 114
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd490afe5654e130800000000000000
+      internalID: 3595093368470326769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 9391
+        y: 119
+        width: 162
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8470344a28700d0800000000000000
+      internalID: -3456650546972768089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 9927
+        y: 119
+        width: 114
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35ea32e55b6bdf3f0800000000000000
+      internalID: -865334663300534701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 10439
+        y: 119
+        width: 114
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ef20a504b086cc0800000000000000
+      internalID: -3717709121378386273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 10927
+        y: 119
+        width: 162
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4fe8f9dbcbb44420800000000000000
+      internalID: 2613420167991455563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xomi SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 11463
+        y: 119
+        width: 114
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f6585b0707ecca0800000000000000
+      internalID: -5994730424599482585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
