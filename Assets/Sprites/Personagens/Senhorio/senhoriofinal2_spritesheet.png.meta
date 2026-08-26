@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 7c222c607d41090468897003ef87d598
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4896420409836494301
+    second: senhoriofinal2_spritesheet_0
+  - first:
+      213: 725671857154171407
+    second: senhoriofinal2_spritesheet_1
+  - first:
+      213: 6287834310592575106
+    second: senhoriofinal2_spritesheet_2
+  - first:
+      213: -3109274619338886324
+    second: senhoriofinal2_spritesheet_3
+  - first:
+      213: 1888889701394432063
+    second: senhoriofinal2_spritesheet_4
+  - first:
+      213: -2162532274511931176
+    second: senhoriofinal2_spritesheet_5
+  - first:
+      213: -46030269037410020
+    second: senhoriofinal2_spritesheet_6
+  - first:
+      213: -7760139803107387068
+    second: senhoriofinal2_spritesheet_7
+  - first:
+      213: 3811313717145957824
+    second: senhoriofinal2_spritesheet_8
+  - first:
+      213: 971750341468704691
+    second: senhoriofinal2_spritesheet_9
+  - first:
+      213: 1866221953052950835
+    second: senhoriofinal2_spritesheet_10
+  - first:
+      213: 3064971778177636635
+    second: senhoriofinal2_spritesheet_11
+  - first:
+      213: 2614285252620489618
+    second: senhoriofinal2_spritesheet_12
+  - first:
+      213: -7526990602362388483
+    second: senhoriofinal2_spritesheet_13
+  - first:
+      213: -2200770061810825879
+    second: senhoriofinal2_spritesheet_14
+  - first:
+      213: 4887445333668763362
+    second: senhoriofinal2_spritesheet_15
+  - first:
+      213: -3695700929196719474
+    second: senhoriofinal2_spritesheet_16
+  - first:
+      213: -2876116965852491695
+    second: senhoriofinal2_spritesheet_17
+  - first:
+      213: -5767721697232414656
+    second: senhoriofinal2_spritesheet_18
+  - first:
+      213: -2197966084774496017
+    second: senhoriofinal2_spritesheet_19
+  - first:
+      213: -6088229401690782497
+    second: senhoriofinal2_spritesheet_20
+  - first:
+      213: 300360743604892896
+    second: senhoriofinal2_spritesheet_21
+  - first:
+      213: -7331291533886478006
+    second: senhoriofinal2_spritesheet_22
+  - first:
+      213: -3146854037349320974
+    second: senhoriofinal2_spritesheet_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 270
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dddd64f9b6493f340800000000000000
+      internalID: 4896420409836494301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 270
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f022c2595ba121a00800000000000000
+      internalID: 725671857154171407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 269
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2863269bdffd24750800000000000000
+      internalID: 6287834310592575106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 270
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43fa251533a9d4d0800000000000000
+      internalID: -3109274619338886324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 269
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f304287fc2fa63a10800000000000000
+      internalID: 1888889701394432063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 206
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d8166a9a542df1e0800000000000000
+      internalID: -2162532274511931176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 207
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c190c15d6b77c5ff0800000000000000
+      internalID: -46030269037410020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 207
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4491a6cc6f17e4490800000000000000
+      internalID: -7760139803107387068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 206
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5fe0ee1a184e430800000000000000
+      internalID: 3811313717145957824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 207
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf4b9979c95c7d00800000000000000
+      internalID: 971750341468704691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 142
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331c1c78af626e910800000000000000
+      internalID: 1866221953052950835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 143
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1910e4e797f88a20800000000000000
+      internalID: 3064971778177636635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 143
+        width: 12
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2939cff069ec74420800000000000000
+      internalID: 2614285252620489618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 143
+        width: 12
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff7c764de1ca8790800000000000000
+      internalID: -7526990602362388483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 143
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9658379f94b4571e0800000000000000
+      internalID: -2200770061810825879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 79
+        width: 12
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6977cd2a1b3d340800000000000000
+      internalID: 4887445333668763362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 79
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e820627e59b36bcc0800000000000000
+      internalID: -3695700929196719474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 79
+        width: 12
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15053ed9bdaf518d0800000000000000
+      internalID: -2876116965852491695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 79
+        width: 12
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0481621dcafe4ffa0800000000000000
+      internalID: -5767721697232414656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 79
+        width: 12
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8f8a0cd714f71e0800000000000000
+      internalID: -2197966084774496017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 15
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4c121bd93428ba0800000000000000
+      internalID: -6088229401690782497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 15
+        width: 12
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4ba0341881b2400800000000000000
+      internalID: 300360743604892896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 15
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a492ed95135024a90800000000000000
+      internalID: -7331291533886478006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: senhoriofinal2_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 15
+        width: 12
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f63acffce02454d0800000000000000
+      internalID: -3146854037349320974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
