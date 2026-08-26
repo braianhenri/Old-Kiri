@@ -372,7 +372,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle gatinho rosa_0: -9104867353663968108
+      Idle gatinho rosa_1: 9006283988942946812
+      Idle gatinho rosa_2: -3264993817391521338
+      Idle gatinho rosa_3: 5734332576030458995
+      Idle gatinho rosa_4: -1355120121815724178
+      Idle gatinho rosa_5: -7469665356754982568
+      Idle gatinho rosa_6: 7048353866930164798
+      Idle gatinho rosa_7: 4162891145793082455
+      Idle gatinho rosa_8: -6512282905058769552
+      Idle gatinho rosa_9: -7220618514120143038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

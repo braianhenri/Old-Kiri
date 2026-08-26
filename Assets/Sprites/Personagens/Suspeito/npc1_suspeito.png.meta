@@ -180,7 +180,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      npc1_suspeito_0: 4207608092109835915
+      npc1_suspeito_1: 8010176461755602761
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

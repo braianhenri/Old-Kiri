@@ -372,7 +372,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle gatinho azul_0: -5308314218093854631
+      Idle gatinho azul_1: -837657140006322595
+      Idle gatinho azul_2: -1111143234026902571
+      Idle gatinho azul_3: 7462443673911187171
+      Idle gatinho azul_4: 4660192443002447431
+      Idle gatinho azul_5: 359494140710693909
+      Idle gatinho azul_6: -1143448198529932688
+      Idle gatinho azul_7: -6448048263122681143
+      Idle gatinho azul_8: 8036934751840623145
+      Idle gatinho azul_9: -3993114147316365357
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

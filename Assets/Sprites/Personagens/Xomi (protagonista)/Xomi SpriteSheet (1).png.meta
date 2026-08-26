@@ -684,7 +684,30 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Xomi SpriteSheet (1)_0: -6458820630541812622
+      Xomi SpriteSheet (1)_1: 2774740562396524682
+      Xomi SpriteSheet (1)_10: -7485308513551958056
+      Xomi SpriteSheet (1)_11: -6568766807945184801
+      Xomi SpriteSheet (1)_12: -3079742868793229284
+      Xomi SpriteSheet (1)_13: 214724895885889526
+      Xomi SpriteSheet (1)_14: -5306795845309577419
+      Xomi SpriteSheet (1)_15: -2972788413357864872
+      Xomi SpriteSheet (1)_16: -9199785001471448382
+      Xomi SpriteSheet (1)_17: 4658367440297543388
+      Xomi SpriteSheet (1)_18: 6538097134623597037
+      Xomi SpriteSheet (1)_19: -2106347757096951610
+      Xomi SpriteSheet (1)_2: 8179647537663152411
+      Xomi SpriteSheet (1)_20: 6713813907855699149
+      Xomi SpriteSheet (1)_21: 1375424075077709023
+      Xomi SpriteSheet (1)_22: 340298996707624232
+      Xomi SpriteSheet (1)_3: 7261949915063725475
+      Xomi SpriteSheet (1)_4: -8196476559756062292
+      Xomi SpriteSheet (1)_5: 876799995953547818
+      Xomi SpriteSheet (1)_6: -3369397526673567731
+      Xomi SpriteSheet (1)_7: -6631573260271086002
+      Xomi SpriteSheet (1)_8: 2863749913145148376
+      Xomi SpriteSheet (1)_9: -6247018410029219219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

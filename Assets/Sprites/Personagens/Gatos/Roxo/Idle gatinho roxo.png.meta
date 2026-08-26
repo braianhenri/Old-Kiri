@@ -372,7 +372,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle gatinho roxo_0: 4367801206598753890
+      Idle gatinho roxo_1: 1723770922800887771
+      Idle gatinho roxo_2: 9044845074372113683
+      Idle gatinho roxo_3: -3385001151407867378
+      Idle gatinho roxo_4: 4271141161924335515
+      Idle gatinho roxo_5: 6314361996033142159
+      Idle gatinho roxo_6: 5915054427975752994
+      Idle gatinho roxo_7: -3312662533286259218
+      Idle gatinho roxo_8: -2785034231026741885
+      Idle gatinho roxo_9: -6473267194238473574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
