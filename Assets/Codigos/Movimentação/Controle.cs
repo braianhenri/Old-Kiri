@@ -14,6 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
+    private Vector2 direcao;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -26,14 +27,48 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector2 direcao = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        direcao = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rb.velocity = direcao.normalized * velocidade;
         if (direcao != Vector2.zero)
         {
             anim.SetBool("Andando", true);
-        }else
+        } else
         {
             anim.SetBool("Andando", false);
+            anim.SetBool("Lado", false);
+        }
+        D_E();
+        C_B();
+
+    }
+    void D_E()
+    {
+        if (direcao.x > 0)
+        {
+            transform.eulerAngles = new Vector2(0f, 0f);
+            anim.SetBool("Lado", true);
+        }
+        if (direcao.x < 0) {
+            transform.eulerAngles = new Vector2(0f, 180f);
+            anim.SetBool("Lado", true);
         }
     }
+    void C_B()
+    {
+        if(direcao.y > 0)
+        {
+            anim.SetBool("Cima",true);
+            anim.SetBool("Baixo", false);
+        }
+        if (direcao.y < 0)
+        {
+            anim.SetBool("Baixo", true);
+            anim.SetBool("Cima", false);
+        }
+        {
+
+        }
+    }
+
 }
+
