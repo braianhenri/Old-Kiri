@@ -192,7 +192,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Xomi Parado1
+      name: Xomi SpriteSheet (1)_0
       rect:
         serializedVersion: 2
         x: 239
@@ -200,7 +200,7 @@ TextureImporter:
         width: 162
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Parado2
+      name: Xomi SpriteSheet (1)_1
       rect:
         serializedVersion: 2
         x: 879
@@ -221,7 +221,7 @@ TextureImporter:
         width: 162
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,7 +234,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Parado3
+      name: Xomi SpriteSheet (1)_2
       rect:
         serializedVersion: 2
         x: 1519
@@ -242,7 +242,7 @@ TextureImporter:
         width: 162
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,7 +255,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Baixo1
+      name: Xomi SpriteSheet (1)_3
       rect:
         serializedVersion: 2
         x: 2159
@@ -263,7 +263,7 @@ TextureImporter:
         width: 152
         height: 372
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,7 +276,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Baixo2
+      name: Xomi SpriteSheet (1)_4
       rect:
         serializedVersion: 2
         x: 2789
@@ -284,7 +284,7 @@ TextureImporter:
         width: 172
         height: 362
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,7 +297,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Baixo3
+      name: Xomi SpriteSheet (1)_5
       rect:
         serializedVersion: 2
         x: 229
@@ -305,7 +305,7 @@ TextureImporter:
         width: 172
         height: 362
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,7 +318,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Baixo4
+      name: Xomi SpriteSheet (1)_6
       rect:
         serializedVersion: 2
         x: 879
@@ -326,7 +326,7 @@ TextureImporter:
         width: 152
         height: 372
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Baixo5
+      name: Xomi SpriteSheet (1)_7
       rect:
         serializedVersion: 2
         x: 1519
@@ -347,7 +347,7 @@ TextureImporter:
         width: 162
         height: 362
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -360,7 +360,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Cima1
+      name: Xomi SpriteSheet (1)_8
       rect:
         serializedVersion: 2
         x: 2159
@@ -368,7 +368,7 @@ TextureImporter:
         width: 162
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,7 +381,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Cima2
+      name: Xomi SpriteSheet (1)_9
       rect:
         serializedVersion: 2
         x: 2789
@@ -389,7 +389,7 @@ TextureImporter:
         width: 182
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -402,7 +402,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Cima3
+      name: Xomi SpriteSheet (1)_10
       rect:
         serializedVersion: 2
         x: 229
@@ -410,7 +410,7 @@ TextureImporter:
         width: 182
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -423,7 +423,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Cima4
+      name: Xomi SpriteSheet (1)_11
       rect:
         serializedVersion: 2
         x: 869
@@ -431,7 +431,7 @@ TextureImporter:
         width: 182
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -444,7 +444,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Cima5
+      name: Xomi SpriteSheet (1)_12
       rect:
         serializedVersion: 2
         x: 1499
@@ -452,7 +452,7 @@ TextureImporter:
         width: 192
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -465,7 +465,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Direita1
+      name: Xomi SpriteSheet (1)_13
       rect:
         serializedVersion: 2
         x: 2139
@@ -473,7 +473,7 @@ TextureImporter:
         width: 202
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -486,7 +486,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Direita2
+      name: Xomi SpriteSheet (1)_14
       rect:
         serializedVersion: 2
         x: 2809
@@ -494,7 +494,7 @@ TextureImporter:
         width: 142
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -507,7 +507,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Direita3
+      name: Xomi SpriteSheet (1)_15
       rect:
         serializedVersion: 2
         x: 249
@@ -515,7 +515,7 @@ TextureImporter:
         width: 142
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -528,7 +528,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Direita4
+      name: Xomi SpriteSheet (1)_16
       rect:
         serializedVersion: 2
         x: 859
@@ -536,7 +536,7 @@ TextureImporter:
         width: 202
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -549,7 +549,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Direita5
+      name: Xomi SpriteSheet (1)_17
       rect:
         serializedVersion: 2
         x: 1529
@@ -557,7 +557,7 @@ TextureImporter:
         width: 142
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -570,7 +570,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Esquerda1
+      name: Xomi SpriteSheet (1)_18
       rect:
         serializedVersion: 2
         x: 2139
@@ -578,7 +578,7 @@ TextureImporter:
         width: 202
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -591,7 +591,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Esquerda2
+      name: Xomi SpriteSheet (1)_19
       rect:
         serializedVersion: 2
         x: 2809
@@ -599,7 +599,7 @@ TextureImporter:
         width: 142
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -612,7 +612,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Esquerda3
+      name: Xomi SpriteSheet (1)_20
       rect:
         serializedVersion: 2
         x: 249
@@ -620,7 +620,7 @@ TextureImporter:
         width: 142
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -633,7 +633,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Esquerda4
+      name: Xomi SpriteSheet (1)_21
       rect:
         serializedVersion: 2
         x: 859
@@ -641,7 +641,7 @@ TextureImporter:
         width: 202
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -654,7 +654,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Xomi Esquerda5
+      name: Xomi SpriteSheet (1)_22
       rect:
         serializedVersion: 2
         x: 1529
@@ -662,7 +662,7 @@ TextureImporter:
         width: 142
         height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -677,7 +677,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7336c2b0414db4948ac37c549e00a567
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -685,29 +685,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Xomi Baixo1: 7261949915063725475
-      Xomi Baixo2: -8196476559756062292
-      Xomi Baixo3: 876799995953547818
-      Xomi Baixo4: -3369397526673567731
-      Xomi Baixo5: -6631573260271086002
-      Xomi Cima1: 2863749913145148376
-      Xomi Cima2: -6247018410029219219
-      Xomi Cima3: -7485308513551958056
-      Xomi Cima4: -6568766807945184801
-      Xomi Cima5: -3079742868793229284
-      Xomi Direita1: 214724895885889526
-      Xomi Direita2: -5306795845309577419
-      Xomi Direita3: -2972788413357864872
-      Xomi Direita4: -9199785001471448382
-      Xomi Direita5: 4658367440297543388
-      Xomi Esquerda1: 6538097134623597037
-      Xomi Esquerda2: -2106347757096951610
-      Xomi Esquerda3: 6713813907855699149
-      Xomi Esquerda4: 1375424075077709023
-      Xomi Esquerda5: 340298996707624232
-      Xomi Parado1: -6458820630541812622
-      Xomi Parado2: 2774740562396524682
-      Xomi Parado3: 8179647537663152411
+      Xomi SpriteSheet (1)_0: -6458820630541812622
+      Xomi SpriteSheet (1)_1: 2774740562396524682
+      Xomi SpriteSheet (1)_10: -7485308513551958056
+      Xomi SpriteSheet (1)_11: -6568766807945184801
+      Xomi SpriteSheet (1)_12: -3079742868793229284
+      Xomi SpriteSheet (1)_13: 214724895885889526
+      Xomi SpriteSheet (1)_14: -5306795845309577419
+      Xomi SpriteSheet (1)_15: -2972788413357864872
+      Xomi SpriteSheet (1)_16: -9199785001471448382
+      Xomi SpriteSheet (1)_17: 4658367440297543388
+      Xomi SpriteSheet (1)_18: 6538097134623597037
+      Xomi SpriteSheet (1)_19: -2106347757096951610
+      Xomi SpriteSheet (1)_2: 8179647537663152411
+      Xomi SpriteSheet (1)_20: 6713813907855699149
+      Xomi SpriteSheet (1)_21: 1375424075077709023
+      Xomi SpriteSheet (1)_22: 340298996707624232
+      Xomi SpriteSheet (1)_3: 7261949915063725475
+      Xomi SpriteSheet (1)_4: -8196476559756062292
+      Xomi SpriteSheet (1)_5: 876799995953547818
+      Xomi SpriteSheet (1)_6: -3369397526673567731
+      Xomi SpriteSheet (1)_7: -6631573260271086002
+      Xomi SpriteSheet (1)_8: 2863749913145148376
+      Xomi SpriteSheet (1)_9: -6247018410029219219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

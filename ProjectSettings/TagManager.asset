@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Obstaculo
-  - Cenario
+  - 
+  - 
   - 
   - 
   - 
@@ -40,13 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 2366608669
-    locked: 0
-  - name: Obstaculo
-    uniqueID: 3671928841
-    locked: 0
-  - name: Cenario
-    uniqueID: 1320703261
     locked: 0
