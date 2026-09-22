@@ -1,10 +1,88 @@
 fileFormatVersion: 2
-guid: b6db6b9a1b5577b46a7ac1f89d836bde
+guid: e9e2aa22add011e429e521ba5010277b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3033786915123822154
-    second: Gemini_Generated_Image_i6te5wi6te5wi6te_0
+      213: 2380529355097094808
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_0
+  - first:
+      213: 2013014912123911009
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_1
+  - first:
+      213: -1395318310851364557
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_2
+  - first:
+      213: 5377203997010203671
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_3
+  - first:
+      213: -4743353899395251887
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_4
+  - first:
+      213: 3942512895246829367
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_5
+  - first:
+      213: -4580084244268373224
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_6
+  - first:
+      213: -2498115296202217959
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_7
+  - first:
+      213: 4023197726481136715
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_8
+  - first:
+      213: 7919028401914811986
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_9
+  - first:
+      213: 8771319234089080666
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_10
+  - first:
+      213: 8342423063028402200
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_11
+  - first:
+      213: -8982369484308016463
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_12
+  - first:
+      213: -2992709612397344762
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_13
+  - first:
+      213: 7692304192075220650
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_14
+  - first:
+      213: 6367369441755451218
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_15
+  - first:
+      213: -9190439038853294102
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_16
+  - first:
+      213: 8984377917167939417
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_17
+  - first:
+      213: 3219932375240929497
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_18
+  - first:
+      213: 1772942467140721937
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_19
+  - first:
+      213: 5994728358320263320
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_20
+  - first:
+      213: 3240861685420485049
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_21
+  - first:
+      213: -8886862032922385190
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_22
+  - first:
+      213: -8484819086378601685
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_23
+  - first:
+      213: 344935195985372763
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_24
+  - first:
+      213: 8321293384733958736
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_25
+  - first:
+      213: -4305005451674528094
+    second: ChatGPT Image 22 de set. de 2026, 07_51_51_26
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,22 +204,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_i6te5wi6te5wi6te_0
+      name: ChatGPT Image 22 de set. de 2026, 07_51_51_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1364
-        height: 768
+        x: 253
+        y: 130
+        width: 1451
+        height: 539
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6b101d7dfd2d5e5d0800000000000000
-      internalID: -3033786915123822154
+      spriteID: f6a79c378f05d8d41b050993eb4471dd
+      internalID: -1559787288
       vertices: []
       indices: 
       edges: []
@@ -149,7 +227,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 475e892a704c50b4abc2fec0aae071c4
     internalID: 0
     vertices: []
     indices: 
@@ -157,7 +235,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gemini_Generated_Image_i6te5wi6te5wi6te_0: -3033786915123822154
+      ChatGPT Image 22 de set. de 2026, 07_51_51_0: -1559787288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

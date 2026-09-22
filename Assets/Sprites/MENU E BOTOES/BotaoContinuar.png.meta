@@ -1,10 +1,79 @@
 fileFormatVersion: 2
-guid: b6db6b9a1b5577b46a7ac1f89d836bde
+guid: 5201f389fbc8eb444925de4410ed56fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3033786915123822154
-    second: Gemini_Generated_Image_i6te5wi6te5wi6te_0
+      213: 8824408084468731243
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_0
+  - first:
+      213: 8097298766731429157
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_1
+  - first:
+      213: -6383859629889492423
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_2
+  - first:
+      213: 6979175565794569891
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_3
+  - first:
+      213: -5141548401554263125
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_4
+  - first:
+      213: 6190328264139304786
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_5
+  - first:
+      213: -2743997380912764982
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_6
+  - first:
+      213: -2021701612503702969
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_7
+  - first:
+      213: 6174735154929931281
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_8
+  - first:
+      213: -5096985180013383371
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_9
+  - first:
+      213: 4430767608502011082
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_10
+  - first:
+      213: 3018756223247124248
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_11
+  - first:
+      213: 4862592681474916901
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_12
+  - first:
+      213: 8130102627165964741
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_13
+  - first:
+      213: -851524421489928401
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_14
+  - first:
+      213: 8566740811935239625
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_15
+  - first:
+      213: -2329029743148871401
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_16
+  - first:
+      213: 1031499322501880207
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_17
+  - first:
+      213: -5017351263207900842
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_18
+  - first:
+      213: -6327869144854710290
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_19
+  - first:
+      213: -2847471178004827731
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_20
+  - first:
+      213: 2808190436617524901
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_21
+  - first:
+      213: 829824655488660622
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_22
+  - first:
+      213: -4711639967926891218
+    second: ChatGPT Image 22 de set. de 2026, 07_55_26_23
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,22 +195,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_i6te5wi6te5wi6te_0
+      name: ChatGPT Image 22 de set. de 2026, 07_55_26_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1364
-        height: 768
+        x: 147
+        y: 103
+        width: 1671
+        height: 587
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6b101d7dfd2d5e5d0800000000000000
-      internalID: -3033786915123822154
+      spriteID: b53d84a6514ad3d448d0657b09ebeb71
+      internalID: 790117854
       vertices: []
       indices: 
       edges: []
@@ -149,7 +218,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 838b32ce8cf25fb4dbf8211841e8a9f7
     internalID: 0
     vertices: []
     indices: 
@@ -157,7 +226,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gemini_Generated_Image_i6te5wi6te5wi6te_0: -3033786915123822154
+      ChatGPT Image 22 de set. de 2026, 07_55_26_0: 790117854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
