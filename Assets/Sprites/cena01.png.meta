@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b6db6b9a1b5577b46a7ac1f89d836bde
+guid: bbe59bcbc5b070f4f86fec7a91a315e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3033786915123822154
-    second: Gemini_Generated_Image_i6te5wi6te5wi6te_0
+      213: 5432867886423994955
+    second: cena01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_i6te5wi6te5wi6te_0
+      name: cena01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1364
-        height: 768
+        width: 1080
+        height: 1920
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b101d7dfd2d5e5d0800000000000000
-      internalID: -3033786915123822154
+      spriteID: b42fde1ee8c656b40800000000000000
+      internalID: 5432867886423994955
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Gemini_Generated_Image_i6te5wi6te5wi6te_0: -3033786915123822154
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
