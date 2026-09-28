@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using TMPro;
 
 public class OpcoesController : MonoBehaviour
@@ -21,12 +23,19 @@ public class OpcoesController : MonoBehaviour
     [Header("Tela Cheia")]
     public Toggle toggleTelaCheia;
 
+    [Header("Brilho")]
+    public Slider sliderBrilho;
+    public Volume volumeGlobal; // arraste o Global Volume da cena aqui
+    private ColorAdjustments colorAdjustments;
+
     void Start()
     {
         // ---- Configura o toggle de tela cheia (só roda se estiver conectado) ----
         if (toggleTelaCheia != null)
         {
-            toggleTelaCheia.isOn = Screen.fullScreen;
+            bool telaCheiaSalva = PlayerPrefs.GetInt("telaCheia", Screen.fullScreen ? 1 : 0) == 1;
+            Screen.fullScreen = telaCheiaSalva;
+            toggleTelaCheia.isOn = telaCheiaSalva;
             toggleTelaCheia.onValueChanged.AddListener(MudarTelaCheia);
         }
 
@@ -37,6 +46,19 @@ public class OpcoesController : MonoBehaviour
             sliderVolume.value = volumeSalvo;
             AplicarVolume(volumeSalvo);
             sliderVolume.onValueChanged.AddListener(AplicarVolume);
+        }
+
+        // ---- Configura o slider de brilho (só roda se estiver conectado) ----
+        if (sliderBrilho != null && volumeGlobal != null &&
+            volumeGlobal.profile.TryGet(out colorAdjustments))
+        {
+            sliderBrilho.minValue = -2f;
+            sliderBrilho.maxValue = 2f;
+
+            float brilhoSalvo = PlayerPrefs.GetFloat("brilho", 0f);
+            sliderBrilho.value = brilhoSalvo;
+            AplicarBrilho(brilhoSalvo);
+            sliderBrilho.onValueChanged.AddListener(AplicarBrilho);
         }
 
         // ---- Preenche o dropdown com as resoluções do monitor, sem duplicatas ----
@@ -84,9 +106,17 @@ public class OpcoesController : MonoBehaviour
     public void AplicarVolume(float valor)
     {
         if (mainMixer != null)
-            mainMixer.SetFloat("MasterVolume", Mathf.Log10(valor) * 20);
+            mainMixer.SetFloat("MasterVolume", Mathf.Log10(Mathf.Max(valor, 0.0001f)) * 20);
 
         PlayerPrefs.SetFloat("volume", valor);
+    }
+
+    public void AplicarBrilho(float valor)
+    {
+        if (colorAdjustments != null)
+            colorAdjustments.postExposure.value = valor;
+
+        PlayerPrefs.SetFloat("brilho", valor);
     }
 
     public void MudarResolucao(int indice)
