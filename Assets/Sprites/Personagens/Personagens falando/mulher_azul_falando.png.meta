@@ -252,7 +252,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mulher_azul_falando_0: 1475449554685525463
+      mulher_azul_falando_1: -6077989358996688629
+      mulher_azul_falando_2: -4583064200194477209
+      mulher_azul_falando_3: 7666873085463510605
+      mulher_azul_falando_4: 8972886153071474817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

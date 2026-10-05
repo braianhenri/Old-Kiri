@@ -180,7 +180,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mulher_azul_0: 339058886984329331
+      mulher_azul_1: -3144822304332945448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

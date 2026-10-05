@@ -252,7 +252,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      verdola_falando_0: -7628223184819391096
+      verdola_falando_1: -521275034646492012
+      verdola_falando_2: -6298672489643529093
+      verdola_falando_3: -5028731602577572603
+      verdola_falando_4: 6403246632413623839
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

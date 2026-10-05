@@ -252,7 +252,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BASE PERSONAGEM FEMININA_falando_0: 8229832217628131720
+      BASE PERSONAGEM FEMININA_falando_1: -2047182590388217902
+      BASE PERSONAGEM FEMININA_falando_2: 4219105360199292614
+      BASE PERSONAGEM FEMININA_falando_3: -1125311899049021590
+      BASE PERSONAGEM FEMININA_falando_4: 3414595224408832246
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

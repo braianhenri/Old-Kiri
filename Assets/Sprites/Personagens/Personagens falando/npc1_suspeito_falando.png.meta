@@ -252,7 +252,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      npc1_suspeito_falando_0: -1511541753744941589
+      npc1_suspeito_falando_1: 2203548970814954772
+      npc1_suspeito_falando_2: 8815449687249642895
+      npc1_suspeito_falando_3: 2463662825140732956
+      npc1_suspeito_falando_4: 9004108660374518437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
