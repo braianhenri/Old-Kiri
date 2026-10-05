@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 82d9765746a8e6145aec5bd53477c277
+guid: abef1cb14c0e318498ef2e756db5c6ff
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 946877545070569222
+    second: caixa_de_texto_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,22 +126,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cenario2.0_0
+      name: caixa_de_texto_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1376
-        height: 768
+        x: 37
+        y: 369
+        width: 835
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7d07bcc6d47db8049a67e1330187fdae
-      internalID: 305260555
+      spriteID: 607a9b74c1cf32d00800000000000000
+      internalID: 946877545070569222
       vertices: []
       indices: 
       edges: []
@@ -146,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cd889bc279e67914faccd162f1052b07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cenario2.0_0: 305260555
+      caixa_de_texto_0: 946877545070569222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

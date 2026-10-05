@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: 82d9765746a8e6145aec5bd53477c277
+guid: b768823be7bbe2e48b176193b8c3557d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1511541753744941589
+    second: npc1_suspeito_falando_0
+  - first:
+      213: 2203548970814954772
+    second: npc1_suspeito_falando_1
+  - first:
+      213: 8815449687249642895
+    second: npc1_suspeito_falando_2
+  - first:
+      213: 2463662825140732956
+    second: npc1_suspeito_falando_3
+  - first:
+      213: 9004108660374518437
+    second: npc1_suspeito_falando_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,22 +138,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cenario2.0_0
+      name: npc1_suspeito_falando_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1376
-        height: 768
+        x: 95
+        y: 604
+        width: 66
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7d07bcc6d47db8049a67e1330187fdae
-      internalID: 305260555
+      spriteID: bed9cd098cce50be0800000000000000
+      internalID: -1511541753744941589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc1_suspeito_falando_1
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 604
+        width: 66
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d5a923d14949e10800000000000000
+      internalID: 2203548970814954772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc1_suspeito_falando_2
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 348
+        width: 66
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85e7d7c8c4c65a70800000000000000
+      internalID: 8815449687249642895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc1_suspeito_falando_3
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 348
+        width: 66
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1449d25940b03220800000000000000
+      internalID: 2463662825140732956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc1_suspeito_falando_4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 92
+        width: 66
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa34acee1505fc70800000000000000
+      internalID: 9004108660374518437
       vertices: []
       indices: 
       edges: []
@@ -146,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cd889bc279e67914faccd162f1052b07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +253,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cenario2.0_0: 305260555
+      npc1_suspeito_falando_0: -1511541753744941589
+      npc1_suspeito_falando_1: 2203548970814954772
+      npc1_suspeito_falando_2: 8815449687249642895
+      npc1_suspeito_falando_3: 2463662825140732956
+      npc1_suspeito_falando_4: 9004108660374518437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

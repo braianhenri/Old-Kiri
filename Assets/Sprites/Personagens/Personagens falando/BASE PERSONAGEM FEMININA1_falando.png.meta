@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: 82d9765746a8e6145aec5bd53477c277
+guid: 190e5dfdb5b5ba54c9c7b08f5d31629b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6684090350295077488
+    second: BASE PERSONAGEM FEMININA1_falando_0
+  - first:
+      213: 4552374722286511598
+    second: BASE PERSONAGEM FEMININA1_falando_1
+  - first:
+      213: -9026083327908298403
+    second: BASE PERSONAGEM FEMININA1_falando_2
+  - first:
+      213: 1547341970290358670
+    second: BASE PERSONAGEM FEMININA1_falando_3
+  - first:
+      213: 677199823900502273
+    second: BASE PERSONAGEM FEMININA1_falando_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,22 +138,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cenario2.0_0
+      name: BASE PERSONAGEM FEMININA1_falando_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1376
-        height: 768
+        x: 91
+        y: 597
+        width: 74
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7d07bcc6d47db8049a67e1330187fdae
-      internalID: 305260555
+      spriteID: 09dab008d375d33a0800000000000000
+      internalID: -6684090350295077488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA1_falando_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 597
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee5ea5eb0b84d2f30800000000000000
+      internalID: 4552374722286511598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA1_falando_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 341
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5143f61909ecb280800000000000000
+      internalID: -9026083327908298403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA1_falando_3
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 341
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89b535e253497510800000000000000
+      internalID: 1547341970290358670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA1_falando_4
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 85
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 109eb81e6a5e56900800000000000000
+      internalID: 677199823900502273
       vertices: []
       indices: 
       edges: []
@@ -146,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cd889bc279e67914faccd162f1052b07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +253,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cenario2.0_0: 305260555
+      BASE PERSONAGEM FEMININA1_falando_0: -6684090350295077488
+      BASE PERSONAGEM FEMININA1_falando_1: 4552374722286511598
+      BASE PERSONAGEM FEMININA1_falando_2: -9026083327908298403
+      BASE PERSONAGEM FEMININA1_falando_3: 1547341970290358670
+      BASE PERSONAGEM FEMININA1_falando_4: 677199823900502273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

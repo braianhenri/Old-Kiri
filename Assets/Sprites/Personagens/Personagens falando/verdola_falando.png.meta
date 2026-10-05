@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: 82d9765746a8e6145aec5bd53477c277
+guid: f2ce165a1d5736a4e8ef50066b9d50ad
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7628223184819391096
+    second: verdola_falando_0
+  - first:
+      213: -521275034646492012
+    second: verdola_falando_1
+  - first:
+      213: -6298672489643529093
+    second: verdola_falando_2
+  - first:
+      213: -5028731602577572603
+    second: verdola_falando_3
+  - first:
+      213: 6403246632413623839
+    second: verdola_falando_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,22 +138,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cenario2.0_0
+      name: verdola_falando_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1376
-        height: 768
+        x: 91
+        y: 603
+        width: 74
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7d07bcc6d47db8049a67e1330187fdae
-      internalID: 305260555
+      spriteID: 885f071fd6b132690800000000000000
+      internalID: -7628223184819391096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: verdola_falando_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 603
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ccd992e1f04c8f0800000000000000
+      internalID: -521275034646492012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: verdola_falando_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 347
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ca5421ebe9698a0800000000000000
+      internalID: -6298672489643529093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: verdola_falando_3
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 347
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50d3595304b563ab0800000000000000
+      internalID: -5028731602577572603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: verdola_falando_4
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 91
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16fa36e2e6ecd850800000000000000
+      internalID: 6403246632413623839
       vertices: []
       indices: 
       edges: []
@@ -146,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cd889bc279e67914faccd162f1052b07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +253,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cenario2.0_0: 305260555
+      verdola_falando_0: -7628223184819391096
+      verdola_falando_1: -521275034646492012
+      verdola_falando_2: -6298672489643529093
+      verdola_falando_3: -5028731602577572603
+      verdola_falando_4: 6403246632413623839
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

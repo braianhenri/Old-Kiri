@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: 82d9765746a8e6145aec5bd53477c277
+guid: 9a950c7f562dc5d40b4a706b2bdedbdc
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1475449554685525463
+    second: mulher_azul_falando_0
+  - first:
+      213: -6077989358996688629
+    second: mulher_azul_falando_1
+  - first:
+      213: -4583064200194477209
+    second: mulher_azul_falando_2
+  - first:
+      213: 7666873085463510605
+    second: mulher_azul_falando_3
+  - first:
+      213: 8972886153071474817
+    second: mulher_azul_falando_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,22 +138,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cenario2.0_0
+      name: mulher_azul_falando_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1376
-        height: 768
+        x: 91
+        y: 595
+        width: 74
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7d07bcc6d47db8049a67e1330187fdae
-      internalID: 305260555
+      spriteID: 7ddf90f7d89d97410800000000000000
+      internalID: 1475449554685525463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mulher_azul_falando_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 595
+        width: 74
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01f56c61e4a6aba0800000000000000
+      internalID: -6077989358996688629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mulher_azul_falando_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 339
+        width: 74
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763399c546fa560c0800000000000000
+      internalID: -4583064200194477209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mulher_azul_falando_3
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 339
+        width: 74
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e3e0d4374366a60800000000000000
+      internalID: 7666873085463510605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mulher_azul_falando_4
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 83
+        width: 74
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188b8d37a68168c70800000000000000
+      internalID: 8972886153071474817
       vertices: []
       indices: 
       edges: []
@@ -146,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cd889bc279e67914faccd162f1052b07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +253,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cenario2.0_0: 305260555
+      mulher_azul_falando_0: 1475449554685525463
+      mulher_azul_falando_1: -6077989358996688629
+      mulher_azul_falando_2: -4583064200194477209
+      mulher_azul_falando_3: 7666873085463510605
+      mulher_azul_falando_4: 8972886153071474817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
