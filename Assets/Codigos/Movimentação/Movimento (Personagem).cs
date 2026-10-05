@@ -12,22 +12,65 @@ public class NewBehaviourScript : MonoBehaviour
     private float velocidade = 2f;
     //componente rigidbody para colisões
     private Rigidbody2D rb;
-    private Vector2 direção;
+    private SpriteRenderer sprite;
+    private Animator anim;
+    private Vector2 direcao;
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        direção = new Vector2 (horizontal, vertical);
     }
     private void FixedUpdate()
     {
-        Vector3 movePosition = (velocidade * Time.fixedDeltaTime * direção.normalized) + rb.position;
-        rb.MovePosition(movePosition);
+        direcao = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        rb.velocity = direcao.normalized * velocidade;
+        if (direcao != Vector2.zero)
+        {
+            anim.SetBool("Andando", true);
+        }
+        else
+        {
+            anim.SetBool("Andando", false);
+            anim.SetBool("Lado", false);
+        }
+        D_E();
+        C_B();
+
     }
+    void D_E()
+    {
+        if (direcao.x > 0)
+        {
+            transform.eulerAngles = new Vector2(0f, 0f);
+            anim.SetBool("Lado", true);
+        }
+        if (direcao.x < 0)
+        {
+            transform.eulerAngles = new Vector2(0f, 180f);
+            anim.SetBool("Lado", true);
+        }
+    }
+    void C_B()
+    {
+        if (direcao.y > 0)
+        {
+            anim.SetBool("Cima", true);
+            anim.SetBool("Baixo", false);
+        }
+        if (direcao.y < 0)
+        {
+            anim.SetBool("Baixo", true);
+            anim.SetBool("Cima", false);
+        }
+        {
+
+        }
+    }
+
 }
+
