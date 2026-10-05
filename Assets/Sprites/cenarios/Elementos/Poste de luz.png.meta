@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Poste de luz_0: -7510278947559361220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
