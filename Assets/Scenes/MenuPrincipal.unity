@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459263e1cc6f1624d879a14211d42bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escalaAumentada: 1.2
+  escalaAumentada: 1.1
   velocidade: 10
 --- !u!1 &342121424
 GameObject:
@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459263e1cc6f1624d879a14211d42bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escalaAumentada: 1.2
+  escalaAumentada: 1.1
   velocidade: 10
 --- !u!114 &486177752
 MonoBehaviour:
@@ -2571,7 +2571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459263e1cc6f1624d879a14211d42bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escalaAumentada: 1.2
+  escalaAumentada: 1.1
   velocidade: 10
 --- !u!1 &1500246695
 GameObject:
