@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: cenario
+    uniqueID: 888153021
+    locked: 0
+  - name: fundo
+    uniqueID: 1140773683
+    locked: 0
+  - name: atras
+    uniqueID: 1985126345
+    locked: 0
+  - name: frente
+    uniqueID: 2538479585
+    locked: 0
