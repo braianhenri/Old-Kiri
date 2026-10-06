@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4613156845824554812}
   - component: {fileID: 7153508742831092891}
   - component: {fileID: 1384983315949033200}
-  - component: {fileID: 3970345685648656329}
   m_Layer: 3
   m_Name: 'Xomi '
   m_TagString: Player
@@ -173,10 +172,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7704073302070396272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c9aebee77d6f464ca16ff39678fbe2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 18a55a68864da774bb37c2771f49f11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 6.4
+  velocidade: 6
 --- !u!95 &1384983315949033200
 Animator:
   serializedVersion: 7
@@ -199,16 +198,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3970345685648656329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7704073302070396272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c9aebee77d6f464ca16ff39678fbe2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 6.4

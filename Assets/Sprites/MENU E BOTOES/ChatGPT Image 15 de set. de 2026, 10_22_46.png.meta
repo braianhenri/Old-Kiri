@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bf736bce4f64b7149a6cc20da9801c95
+guid: f65440c5a574f1c49b3d3d467ee27f4e
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ChatGPT Image 15 de set. de 2026, 10_22_46_0: 8005350563705298204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
