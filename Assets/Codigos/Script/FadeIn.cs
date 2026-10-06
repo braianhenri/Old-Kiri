@@ -1,15 +1,24 @@
+
 using System.Collections;
 using UnityEngine;
 
 public class FadeIn : MonoBehaviour
 {
     [Header("Configuração")]
-    public CanvasGroup painelFade; // arraste o PainelFade aqui
-    public float duracao = 1.5f;   // quantos segundos até clarear totalmente
+    public CanvasGroup painelFade;
+    public float duracao = 3f;
 
     void Start()
     {
-        painelFade.alpha = 1f; // começa 100% preto
+        // Congela o jogo
+        Time.timeScale = 0f;
+
+        // Ativa o painel
+        painelFade.gameObject.SetActive(true);
+
+        // Começa totalmente preto
+        painelFade.alpha = 1f;
+
         StartCoroutine(Clarear());
     }
 
@@ -19,12 +28,24 @@ public class FadeIn : MonoBehaviour
 
         while (tempoDecorrido < duracao)
         {
-            tempoDecorrido += Time.deltaTime;
-            painelFade.alpha = Mathf.Lerp(1f, 0f, tempoDecorrido / duracao);
+            // Usa unscaledDeltaTime porque o jogo está pausado
+            tempoDecorrido += Time.unscaledDeltaTime;
+
+            painelFade.alpha = Mathf.Lerp(
+                1f,
+                0f,
+                tempoDecorrido / duracao
+            );
+
             yield return null;
         }
 
         painelFade.alpha = 0f;
-        painelFade.gameObject.SetActive(false); // desativa pra não bloquear cliques na tela
+
+        // Desativa o painel
+        painelFade.gameObject.SetActive(false);
+
+        // Libera o jogo
+        Time.timeScale = 1f;
     }
 }
