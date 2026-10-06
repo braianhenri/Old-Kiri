@@ -11,12 +11,18 @@ public class AtributosJogador : MonoBehaviour
     }
     public int ataque() 
     {
-        return 10 + atributos.força * 10;
+        return 10 + atributos.força * 2;
+    }
+    public int ataqueCritico()
+    {
+        return atributos.força*10;
     }
 
     void Start()
     {
-        
+        VidaMaxima();
+        ataque();
+        ataqueCritico();
     }
 
     // Update is called once per frame
