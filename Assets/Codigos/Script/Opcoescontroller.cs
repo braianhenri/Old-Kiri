@@ -8,15 +8,15 @@ using TMPro;
 
 public class OpcoesController : MonoBehaviour
 {
-    [Header("Referï¿½ncias de UI")]
+    [Header("Referências de UI")]
     public GameObject painelOpcoes;
-    public GameObject painelMenuPrincipal; // opcional, se quiser esconder o menu atrï¿½s
+    public GameObject painelMenuPrincipal; // opcional, se quiser esconder o menu atrás
 
     [Header("Volume")]
     public AudioMixer mainMixer; // arraste o MainMixer aqui
     public Slider sliderVolume;
 
-    [Header("Resoluï¿½ï¿½o")]
+    [Header("Resolução")]
     public TMP_Dropdown dropdownResolucao;
     private Resolution[] resolucoes;
 
@@ -30,7 +30,7 @@ public class OpcoesController : MonoBehaviour
 
     void Start()
     {
-        // ---- Configura o toggle de tela cheia (sï¿½ roda se estiver conectado) ----
+        // ---- Configura o toggle de tela cheia (só roda se estiver conectado) ----
         if (toggleTelaCheia != null)
         {
             bool telaCheiaSalva = PlayerPrefs.GetInt("telaCheia", Screen.fullScreen ? 1 : 0) == 1;
@@ -39,7 +39,7 @@ public class OpcoesController : MonoBehaviour
             toggleTelaCheia.onValueChanged.AddListener(MudarTelaCheia);
         }
 
-        // ---- Configura o slider de volume (sï¿½ roda se estiver conectado) ----
+        // ---- Configura o slider de volume (só roda se estiver conectado) ----
         if (sliderVolume != null)
         {
             float volumeSalvo = PlayerPrefs.GetFloat("volume", 1f);
@@ -48,7 +48,7 @@ public class OpcoesController : MonoBehaviour
             sliderVolume.onValueChanged.AddListener(AplicarVolume);
         }
 
-        // ---- Configura o slider de brilho (sï¿½ roda se estiver conectado) ----
+        // ---- Configura o slider de brilho (só roda se estiver conectado) ----
         if (sliderBrilho != null && volumeGlobal != null &&
             volumeGlobal.profile.TryGet(out colorAdjustments))
         {
@@ -61,7 +61,7 @@ public class OpcoesController : MonoBehaviour
             sliderBrilho.onValueChanged.AddListener(AplicarBrilho);
         }
 
-        // ---- Preenche o dropdown com as resoluï¿½ï¿½es do monitor, sem duplicatas ----
+        // ---- Preenche o dropdown com as resoluções do monitor, sem duplicatas ----
         if (dropdownResolucao != null)
         {
             Resolution[] todasResolucoes = Screen.resolutions;
