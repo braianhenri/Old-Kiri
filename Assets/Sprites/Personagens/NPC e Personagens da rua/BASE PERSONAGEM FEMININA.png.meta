@@ -66,21 +66,579 @@ TextureImporter:
   applyGammaDecoding: 0
   swizzle: 50462976
   cookieLightType: 0
-  platformSettings: []
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 263
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae2cf76a29b01a4d8dc24387f742598
+      internalID: -400212328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 257
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8df1b7dbafb68644a1aebca61ab307d
+      internalID: 247834475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 255
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e450b312b80d9ed4295bbfad3c94cc1a
+      internalID: 821064332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 256
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b96c240efe42394e966ad69f5b8e187
+      internalID: -1242157914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 257
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78aa497cc309864e90e62bc8d6c454a
+      internalID: 1676551892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 198
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455e932897b7dec479fed0fb9aa461cc
+      internalID: 471969823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 195
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94fe0afc6471644790a866ec370ab42
+      internalID: -1902781033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_7
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 192
+        width: 44
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebd68bc3d59a1342a4cc63f0738aa68
+      internalID: -312500549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 190
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c75d4b2741ba414f988700f3d193c5f
+      internalID: -268855713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_9
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 192
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc9e623ec6bf524786e5cfd04006eae
+      internalID: -918850962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 127
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294eec5f64b866945911bdca6bb3a717
+      internalID: 162601379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_11
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 124
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338693688e8590d4bb1ef71064d90e17
+      internalID: 851428462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_12
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 125
+        width: 37
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3684e3e78ac826d499197aa20b46c0ae
+      internalID: 1119205762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_13
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 125
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7c6428f6b3be54cb20dd6a40f809fc
+      internalID: 11062266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_14
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 127
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538171879684b0e43bcc1eccde2fe449
+      internalID: -1349066206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 67
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b704a860e4d58438714d0429594203
+      internalID: -978837239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 65
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97593a54f1a3b6641be87bb6f3613559
+      internalID: -913119144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_17
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 63
+        width: 48
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9378df59a3d3e7345b45b603bed1411d
+      internalID: -1671970747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_18
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 61
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bcf2e784cc18fc4aab41dd19878109f
+      internalID: 361935679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_19
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 61
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 395b06b7b6f5406449031b79d0a1f96c
+      internalID: 139128853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_20
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 3
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674e0910b6af424429b8e1d7b6d36e4d
+      internalID: 1860848204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_21
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8be6a5c4ab42d4fb9691ea5840acfa
+      internalID: -1100481915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BASE PERSONAGEM FEMININA_22
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e186a34f60826428a02065a26be0ef
+      internalID: 200453484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b9f4ebc424aa8c4478ec08248fdfd793
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BASE PERSONAGEM FEMININA_0: -400212328
+      BASE PERSONAGEM FEMININA_1: 247834475
+      BASE PERSONAGEM FEMININA_10: 162601379
+      BASE PERSONAGEM FEMININA_11: 851428462
+      BASE PERSONAGEM FEMININA_12: 1119205762
+      BASE PERSONAGEM FEMININA_13: 11062266
+      BASE PERSONAGEM FEMININA_14: -1349066206
+      BASE PERSONAGEM FEMININA_15: -978837239
+      BASE PERSONAGEM FEMININA_16: -913119144
+      BASE PERSONAGEM FEMININA_17: -1671970747
+      BASE PERSONAGEM FEMININA_18: 361935679
+      BASE PERSONAGEM FEMININA_19: 139128853
+      BASE PERSONAGEM FEMININA_2: 821064332
+      BASE PERSONAGEM FEMININA_20: 1860848204
+      BASE PERSONAGEM FEMININA_21: -1100481915
+      BASE PERSONAGEM FEMININA_22: 200453484
+      BASE PERSONAGEM FEMININA_3: -1242157914
+      BASE PERSONAGEM FEMININA_4: 1676551892
+      BASE PERSONAGEM FEMININA_5: 471969823
+      BASE PERSONAGEM FEMININA_6: -1902781033
+      BASE PERSONAGEM FEMININA_7: -312500549
+      BASE PERSONAGEM FEMININA_8: -268855713
+      BASE PERSONAGEM FEMININA_9: -918850962
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
