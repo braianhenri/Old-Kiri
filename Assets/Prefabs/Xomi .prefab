@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4613156845824554812}
   - component: {fileID: 7153508742831092891}
   - component: {fileID: 1384983315949033200}
+  - component: {fileID: 5479144760024157594}
+  - component: {fileID: 7446255411751773689}
   m_Layer: 3
   m_Name: 'Xomi '
   m_TagString: Player
@@ -198,3 +200,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5479144760024157594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7704073302070396272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd5be1a5e3b7bc44979123e106207d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
+  "for\xE7a": 0
+  defesa: 0
+  sorte: 0
+--- !u!114 &7446255411751773689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7704073302070396272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e52c676ada41d4f8748ddeed05a4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atributos: {fileID: 0}
