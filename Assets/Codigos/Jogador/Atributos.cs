@@ -20,4 +20,20 @@ public class Atributos : MonoBehaviour
     {
         
     }
+    public void AumentarVida()
+    {         
+        vida++;
+    }
+    public void AumentarForça()
+    {
+        força++;
+    }
+    public void AumentarDefesa()
+    {
+        defesa++;
+    }
+    public void AumentarSorte()
+    {
+        sorte++;
+    }
 }

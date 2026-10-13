@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 251471403}
   - component: {fileID: 251471402}
   m_Layer: 0
-  m_Name: acoes
+  m_Name: "A\xE7\xF5esCanvas"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,9 +209,8 @@ GameObject:
   - component: {fileID: 339773159}
   - component: {fileID: 339773161}
   - component: {fileID: 339773160}
-  - component: {fileID: 339773162}
   m_Layer: 7
-  m_Name: BarraVida
+  m_Name: VidaCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +228,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 407661766}
   - {fileID: 1732117084}
   - {fileID: 1966378605}
   - {fileID: 924961406}
@@ -279,19 +277,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339773158}
   m_CullTransparentMesh: 1
---- !u!114 &339773162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339773158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e3a1612afaa2184eace9e2eae9c1b94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: {fileID: 1966378604}
 --- !u!1 &357750442
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,8 +311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 45}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 3.9, y: 36.4}
+  m_SizeDelta: {x: 240.46, y: 56.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &357750444
 MonoBehaviour:
@@ -376,8 +361,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 88
+  m_fontSizeBase: 88
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -440,7 +425,7 @@ GameObject:
   - component: {fileID: 364279453}
   - component: {fileID: 364279452}
   m_Layer: 7
-  m_Name: 'VidaTXT(TMP) '
+  m_Name: 'VidaTexto(TMP) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -462,7 +447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.6, y: 93.00003}
+  m_AnchoredPosition: {x: 0.6, y: 88.7}
   m_SizeDelta: {x: 200, y: 43.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &364279452
@@ -512,8 +497,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -563,81 +548,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364279450}
-  m_CullTransparentMesh: 1
---- !u!1 &407661765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 407661766}
-  - component: {fileID: 407661768}
-  - component: {fileID: 407661767}
-  m_Layer: 7
-  m_Name: FundoVida
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &407661766
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407661765}
-  m_LocalRotation: {x: 0.0043632328, y: 0.0043632328, z: -0.00001903816, w: 0.999981}
-  m_LocalPosition: {x: 0, y: 0, z: 0.03}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 339773159}
-  m_LocalEulerAnglesHint: {x: 0.5, y: 0.5, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.37, y: -21.71}
-  m_SizeDelta: {x: 193.1, y: 39.58}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &407661767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407661765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.60093045, g: 0.19339621, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &407661768
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407661765}
   m_CullTransparentMesh: 1
 --- !u!1 &583465745
 GameObject:
@@ -810,8 +720,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -251.00024, y: -43.9999}
-  m_SizeDelta: {x: 256.3, y: 50}
+  m_AnchoredPosition: {x: -250.1, y: -40.1}
+  m_SizeDelta: {x: 300.2, y: 47.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &702627512
 MonoBehaviour:
@@ -860,8 +770,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -941,6 +851,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1613764178}
   - {fileID: 583465749}
   - {fileID: 731032659}
   m_Father: {fileID: 0}
@@ -957,7 +868,7 @@ GameObject:
   - component: {fileID: 730164611}
   - component: {fileID: 730164610}
   m_Layer: 0
-  m_Name: Background
+  m_Name: BackgroundBatalha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,8 +1068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -251, y: 46}
-  m_SizeDelta: {x: 256.3, y: 50}
+  m_AnchoredPosition: {x: -257.46, y: 45.503}
+  m_SizeDelta: {x: 243.39, y: 51.005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739873889
 MonoBehaviour:
@@ -1207,8 +1118,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1269,7 +1180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836498284}
   m_Layer: 7
-  m_Name: HudJogador
+  m_Name: MenuJogador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1380,8 +1291,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1432,6 +1343,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871789800}
   m_CullTransparentMesh: 1
+--- !u!1001 &905816794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384387950963730764, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153508742831092891, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704073302070396272, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_Name
+      value: 'Xomi '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704073302070396272, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7704073302070396272, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 905816796}
+    - targetCorrespondingSourceObject: {fileID: 7704073302070396272, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 905816797}
+  m_SourcePrefab: {fileID: 100100000, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+--- !u!1 &905816795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7704073302070396272, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+  m_PrefabInstance: {fileID: 905816794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &905816796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905816795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e52c676ada41d4f8748ddeed05a4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atributos: {fileID: 905816797}
+--- !u!114 &905816797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905816795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd5be1a5e3b7bc44979123e106207d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 2
+  "for\xE7a": 0
+  defesa: 0
+  sorte: 0
 --- !u!1 &924961405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1460,7 @@ GameObject:
   - component: {fileID: 924961408}
   - component: {fileID: 924961407}
   m_Layer: 7
-  m_Name: VidaNumero(TMP)
+  m_Name: VidaNumeral(TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1516,8 +1532,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1705,6 +1721,53 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1613764177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1613764178}
+  - component: {fileID: 1613764179}
+  m_Layer: 0
+  m_Name: GerenciadorBatalha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1613764178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613764177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 707030831}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1613764179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613764177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3a1612afaa2184eace9e2eae9c1b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AtJogador: {fileID: 905816796}
+  vida: {fileID: 1966378604}
+  TxtVida: {fileID: 924961407}
 --- !u!1 &1732117083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,7 +1780,7 @@ GameObject:
   - component: {fileID: 1732117086}
   - component: {fileID: 1732117085}
   m_Layer: 7
-  m_Name: FundoVida (1)
+  m_Name: BackgroundVida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1755,7 +1818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5327544, g: 0, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1792,7 +1855,7 @@ GameObject:
   - component: {fileID: 1966378607}
   - component: {fileID: 1966378606}
   m_Layer: 7
-  m_Name: vida
+  m_Name: BarraVida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1830,7 +1893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1860,4 +1923,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 962158900}
+  - {fileID: 905816794}
   - {fileID: 707030831}
