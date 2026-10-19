@@ -73,4 +73,3 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
 }
-

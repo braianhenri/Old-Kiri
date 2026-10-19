@@ -8,6 +8,9 @@ public class RatoCorrendo : MonoBehaviour
     public SpriteRenderer rendererRato;   // SpriteRenderer do rato
     public Sprite[] frames;               // sprites dele andando
 
+    [Header("Som")]
+    public AudioSource somRato;           // Audio Source do rato
+
     [Header("Percurso")]
     public Transform pontoInicial;
     public Transform pontoFinal;
@@ -40,33 +43,39 @@ public class RatoCorrendo : MonoBehaviour
         rato.transform.position = pontoInicial.position;
         rato.SetActive(true);
 
+        // Toca o som depois de ativar o rato
+        if (somRato != null) somRato.Play();
+
         // Vira o sprite de acordo com a direção do percurso
         bool indoParaEsquerda = pontoFinal.position.x < pontoInicial.position.x;
-        rendererRato.flipX = spriteOlhaParaEsquerda ? !indoParaEsquerda : indoParaEsquerda;
+        rendererRato.flipX = (indoParaEsquerda != spriteOlhaParaEsquerda);
 
         int frameAtual = 0;
-        float contador = 0f;
-
-        if (frames.Length > 0)
-            rendererRato.sprite = frames[0];
+        float timer = 0f;
 
         while (Vector3.Distance(rato.transform.position, pontoFinal.position) > 0.05f)
         {
+            // Movimento
             rato.transform.position = Vector3.MoveTowards(
                 rato.transform.position,
                 pontoFinal.position,
-                velocidade * Time.deltaTime);
+                velocidade * Time.deltaTime
+            );
 
-            contador += Time.deltaTime;
-            if (frames.Length > 1 && contador >= tempoCadaFrame)
+            // Animação
+            timer += Time.deltaTime;
+            if (timer >= tempoCadaFrame && frames.Length > 0)
             {
-                contador = 0f;
+                timer = 0f;
                 frameAtual = (frameAtual + 1) % frames.Length;
                 rendererRato.sprite = frames[frameAtual];
             }
 
             yield return null;
         }
+
+        // Para o som antes de desativar o rato
+        if (somRato != null) somRato.Stop();
 
         rato.SetActive(false);
     }
