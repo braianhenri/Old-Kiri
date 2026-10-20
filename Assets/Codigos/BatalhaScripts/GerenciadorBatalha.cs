@@ -17,7 +17,6 @@ public class GerenciadorBatalha : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        instance = this;
     }
     void Start()
     {
@@ -39,10 +38,5 @@ public class GerenciadorBatalha : MonoBehaviour
         if (HudBatalha != null)
             HudBatalha.SetActive(false);
         Debug.Log("Batalha Finalizada");
-    }   
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

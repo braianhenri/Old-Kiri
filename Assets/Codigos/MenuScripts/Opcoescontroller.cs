@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -81,13 +82,15 @@ public class OpcoesController : MonoBehaviour
             resolucoes = resolucoesUnicas.ToArray();
             dropdownResolucao.ClearOptions();
 
-            List<string> opcoes = new List<string>();
+            List<string> opcoes = new List<string>(resolucoes.Length);
             int indiceAtual = 0;
+            StringBuilder sb = new StringBuilder();
 
             for (int i = 0; i < resolucoes.Length; i++)
             {
-                string opcao = resolucoes[i].width + " x " + resolucoes[i].height;
-                opcoes.Add(opcao);
+                sb.Clear();
+                sb.Append(resolucoes[i].width).Append(" x ").Append(resolucoes[i].height);
+                opcoes.Add(sb.ToString());
 
                 if (resolucoes[i].width == Screen.currentResolution.width &&
                     resolucoes[i].height == Screen.currentResolution.height)

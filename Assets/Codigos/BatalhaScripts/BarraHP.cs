@@ -20,11 +20,6 @@ public class BarraHP : MonoBehaviour
         vida.transform.localScale = new Vector3(0.5f, 1f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        updateHUD();
-    }
     public void updateHUD()
     {
         float vidaPercent = (float)vidaAtual / vidaMax;

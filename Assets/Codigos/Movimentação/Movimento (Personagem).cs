@@ -21,10 +21,6 @@ public class NewBehaviourScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
-    // Update is called once per frame
-    void Update()
-    {
-    }
     private void FixedUpdate()
     {
         direcao = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -46,12 +42,12 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (direcao.x > 0)
         {
-            transform.eulerAngles = new Vector2(0f, 0f);
+            transform.eulerAngles = Vector3.zero;
             anim.SetBool("Lado", true);
         }
-        if (direcao.x < 0)
+        else if (direcao.x < 0)
         {
-            transform.eulerAngles = new Vector2(0f, 180f);
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
             anim.SetBool("Lado", true);
         }
     }
@@ -62,13 +58,10 @@ public class NewBehaviourScript : MonoBehaviour
             anim.SetBool("Cima", true);
             anim.SetBool("Baixo", false);
         }
-        if (direcao.y < 0)
+        else if (direcao.y < 0)
         {
             anim.SetBool("Baixo", true);
             anim.SetBool("Cima", false);
-        }
-        {
-
         }
     }
 

@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 
 public class Atributos : MonoBehaviour
 {
@@ -10,28 +8,21 @@ public class Atributos : MonoBehaviour
     public int defesa;
     public int sorte;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void AumentarVida()
     {         
         vida++;
     }
+
     public void AumentarForça()
     {
         força++;
     }
+
     public void AumentarDefesa()
     {
         defesa++;
     }
+
     public void AumentarSorte()
     {
         sorte++;
