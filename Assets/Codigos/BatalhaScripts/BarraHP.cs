@@ -1,46 +1,90 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Gerencia a barra de vida do jogador
+/// </summary>
 public class BarraHP : MonoBehaviour
 {
-    public AtributosJogador AtJogador;
-    [SerializeField] GameObject vida;
-    [SerializeField] TMP_Text TxtVida;
-    private int vidaMax;
+    [SerializeField] private AtributosJogador atributosJogador;
+    [SerializeField] private GameObject vidaVisual;
+    [SerializeField] private TMP_Text textoVida;
+
+    [Header("Animação")]
+    [SerializeField] private float velocidadeAnimacao = 5f;
+
+    private int vidaMaxima;
     private int vidaAtual;
-    // Start is called before the first frame update
-    void Start()
+    private float vidaVisualAtual;
+
+    private void Start()
     {
-        vidaMax = AtJogador.VidaMaxima();
-        vidaAtual = vidaMax;
-        updateHUD();
-        vida.transform.localScale = new Vector3(0.5f, 1f);
+        if (atributosJogador == null)
+        {
+            Debug.LogError("BarraHP: AtributosJogador não foi atribuído!");
+            return;
+        }
+
+        vidaMaxima = atributosJogador.VidaMaxima();
+        vidaAtual = vidaMaxima;
+        vidaVisualAtual = 1f;
+
+        AtualizarHUD();
     }
 
-    public void updateHUD()
+    private void Update()
     {
-        float vidaPercent = (float)vidaAtual / vidaMax;
-        vida.transform.localScale = new Vector3(vidaPercent, 1f);
-        TxtVida.text = vidaAtual + "/" + vidaMax;
+        // Anima a barra de vida suavemente
+        if (vidaVisual != null)
+        {
+            float vidaPercent = (float)vidaAtual / vidaMaxima;
+            vidaVisualAtual = Mathf.Lerp(vidaVisualAtual, vidaPercent, Time.deltaTime * velocidadeAnimacao);
+            vidaVisual.transform.localScale = new Vector3(vidaVisualAtual, 1f, 1f);
+        }
     }
-    public void ReceberDano()
+
+    /// <summary>
+    /// Atualiza o texto da vida
+    /// </summary>
+    private void AtualizarHUD()
     {
-        vidaAtual -= 20;
-        if (vidaAtual < 0)
-        {
-            vidaAtual = 0;
-        }
-        updateHUD();
+        if (textoVida != null)
+            textoVida.text = $"{vidaAtual}/{vidaMaxima}";
     }
-     public void OnButtonClick(){
-        vidaAtual -= 20;
+
+    /// <summary>
+    /// Aplica dano ao jogador
+    /// </summary>
+    public void ReceberDano(int quantidade = 20)
+    {
+        vidaAtual -= quantidade;
         if (vidaAtual < 0)
-        {
             vidaAtual = 0;
-        }
-        updateHUD();
+
+        AtualizarHUD();
+        Debug.Log($"Jogador recebeu {quantidade} de dano! Vida: {vidaAtual}");
     }
+
+    /// <summary>
+    /// Cura o jogador
+    /// </summary>
+    public void Curar(int quantidade = 20)
+    {
+        vidaAtual += quantidade;
+        if (vidaAtual > vidaMaxima)
+            vidaAtual = vidaMaxima;
+
+        AtualizarHUD();
+        Debug.Log($"Jogador foi curado em {quantidade}! Vida: {vidaAtual}");
+    }
+
+    /// <summary>
+    /// Retorna a vida atual
+    /// </summary>
+    public int ObterVidaAtual() => vidaAtual;
+
+    /// <summary>
+    /// Retorna a vida máxima
+    /// </summary>
+    public int ObterVidaMaxima() => vidaMaxima;
 }
