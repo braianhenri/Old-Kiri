@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField]
     //velocidade padrao
     private float velocidade = 2f;
-    //componente rigidbody para colisões
+    //componente rigidbody para colisï¿½es
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;

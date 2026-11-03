@@ -72,6 +72,17 @@ public class DialogoTulipa : MonoBehaviour
 
     [Header("Travar o jogador")]
     public MonoBehaviour scriptMovimento;
+    [Header("Posicao das opcoes (ao lado do Xomi)")]
+    public float larguraOpcao = 800f;
+    public float alturaOpcao = 80f;
+    public float espacoEntreOpcoes = 15f;
+    public float margemDoXomi = 40f;
+    public int tamanhoFonteOpcao = 28;
+
+    private bool mostrandoOpcoes = false;
+    private Transform xomi;
+    private Canvas canvasOpcoes;
+
 
     private bool jaFalou = false;
     private int escolha = -1;
@@ -110,22 +121,45 @@ public class DialogoTulipa : MonoBehaviour
             if (opcoes.Length > botoesOpcao.Length)
                 Debug.LogWarning("Tem mais opcoes do que botoes! Adicione mais botoes na lista.");
 
+            // Mostra o painel perto do Xomi (opcoes escondidas e travadas ate serem digitadas)
+            PrepararLayoutOpcoes();
+            painelOpcoes.SetActive(true);
+            mostrandoOpcoes = true;
+            SeguirXomi();
+
             for (int i = 0; i < botoesOpcao.Length; i++)
             {
-                bool existe = i < opcoes.Length && i < textosOpcao.Length;
+                bool existe = OpcaoExiste(i);
                 botoesOpcao[i].gameObject.SetActive(existe);
+                Transform painelOp = PainelDaOpcao(i);
+                if (painelOp != null) painelOp.gameObject.SetActive(false);
                 if (!existe) continue;
 
-                textosOpcao[i].text = opcoes[i].textoOpcao;
+                textosOpcao[i].text = "";
+                botoesOpcao[i].interactable = false;
 
                 int indice = i; // copia necessaria pro clique pegar o indice certo
                 botoesOpcao[i].onClick.RemoveAllListeners();
                 botoesOpcao[i].onClick.AddListener(() => escolha = indice);
             }
 
-            painelOpcoes.SetActive(true);
+            // Digita uma opcao de cada vez: 1, depois 2, depois 3
+            for (int i = 0; i < botoesOpcao.Length; i++)
+            {
+                if (!OpcaoExiste(i)) continue;
+                Transform painelOp = PainelDaOpcao(i);
+                if (painelOp != null) painelOp.gameObject.SetActive(true);
+                yield return StartCoroutine(DigitarOpcao(textosOpcao[i], opcoes[i].textoOpcao));
+            }
+
+            // So libera o clique depois que as tres terminaram de ser digitadas
+            for (int i = 0; i < botoesOpcao.Length; i++)
+                if (OpcaoExiste(i)) botoesOpcao[i].interactable = true;
+
             yield return new WaitUntil(() => escolha != -1);
+            mostrandoOpcoes = false;
             painelOpcoes.SetActive(false);
+
 
             OpcaoDialogo escolhida = opcoes[escolha];
 
@@ -146,6 +180,121 @@ public class DialogoTulipa : MonoBehaviour
 
         caixaDialogo.SetActive(false);
         if (scriptMovimento != null) scriptMovimento.enabled = true;
+    }
+
+    void LateUpdate()
+    {
+        if (mostrandoOpcoes) SeguirXomi();
+    }
+
+    // Painel ("Opcoes dialogo") que contem o botao da opcao i
+    Transform PainelDaOpcao(int i)
+    {
+        Transform pai = botoesOpcao[i].transform.parent;
+        return (pai != null && pai != painelOpcoes.transform) ? pai : null;
+    }
+
+    bool OpcaoExiste(int i)
+    {
+        return i < opcoes.Length && i < textosOpcao.Length && i < botoesOpcao.Length;
+    }
+
+    // Ajusta tamanho/alinhamento das opcoes pra ficarem como texto flutuante a esquerda do Xomi
+    void PrepararLayoutOpcoes()
+    {
+        for (int i = 0; i < botoesOpcao.Length && i < textosOpcao.Length; i++)
+        {
+            RectTransform painel = PainelDaOpcao(i) as RectTransform;
+            if (painel == null) continue;
+
+            painel.pivot = new Vector2(1f, 0.5f);
+            painel.sizeDelta = new Vector2(larguraOpcao, alturaOpcao);
+
+            // Botao ocupa o painel inteiro (a area clicavel e a linha toda)
+            RectTransform botao = botoesOpcao[i].transform as RectTransform;
+            botao.anchorMin = Vector2.zero;
+            botao.anchorMax = Vector2.one;
+            botao.offsetMin = Vector2.zero;
+            botao.offsetMax = Vector2.zero;
+            botao.SetAsFirstSibling();
+
+            // Texto por cima do botao, alinhado a esquerda
+            RectTransform texto = textosOpcao[i].rectTransform;
+            texto.SetParent(painel, false);
+            texto.anchorMin = Vector2.zero;
+            texto.anchorMax = Vector2.one;
+            texto.offsetMin = new Vector2(20f, 5f);
+            texto.offsetMax = new Vector2(-20f, -5f);
+            texto.SetAsLastSibling();
+            textosOpcao[i].alignment = TextAlignmentOptions.MidlineLeft;
+            textosOpcao[i].fontSize = tamanhoFonteOpcao;
+            textosOpcao[i].raycastTarget = false; // o clique vai pro botao
+        }
+    }
+
+    // Posiciona as opcoes empilhadas, a esquerda do Xomi, acompanhando ele na tela
+    void SeguirXomi()
+    {
+        if (xomi == null)
+        {
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            if (p == null) return;
+            xomi = p.transform;
+        }
+        if (canvasOpcoes == null) canvasOpcoes = painelOpcoes.GetComponentInParent<Canvas>();
+        Camera cam = Camera.main;
+        if (cam == null) return;
+
+        float escala = canvasOpcoes != null ? canvasOpcoes.scaleFactor : 1f;
+
+        Vector3 ponto = xomi.position;
+        Renderer r = xomi.GetComponent<Renderer>();
+        if (r != null) ponto = new Vector3(r.bounds.min.x, r.bounds.center.y, xomi.position.z);
+
+        Vector3 tela = cam.WorldToScreenPoint(ponto);
+        float x = Mathf.Max(tela.x - margemDoXomi * escala, (larguraOpcao + 10f) * escala);
+
+        int total = 0;
+        for (int i = 0; i < botoesOpcao.Length; i++) if (OpcaoExiste(i)) total++;
+
+        float passo = (alturaOpcao + espacoEntreOpcoes) * escala;
+        float topo = tela.y + (total - 1) * 0.5f * passo;
+
+        int posicao = 0;
+        for (int i = 0; i < botoesOpcao.Length; i++)
+        {
+            if (!OpcaoExiste(i)) continue;
+            Transform painel = PainelDaOpcao(i);
+            if (painel != null)
+                painel.position = new Vector3(x, topo - posicao * passo, 0f);
+            posicao++;
+        }
+    }
+
+    // Digita a opcao letra por letra, igual as falas
+    IEnumerator DigitarOpcao(TMP_Text alvo, string texto)
+    {
+        alvo.text = "";
+        float contadorSom = 0f;
+
+        foreach (char letra in texto)
+        {
+            alvo.text += letra;
+
+            if (letra != ' ' && audioSource != null && somTeclado != null)
+            {
+                if (contadorSom <= 0f)
+                {
+                    audioSource.PlayOneShot(somTeclado);
+                    contadorSom = intervaloSom;
+                }
+            }
+            contadorSom -= velocidadeTexto;
+
+            yield return new WaitForSeconds(velocidadeTexto);
+        }
+
+        yield return new WaitForSeconds(0.2f);
     }
 
     IEnumerator DigitarTexto(Fala fala)
