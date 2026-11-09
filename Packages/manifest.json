@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.coplaydev.unity-mcp": "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main",
+    "com.burakk.unity-editor-mcp": "https://github.com/burakaydinofficial/unity-editor-mcp.git?path=unity-editor-mcp#v0.22.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.12.4",

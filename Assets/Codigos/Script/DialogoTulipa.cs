@@ -116,6 +116,9 @@ public class DialogoTulipa : MonoBehaviour
         {
             textoFala.text = "";
             if (textoNome != null) textoNome.text = "";
+
+            // Esconde a caixa da Tulipa enquanto ninguem esta falando (so as opcoes aparecem)
+            caixaDialogo.SetActive(false);
             escolha = -1;
 
             if (opcoes.Length > botoesOpcao.Length)
@@ -160,6 +163,8 @@ public class DialogoTulipa : MonoBehaviour
             mostrandoOpcoes = false;
             painelOpcoes.SetActive(false);
 
+            // Alguem vai voltar a falar: mostra a caixa de novo
+            caixaDialogo.SetActive(true);
 
             OpcaoDialogo escolhida = opcoes[escolha];
 

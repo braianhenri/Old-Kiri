@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cenario02_0: 4773070494735864300
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
