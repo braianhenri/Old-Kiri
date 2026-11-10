@@ -5276,11 +5276,14 @@ PolygonCollider2D:
       - {x: -5.4, y: -9.599999}
       - {x: -2.5228372, y: -9.599999}
       - {x: -2.5362084, y: 6.1821613}
+      - {x: -2.5327022, y: 9.584286}
+      - {x: 2.6345303, y: 9.610872}
       - {x: 2.5992808, y: 6.210923}
       - {x: 5.499714, y: 6.170085}
       - {x: 5.3698325, y: -9.571723}
       - {x: 2.6274834, y: -9.571566}
       - {x: 2.5664165, y: 6.1907363}
+      - {x: 2.6483154, y: 9.627174}
       - {x: -2.5614858, y: 9.561351}
   m_UseDelaunayMesh: 0
 --- !u!1 &1544411878
@@ -5371,7 +5374,7 @@ Transform:
   m_GameObject: {fileID: 1544411878}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.010136947, y: -30.178406, z: -10}
+  m_LocalPosition: {x: -0.09073578, y: -30.192074, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6239,17 +6242,49 @@ MonoBehaviour:
   - {fileID: 2073999135}
   opcoes:
   - textoOpcao: "N\xE3o sei, acordei no final da rua e to meio perdido"
-    resposta: []
+    resposta:
+    - quem: 0
+      texto: "Todo mundo est\xE1 perdido aqui, meu filho."
+    - quem: 0
+      texto: "N\xE3o posso te ajudar agora. por\xE9m..."
+    - quem: 0
+      texto: "Toma cuidado com quem voc\xEA anda"
+    - quem: 0
+      texto: Aqui um presente de boas vindas
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
   - textoOpcao: Claro que eu sei onde eu to! ta achando que eu sou oq?
-    resposta: []
+    resposta:
+    - quem: 0
+      texto: "Hmmm...\nEntendi, Desculpa o inc\xF4modo"
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
   - textoOpcao: Eu vim de Mani
-    resposta: []
+    resposta:
+    - quem: 0
+      texto: 'Many???
+
+        De Many??'
+    - quem: 0
+      texto: "Ha Ha Ha... acho que voc\xEA est\xE1 meio enganado querido."
+    - quem: 0
+      texto: "Ningu\xE9m de Mani pisaria aqui.."
+    - quem: 1
+      texto: 'Porque?
+
+'
+    - quem: 1
+      texto: Mas qual o nome desta cidade?
+    - quem: 0
+      texto: "Voc\xEA est\xE1 em old kiri."
+    - quem: 1
+      texto: Old kiri?
+    - quem: 0
+      texto: 'Sim! '
+    - quem: 0
+      texto: "Voc\xEA n\xE3o conhece n\xE9? toma ai, vai te ajudar"
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
