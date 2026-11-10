@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      refir-1.png_0: 1778728430159942164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
