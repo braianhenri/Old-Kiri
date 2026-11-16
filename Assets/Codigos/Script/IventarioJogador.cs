@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class IventarioJogador : MonoBehaviour
@@ -37,8 +38,8 @@ public class IventarioJogador : MonoBehaviour
             painelInventario.SetActive(false);
         }
 
-        detalhesVisiveis = false;
-        AtualizarInventarioNaTela();
+        RegistrarEventosDosItens();
+        OcultarItensNaTela();
     }
 
     private void Update()
@@ -168,22 +169,15 @@ public class IventarioJogador : MonoBehaviour
                 if (possuiItem)
                 {
                     imagensItens[i].sprite = item.SpriteItem;
+                    imagensItens[i].raycastTarget = true;
                 }
             }
 
             if (i < descricoesItens.Length &&
                 descricoesItens[i] != null)
             {
-                descricoesItens[i].gameObject.SetActive(possuiItem);
-
-                if (possuiItem)
-                {
-                    descricoesItens[i].text = item.DescricaoItem;
-                }
-                else
-                {
-                    descricoesItens[i].text = string.Empty;
-                }
+                descricoesItens[i].text = string.Empty;
+                descricoesItens[i].gameObject.SetActive(false);
             }
         }
     }
@@ -232,6 +226,97 @@ public class IventarioJogador : MonoBehaviour
             // Remover o item do inventário                     
             itensInventario[posicao] = null;
             AtualizarInventarioNaTela();
+        }
+    }
+
+    private void RegistrarEventosDosItens()
+    {
+        if (imagensItens == null)
+        {
+            Debug.LogError(
+                "O campo Imagens Itens não foi preenchido no Inspector.");
+            return;
+        }
+
+        for (int i = 0; i < imagensItens.Length; i++)
+        {
+            if (imagensItens[i] == null)
+            {
+                continue;
+            }
+
+            EventTrigger evento =
+                imagensItens[i].GetComponent<EventTrigger>();
+
+            if (evento == null)
+            {
+                evento = imagensItens[i].gameObject
+                    .AddComponent<EventTrigger>();
+            }
+
+            int indiceItem = i;
+
+            EventTrigger.Entry entradaMouse =
+                new EventTrigger.Entry();
+
+            entradaMouse.eventID =
+                EventTriggerType.PointerEnter;
+
+            entradaMouse.callback.AddListener(
+                dados => MostrarDescricao(indiceItem));
+
+            evento.triggers.Add(entradaMouse);
+
+            EventTrigger.Entry saidaMouse =
+                new EventTrigger.Entry();
+
+            saidaMouse.eventID =
+                EventTriggerType.PointerExit;
+
+            saidaMouse.callback.AddListener(
+                dados => OcultarDescricao(indiceItem));
+
+            evento.triggers.Add(saidaMouse);
+        }
+    }
+
+    private void MostrarDescricao(int indice)
+    {
+        if (painelInventario == null ||
+            !painelInventario.activeSelf)
+        {
+            return;
+        }
+
+        if (indice >= itensInventario.Length ||
+            indice >= descricoesItens.Length)
+        {
+            return;
+        }
+
+        if (itensInventario[indice] == null ||
+            descricoesItens[indice] == null)
+        {
+            return;
+        }
+
+        descricoesItens[indice].text =
+            itensInventario[indice].DescricaoItem;
+
+        descricoesItens[indice].gameObject.SetActive(true);
+    }
+
+    private void OcultarDescricao(int indice)
+    {
+        if (indice < 0 ||
+            indice >= descricoesItens.Length)
+        {
+            return; 
+        }
+
+        if (descricoesItens[indice] != null)
+        {
+            descricoesItens[indice].gameObject.SetActive(false);
         }
     }
 }

@@ -10,9 +10,6 @@ public class Item : MonoBehaviour
     [SerializeField]
     private string descricaoItem;
 
-    private IventarioJogador inventarioJogador;
-    private bool jogadorPerto;
-
     public Sprite SpriteItem
     {
         get { return spriteItem; }
@@ -23,6 +20,9 @@ public class Item : MonoBehaviour
         get { return descricaoItem; }
     }
 
+    private IventarioJogador inventarioJogador;
+    private bool jogadorPerto;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -32,7 +32,8 @@ public class Item : MonoBehaviour
                 return;
             }
 
-            if (inventarioJogador.AdicionarItem(this))
+            if (inventarioJogador != null &&
+                inventarioJogador.AdicionarItem(this))
             {
                 gameObject.SetActive(false);
             }
