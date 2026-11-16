@@ -2,18 +2,33 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    [Header("Informações do item")]
+    [SerializeField]
+    private Sprite spriteItem;
+
+    [TextArea(3, 6)]
+    [SerializeField]
+    private string descricaoItem;
+
     private IventarioJogador inventarioJogador;
     private bool jogadorPerto;
+
+    public Sprite SpriteItem
+    {
+        get { return spriteItem; }
+    }
+
+    public string DescricaoItem
+    {
+        get { return descricaoItem; }
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("A tecla E foi detectada.");
-
             if (!jogadorPerto)
             {
-                Debug.Log("O jogador ainda não está perto do item.");
                 return;
             }
 
@@ -26,8 +41,6 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D outroObjeto)
     {
-        Debug.Log("Objeto entrou no item: " + outroObjeto.name);
-
         if (!outroObjeto.CompareTag("Player"))
         {
             return;
@@ -39,7 +52,6 @@ public class Item : MonoBehaviour
         if (inventarioJogador != null)
         {
             jogadorPerto = true;
-            Debug.Log("Jogador perto. Pressione E.");
         }
     }
 
