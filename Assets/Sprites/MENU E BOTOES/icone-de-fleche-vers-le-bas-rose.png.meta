@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icone-de-fleche-vers-le-bas-rose_0: -593994278531251117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
