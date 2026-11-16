@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\xCDcone de seta roxa apontando \xE0 direita_0": 1368281611004057074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,7 +7,8 @@ using TMPro;
 public enum Quem
 {
     Tulipa,
-    Jogador
+    Jogador, 
+    Taison
 }
 
 [System.Serializable]

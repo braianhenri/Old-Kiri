@@ -1,46 +1,31 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
-public enum Quem
+// Este script reutiliza Quem, Fala e OpcaoDialogo do DialogoTulipa.cs.
+// No DialogoTulipa.cs, adicione "Taison" no FINAL do enum Quem:
+//
+//   public enum Quem { Tulipa, Jogador, Taison }
+//
+// (no final pra nao bagunçar o que voce ja preencheu no Inspector)
+
+public class DialogoTaison : MonoBehaviour
 {
-    Tulipa,
-    Jogador
-}
+    [Header("Interacao (apertar botao pra conversar)")]
+    public GameObject iconeInteracao;           // a sprite/imagem do "aperte E"
+    public KeyCode teclaInteracao = KeyCode.E;
+    public bool podeRepetir = false;            // se true, da pra conversar de novo depois
 
-[System.Serializable]
-public class Fala
-{
-    public Quem quem;
-    [TextArea(3, 5)] public string texto;
-}
-
-[System.Serializable]
-public class OpcaoDialogo
-{
-    [Tooltip("O que aparece no botao (e o que o jogador fala)")]
-    public string textoOpcao;
-
-    [Tooltip("O que acontece na conversa depois dessa escolha")]
-    public Fala[] resposta;
-
-    [Tooltip("Opcional: ligue aqui o que deve acontecer ao escolher (dar item, etc)")]
-    public UnityEvent aoEscolher;
-}
-
-public class DialogoTulipa : MonoBehaviour
-{
     [Header("Interface")]
     public GameObject caixaDialogo;
     public TMP_Text textoFala;
     public Image rostoImagem;
     public TMP_Text textoNome; // opcional
 
-    [Header("Rostos da Tulipa")]
+    [Header("Rostos do Taison")]
     public Sprite[] rostos;
-    public string nomeTulipa = "Tulipa";
+    public string nomeTaison = "Taison";
 
     [Header("Rostos do Jogador")]
     public Sprite[] rostosJogador;
@@ -83,19 +68,45 @@ public class DialogoTulipa : MonoBehaviour
     private Transform xomi;
     private Canvas canvasOpcoes;
 
-
     private bool jaFalou = false;
+    private bool jogadorPerto = false;
+    private bool dialogoAtivo = false;
     private int escolha = -1;
 
     void Start()
     {
         caixaDialogo.SetActive(false);
         if (painelOpcoes != null) painelOpcoes.SetActive(false);
+        if (iconeInteracao != null) iconeInteracao.SetActive(false);
+    }
+
+    bool PodeInteragir()
+    {
+        return jogadorPerto && !dialogoAtivo && (!jaFalou || podeRepetir);
+    }
+
+    void AtualizarIcone()
+    {
+        if (iconeInteracao != null) iconeInteracao.SetActive(PodeInteragir());
     }
 
     void OnTriggerEnter2D(Collider2D outro)
     {
-        if (outro.CompareTag("Player") && !jaFalou)
+        if (!outro.CompareTag("Player")) return;
+        jogadorPerto = true;
+        AtualizarIcone();
+    }
+
+    void OnTriggerExit2D(Collider2D outro)
+    {
+        if (!outro.CompareTag("Player")) return;
+        jogadorPerto = false;
+        AtualizarIcone();
+    }
+
+    void Update()
+    {
+        if (PodeInteragir() && Input.GetKeyDown(teclaInteracao))
         {
             jaFalou = true;
             StartCoroutine(Dialogo());
@@ -104,6 +115,8 @@ public class DialogoTulipa : MonoBehaviour
 
     IEnumerator Dialogo()
     {
+        dialogoAtivo = true;
+        AtualizarIcone();
         if (scriptMovimento != null) scriptMovimento.enabled = false;
         caixaDialogo.SetActive(true);
 
@@ -116,6 +129,9 @@ public class DialogoTulipa : MonoBehaviour
         {
             textoFala.text = "";
             if (textoNome != null) textoNome.text = "";
+
+            // Esconde a caixa do Taison enquanto ninguem esta falando (so as opcoes aparecem)
+            caixaDialogo.SetActive(false);
             escolha = -1;
 
             if (opcoes.Length > botoesOpcao.Length)
@@ -160,6 +176,8 @@ public class DialogoTulipa : MonoBehaviour
             mostrandoOpcoes = false;
             painelOpcoes.SetActive(false);
 
+            // Alguem vai voltar a falar: mostra a caixa de novo
+            caixaDialogo.SetActive(true);
 
             OpcaoDialogo escolhida = opcoes[escolha];
 
@@ -180,6 +198,9 @@ public class DialogoTulipa : MonoBehaviour
 
         caixaDialogo.SetActive(false);
         if (scriptMovimento != null) scriptMovimento.enabled = true;
+
+        dialogoAtivo = false;
+        AtualizarIcone();
     }
 
     void LateUpdate()
@@ -301,9 +322,11 @@ public class DialogoTulipa : MonoBehaviour
     {
         textoFala.text = "";
 
-        Sprite[] faces = (fala.quem == Quem.Tulipa) ? rostos : rostosJogador;
+        // Qualquer fala que nao seja do Jogador e do Taison (NPC deste script)
+        bool ehJogador = fala.quem == Quem.Jogador;
+        Sprite[] faces = ehJogador ? rostosJogador : rostos;
         if (textoNome != null)
-            textoNome.text = (fala.quem == Quem.Tulipa) ? nomeTulipa : nomeJogador;
+            textoNome.text = ehJogador ? nomeJogador : nomeTaison;
 
         if (rostoImagem != null) rostoImagem.enabled = faces.Length > 0;
 
