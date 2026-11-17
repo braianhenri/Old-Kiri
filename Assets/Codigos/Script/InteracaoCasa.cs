@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class InteracaoCasa : MonoBehaviour
@@ -9,7 +9,7 @@ public class InteracaoCasa : MonoBehaviour
     public GameObject setaGuia;
 
     [Header("Comportamento")]
-    public bool exigirTeclaE = true;   // desmarque para o fade começar ao chegar
+    public bool exigirTeclaE = true;   // desmarque para o fade comeï¿½ar ao chegar
 
     [Header("Depois da interacao")]
     public GameObject npc;             // deixe DESLIGADO na cena
@@ -63,6 +63,7 @@ public class InteracaoCasa : MonoBehaviour
         usou = true; perto = false;
         if (avisoE) avisoE.SetActive(false);
         if (setaGuia) setaGuia.SetActive(false);
+        var cm = GameObject.Find("CaixaMissao"); if (cm) cm.SetActive(false);
 
         yield return fade.Escurecer(1f);
         if (npc)

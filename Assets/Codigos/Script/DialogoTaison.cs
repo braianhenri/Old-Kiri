@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -64,6 +64,17 @@ public class DialogoTaison : MonoBehaviour
     public float margemDoXomi = 40f;
     public int tamanhoFonteOpcao = 28;
 
+    [System.Serializable]
+    public class EscolhaSeguinte
+    {
+        public int aposOpcao;           // indice da opcao (0 = primeira) depois da qual essa escolha aparece
+        public OpcaoDialogo[] opcoes;   // novas opcoes, cada uma com sua resposta
+    }
+
+    [Header("Escolhas seguintes (depois da resposta de uma opcao)")]
+    public EscolhaSeguinte[] escolhasSeguintes;
+
+    private OpcaoDialogo[] opcoesAtuais;
     private bool mostrandoOpcoes = false;
     private Transform xomi;
     private Canvas canvasOpcoes;
@@ -124,8 +135,20 @@ public class DialogoTaison : MonoBehaviour
         foreach (Fala fala in falasIniciais)
             yield return StartCoroutine(DigitarTexto(fala));
 
-        // Escolha (so acontece se tiver opcoes cadastradas)
-        if (opcoes.Length > 0 && painelOpcoes != null)
+        yield return StartCoroutine(Escolher(opcoes));
+
+        caixaDialogo.SetActive(false);
+        if (scriptMovimento != null) scriptMovimento.enabled = true;
+
+        dialogoAtivo = false;
+        AtualizarIcone();
+    }
+
+    // Mostra uma lista de opcoes, espera a escolha, roda a resposta (e a escolha seguinte, se houver)
+    IEnumerator Escolher(OpcaoDialogo[] lista)
+    {
+        if (lista == null || lista.Length == 0 || painelOpcoes == null) yield break;
+        opcoesAtuais = lista;
         {
             textoFala.text = "";
             if (textoNome != null) textoNome.text = "";
@@ -134,7 +157,7 @@ public class DialogoTaison : MonoBehaviour
             caixaDialogo.SetActive(false);
             escolha = -1;
 
-            if (opcoes.Length > botoesOpcao.Length)
+            if (lista.Length > botoesOpcao.Length)
                 Debug.LogWarning("Tem mais opcoes do que botoes! Adicione mais botoes na lista.");
 
             // Mostra o painel perto do Xomi (opcoes escondidas e travadas ate serem digitadas)
@@ -165,7 +188,7 @@ public class DialogoTaison : MonoBehaviour
                 if (!OpcaoExiste(i)) continue;
                 Transform painelOp = PainelDaOpcao(i);
                 if (painelOp != null) painelOp.gameObject.SetActive(true);
-                yield return StartCoroutine(DigitarOpcao(textosOpcao[i], opcoes[i].textoOpcao));
+                yield return StartCoroutine(DigitarOpcao(textosOpcao[i], lista[i].textoOpcao));
             }
 
             // So libera o clique depois que as tres terminaram de ser digitadas
@@ -179,7 +202,8 @@ public class DialogoTaison : MonoBehaviour
             // Alguem vai voltar a falar: mostra a caixa de novo
             caixaDialogo.SetActive(true);
 
-            OpcaoDialogo escolhida = opcoes[escolha];
+            int idx = escolha;
+            OpcaoDialogo escolhida = lista[idx];
 
             // O jogador fala a opcao que escolheu
             if (jogadorFalaAOpcao)
@@ -194,13 +218,16 @@ public class DialogoTaison : MonoBehaviour
             // Resposta especifica dessa escolha
             foreach (Fala fala in escolhida.resposta)
                 yield return StartCoroutine(DigitarTexto(fala));
+
+            // Escolha seguinte: depois dessa resposta, o jogador escolhe de novo
+            if (lista == opcoes)
+                foreach (EscolhaSeguinte e in escolhasSeguintes)
+                    if (e.aposOpcao == idx && e.opcoes.Length > 0)
+                    {
+                        yield return StartCoroutine(Escolher(e.opcoes));
+                        break;
+                    }
         }
-
-        caixaDialogo.SetActive(false);
-        if (scriptMovimento != null) scriptMovimento.enabled = true;
-
-        dialogoAtivo = false;
-        AtualizarIcone();
     }
 
     void LateUpdate()
@@ -217,7 +244,7 @@ public class DialogoTaison : MonoBehaviour
 
     bool OpcaoExiste(int i)
     {
-        return i < opcoes.Length && i < textosOpcao.Length && i < botoesOpcao.Length;
+        return i < opcoesAtuais.Length && i < textosOpcao.Length && i < botoesOpcao.Length;
     }
 
     // Ajusta tamanho/alinhamento das opcoes pra ficarem como texto flutuante a esquerda do Xomi
