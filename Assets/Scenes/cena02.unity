@@ -543,8 +543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.661621, y: 30.174194}
-  m_SizeDelta: {x: 788.52, y: 116.25}
+  m_AnchoredPosition: {x: 9, y: -25}
+  m_SizeDelta: {x: 782.6921, y: 159.9593}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130393063
 MonoBehaviour:
@@ -2462,8 +2462,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.661621, y: -22.30307}
-  m_SizeDelta: {x: 788.52, y: 129.937}
+  m_AnchoredPosition: {x: 9, y: 47}
+  m_SizeDelta: {x: 785.6061, y: 164.9044}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621295119
 MonoBehaviour:
@@ -3095,7 +3095,7 @@ MonoBehaviour:
   - {fileID: 625323621}
   - {fileID: 1912017674}
   opcoes:
-  - textoOpcao: "Meu nome \xE9... bom eu vim aqui porque o Senhorio me mandou.Senhor"
+  - textoOpcao: "Meu nome \xE9... bom eu vim aqui porque o Senhorio me mandou, senhor"
     resposta:
     - quem: 2
       texto: "P#@a que p@#iu mas agora ele tem capangas... voc\xEA \xE9 a P@#$a de
@@ -3132,7 +3132,11 @@ MonoBehaviour:
   - aposOpcao: 0
     opcoes:
     - textoOpcao: "Eu s\xF3 vim pegar o que ele pediu, n\xE3o quero brigar"
-      resposta: []
+      resposta:
+      - quem: 2
+        texto: "Hmmm.. Tu quer dinheiro n\xE9? saiba que dinheiro nao cai em \xE1rvore"
+      - quem: 2
+        texto: Vai ter que conquistar...
       aoEscolher:
         m_PersistentCalls:
           m_Calls:
@@ -6119,8 +6123,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 367.8, y: -122.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 343.0634, y: -117}
+  m_SizeDelta: {x: 149.4732, y: 147.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839325688
 MonoBehaviour:
@@ -6614,8 +6618,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.661621, y: 79.73534}
-  m_SizeDelta: {x: 788.525, y: 116.253}
+  m_AnchoredPosition: {x: 10, y: 119}
+  m_SizeDelta: {x: 791.4388, y: 165.7902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2002854808
 MonoBehaviour:
