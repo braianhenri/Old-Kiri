@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lixo4_0: 3530184317540555045
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
