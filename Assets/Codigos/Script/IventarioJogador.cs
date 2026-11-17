@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,6 +10,13 @@ public class IventarioJogador : MonoBehaviour
     [SerializeField]
     private TMP_Text mensagemTela;
 
+    [Header("Descrição do item")]
+    [SerializeField]
+    private TMP_Text descricaoItemTela;
+
+    [SerializeField]
+    private float velocidadeDigitacao = 0.03f;
+
     [Header("Painel do inventário")]
     [SerializeField]
     private GameObject painelInventario;
@@ -18,13 +25,14 @@ public class IventarioJogador : MonoBehaviour
     [SerializeField]
     private Image[] imagensItens;
 
+    [Header("Texto exibido ao abrir o inventário")]
     [SerializeField]
-    private TMP_Text[] descricoesItens;
+    private GameObject textoInventario;
 
     private Item[] itensInventario = new Item[10];
     private Coroutine mensagemAtual;
+    private Coroutine descricaoAtual;
     private float escalaTempoAnterior = 1f;
-    private bool detalhesVisiveis;
 
     private void Start()
     {
@@ -33,9 +41,20 @@ public class IventarioJogador : MonoBehaviour
             mensagemTela.gameObject.SetActive(false);
         }
 
+        if (descricaoItemTela != null)
+        {
+            descricaoItemTela.text = string.Empty;
+            descricaoItemTela.gameObject.SetActive(false);
+        }
+
         if (painelInventario != null)
         {
             painelInventario.SetActive(false);
+        }
+
+        if (textoInventario != null)
+        {
+            textoInventario.SetActive(false);
         }
 
         RegistrarEventosDosItens();
@@ -100,6 +119,7 @@ public class IventarioJogador : MonoBehaviour
         {
             painelInventario.SetActive(false);
             OcultarItensNaTela();
+            OcultarDescricao();
 
             Time.timeScale = escalaTempoAnterior;
             return;
@@ -114,6 +134,11 @@ public class IventarioJogador : MonoBehaviour
 
     private void OcultarItensNaTela()
     {
+        if (imagensItens == null)
+        {
+            return;
+        }
+
         for (int i = 0; i < imagensItens.Length; i++)
         {
             if (imagensItens[i] != null)
@@ -121,26 +146,6 @@ public class IventarioJogador : MonoBehaviour
                 imagensItens[i].gameObject.SetActive(false);
             }
         }
-
-        for (int i = 0; i < descricoesItens.Length; i++)
-        {
-            if (descricoesItens[i] != null)
-            {
-                descricoesItens[i].gameObject.SetActive(false);
-            }
-        }
-    }
-
-    private void AlternarDetalhes()
-    {
-        if (painelInventario == null ||
-            !painelInventario.activeSelf)
-        {
-            return;
-        }
-
-        detalhesVisiveis = !detalhesVisiveis;
-        AtualizarInventarioNaTela();
     }
 
     private void AtualizarInventarioNaTela()
@@ -162,22 +167,17 @@ public class IventarioJogador : MonoBehaviour
             Item item = itensInventario[i];
             bool possuiItem = item != null;
 
-            if (imagensItens[i] != null)
+            if (imagensItens[i] == null)
             {
-                imagensItens[i].gameObject.SetActive(possuiItem);
-
-                if (possuiItem)
-                {
-                    imagensItens[i].sprite = item.SpriteItem;
-                    imagensItens[i].raycastTarget = true;
-                }
+                continue;
             }
 
-            if (i < descricoesItens.Length &&
-                descricoesItens[i] != null)
+            imagensItens[i].gameObject.SetActive(possuiItem);
+
+            if (possuiItem)
             {
-                descricoesItens[i].text = string.Empty;
-                descricoesItens[i].gameObject.SetActive(false);
+                imagensItens[i].sprite = item.SpriteItem;
+                imagensItens[i].raycastTarget = true;
             }
         }
     }
@@ -206,7 +206,7 @@ public class IventarioJogador : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
 
         mensagemTela.gameObject.SetActive(false);
-    }   
+    }
 
     private void UsarItemNaPosicao(int posicao)
     {
@@ -217,16 +217,16 @@ public class IventarioJogador : MonoBehaviour
 
         Item item = itensInventario[posicao];
 
-        if (item != null)
+        if (item == null)
         {
-            // Lógica para usar o item
-            // Exemplo: item.UsoEfeito();
-            MostrarMensagem("Usou item " + item.name);
-
-            // Remover o item do inventário                     
-            itensInventario[posicao] = null;
-            AtualizarInventarioNaTela();
+            return;
         }
+
+        MostrarMensagem("Usou item " + item.name);
+
+        itensInventario[posicao] = null;
+        OcultarDescricao();
+        AtualizarInventarioNaTela();
     }
 
     private void RegistrarEventosDosItens()
@@ -256,67 +256,83 @@ public class IventarioJogador : MonoBehaviour
 
             int indiceItem = i;
 
-            EventTrigger.Entry entradaMouse =
+            EventTrigger.Entry entradaClique =
                 new EventTrigger.Entry();
 
-            entradaMouse.eventID =
-                EventTriggerType.PointerEnter;
+            entradaClique.eventID =
+                EventTriggerType.PointerClick;
 
-            entradaMouse.callback.AddListener(
+            entradaClique.callback.AddListener(
                 dados => MostrarDescricao(indiceItem));
 
-            evento.triggers.Add(entradaMouse);
-
-            EventTrigger.Entry saidaMouse =
-                new EventTrigger.Entry();
-
-            saidaMouse.eventID =
-                EventTriggerType.PointerExit;
-
-            saidaMouse.callback.AddListener(
-                dados => OcultarDescricao(indiceItem));
-
-            evento.triggers.Add(saidaMouse);
+            evento.triggers.Add(entradaClique);
         }
     }
 
     private void MostrarDescricao(int indice)
     {
         if (painelInventario == null ||
-            !painelInventario.activeSelf)
+            !painelInventario.activeSelf ||
+            descricaoItemTela == null)
         {
             return;
         }
 
-        if (indice >= itensInventario.Length ||
-            indice >= descricoesItens.Length)
+        if (indice < 0 ||
+            indice >= itensInventario.Length)
         {
             return;
         }
 
-        if (itensInventario[indice] == null ||
-            descricoesItens[indice] == null)
+        Item item = itensInventario[indice];
+
+        if (item == null)
         {
             return;
         }
 
-        descricoesItens[indice].text =
-            itensInventario[indice].DescricaoItem;
+        if (descricaoAtual != null)
+        {
+            StopCoroutine(descricaoAtual);
+        }
 
-        descricoesItens[indice].gameObject.SetActive(true);
+        descricaoAtual = StartCoroutine(
+            DigitarDescricao(item.DescricaoItem));
     }
 
-    private void OcultarDescricao(int indice)
+    private IEnumerator DigitarDescricao(string descricao)
     {
-        if (indice < 0 ||
-            indice >= descricoesItens.Length)
+        descricaoItemTela.text = string.Empty;
+        descricaoItemTela.gameObject.SetActive(true);
+
+        if (string.IsNullOrEmpty(descricao))
         {
-            return; 
+            yield break;
         }
 
-        if (descricoesItens[indice] != null)
+        foreach (char caractere in descricao)
         {
-            descricoesItens[indice].gameObject.SetActive(false);
+            descricaoItemTela.text += caractere;
+
+            yield return new WaitForSecondsRealtime(
+                velocidadeDigitacao);
         }
+    }
+
+    private void OcultarDescricao()
+    {
+        if (descricaoAtual != null)
+        {
+            StopCoroutine(descricaoAtual);
+            descricaoAtual = null;
+        }
+
+        if (descricaoItemTela == null)
+        {
+            return;
+        }
+
+        descricaoItemTela.text = string.Empty;
+        descricaoItemTela.gameObject.SetActive(false);
     }
 }
