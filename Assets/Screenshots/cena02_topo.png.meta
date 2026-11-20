@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cena02_topo_0: -7101361209663799801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
