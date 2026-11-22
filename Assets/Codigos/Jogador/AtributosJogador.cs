@@ -24,16 +24,19 @@ public class AtributosJogador : MonoBehaviour
 
     public int VidaMaxima()
     {
+        if (vidaMaximaCache == 0) AtualizarCache();
         return vidaMaximaCache;
     }
 
     public int Ataque()
     {
+        if (ataqueCache == 0) AtualizarCache();
         return ataqueCache;
     }
 
     public int AtaqueCritico()
     {
+        AtualizarCache();
         return ataqueCriticoCache;
     }
 }

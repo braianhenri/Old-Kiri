@@ -81,6 +81,12 @@ public class BarraHP : MonoBehaviour
     /// <summary>
     /// Retorna a vida atual
     /// </summary>
+    public void Restaurar()
+    {
+        vidaAtual = vidaMaxima;
+        AtualizarHUD();
+    }
+
     public int ObterVidaAtual() => vidaAtual;
 
     /// <summary>

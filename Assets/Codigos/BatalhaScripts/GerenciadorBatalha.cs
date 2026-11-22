@@ -34,7 +34,8 @@ public class GerenciadorBatalha : MonoBehaviour
         TurnoInimigo, // IA do inimigo agindo
         Vitoria,      // Jogador venceu
         Derrota,      // Jogador perdeu
-        Pausa         // Batalha pausada
+        Pausa,        // Batalha pausada
+        Fuga          // Jogador fugiu
     }
     #endregion
 
@@ -68,6 +69,7 @@ public class GerenciadorBatalha : MonoBehaviour
     private int turnoAtual = 0;
     private bool esperandoAcaoJogador = false;
     private float tempoUltimaAcao = 0f;
+    private bool acaoInimigaIniciada = false;
     #endregion
 
     #region Eventos
@@ -75,6 +77,7 @@ public class GerenciadorBatalha : MonoBehaviour
     public static event Action<int> OnTurnoMudou;
     public static event Action OnBatalhaIniciou;
     public static event Action OnBatalhaTerminou;
+    public static event Action OnAcaoInimiga;
     #endregion
 
     #region MonoBehaviour
@@ -85,7 +88,7 @@ public class GerenciadorBatalha : MonoBehaviour
 
     private void Update()
     {
-        if (estadoAtual == EstadoBatalha.Andamento)
+        if (estadoAtual == EstadoBatalha.Andamento || estadoAtual == EstadoBatalha.TurnoJogador || estadoAtual == EstadoBatalha.TurnoInimigo)
         {
             ProcessarLogicaBatalha();
         }
@@ -97,7 +100,7 @@ public class GerenciadorBatalha : MonoBehaviour
                 PausarBatalha();
             if (Input.GetKeyDown(KeyCode.R))
                 Retomar();
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.F10))
                 FinalizarBatalha(true);
         }
     }
@@ -146,10 +149,10 @@ public class GerenciadorBatalha : MonoBehaviour
 
             case EstadoBatalha.TurnoInimigo:
                 // Aguarda delay antes de executar ação inimiga
-                if (Time.time - tempoUltimaAcao >= delayAcaoInimigo)
+                if (!acaoInimigaIniciada && Time.time - tempoUltimaAcao >= delayAcaoInimigo)
                 {
+                    acaoInimigaIniciada = true;
                     ExecutarAcaoInimiga();
-                    ComecaTurnoJogador();
                 }
                 break;
         }
@@ -204,7 +207,51 @@ public class GerenciadorBatalha : MonoBehaviour
     private void ExecutarAcaoInimiga()
     {
         Log("Inimigo executou ação!");
-        // Implementar IA do inimigo aqui
+        if (OnAcaoInimiga != null)
+            OnAcaoInimiga.Invoke();
+        else
+            TerminarTurnoInimigo();
+    }
+    #endregion
+
+    #region Controle externo de turnos
+    /// <summary>Encerra o turno do jogador e passa a vez para o inimigo.</summary>
+    public void FinalizarTurnoJogador()
+    {
+        if (estadoAtual != EstadoBatalha.TurnoJogador)
+            return;
+
+        esperandoAcaoJogador = false;
+        acaoInimigaIniciada = false;
+        MudarEstado(EstadoBatalha.TurnoInimigo);
+        tempoUltimaAcao = Time.time;
+    }
+
+    /// <summary>Chamado quando a acao do inimigo terminou (animacoes e dano).</summary>
+    public void TerminarTurnoInimigo()
+    {
+        if (estadoAtual != EstadoBatalha.TurnoInimigo)
+            return;
+
+        ComecaTurnoJogador();
+    }
+
+    public void FugirDaBatalha()
+    {
+        MudarEstado(EstadoBatalha.Fuga);
+        Time.timeScale = 1f;
+        OnBatalhaTerminou?.Invoke();
+        Log("Jogador fugiu da batalha");
+    }
+
+    /// <summary>Volta ao estado inicial (para testar a cena varias vezes).</summary>
+    public void ReiniciarParaTeste()
+    {
+        estadoAtual = EstadoBatalha.Inativo;
+        turnoAtual = 0;
+        esperandoAcaoJogador = false;
+        acaoInimigaIniciada = false;
+        Time.timeScale = 1f;
     }
     #endregion
 
@@ -213,7 +260,7 @@ public class GerenciadorBatalha : MonoBehaviour
     {
         if (barraHPJogador != null)
         {
-            barraHPJogador.ReceberDano();
+            barraHPJogador.ReceberDano(quantidade);
             Log($"Jogador recebeu {quantidade} de dano!");
 
             // Verifica se o jogador morreu

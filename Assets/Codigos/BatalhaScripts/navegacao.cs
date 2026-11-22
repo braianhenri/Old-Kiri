@@ -22,6 +22,9 @@ public class Navegacao : MonoBehaviour
     [SerializeField] private AudioClip somSeleção;
     [SerializeField] private AudioSource audioSource;
 
+    public event System.Action<int> OnOpcaoConfirmada;
+    public bool entradaAtiva = true;
+
     private int indiceAtual = 0;
     private int totalOpcoes = 0;
     private int totalLinhas = 0;
@@ -46,6 +49,9 @@ public class Navegacao : MonoBehaviour
 
     private void Update()
     {
+        if (!entradaAtiva)
+            return;
+
         // Navegar para cima
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -176,6 +182,9 @@ public class Navegacao : MonoBehaviour
     private void SelecionarOpcaoAtual()
     {
         Debug.Log($"Opção selecionada: {textoOpcoes[indiceAtual].text}");
+
+        if (OnOpcaoConfirmada != null)
+            OnOpcaoConfirmada.Invoke(indiceAtual);
 
         // Tenta invocar o Button associado ao TextMeshProUGUI
         Button botao = textoOpcoes[indiceAtual].GetComponentInParent<Button>();
