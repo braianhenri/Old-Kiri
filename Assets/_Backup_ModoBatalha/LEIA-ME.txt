@@ -1,9 +1,0 @@
-BACKUP DO MODO DE BATALHA - estado ANTES das melhorias de acao
-Criado em: 22/11/2026 15:19:46
-
-Para voltar como estava:
-1) Scripts: copie cada arquivo .cs.txt desta pasta para o lugar original e tire o .txt do nome:
-   GerenciadorBatalha, ControladorCombate, InimigoBatalha, BarraHP -> Assets/Codigos/BatalhaScripts/
-   Atributos, AtributosJogador -> Assets/Codigos/Jogador/
-2) Cena: ModoBatalha_ANTES.unity e a copia da cena. Abra ela, e use File > Save As... com o nome ModoBatalha na pasta Assets/Scenes (substituindo a atual).
-Ou peca para o Claude voltar tudo.
