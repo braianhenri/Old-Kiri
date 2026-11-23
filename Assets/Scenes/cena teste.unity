@@ -5469,6 +5469,9 @@ MonoBehaviour:
   - {fileID: 1916653915}
   - {fileID: 370683402}
   textoInventario: {fileID: 0}
+  tamanhoFonteQuantidade: 30
+  deslocamentoQuantidade: {x: -79, y: 0}
+  larguraQuantidade: 36
 --- !u!1 &1158910649
 GameObject:
   m_ObjectHideFlags: 0
@@ -7982,7 +7985,7 @@ Transform:
   m_GameObject: {fileID: 1544411878}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -30.380001, z: -10}
+  m_LocalPosition: {x: 0.0000003799796, y: -30.38, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8834,10 +8837,13 @@ MonoBehaviour:
   falasIniciais:
   - quem: 0
     texto: "Ei... voc\xEA n\xE3o \xE9 daqui, n\xE9?"
+    daItemDepois: 0
   - quem: 0
     texto: "Ningu\xE9m por aqui anda com essa cara de perdido."
+    daItemDepois: 0
   - quem: 0
     texto: Veio de onde?
+    daItemDepois: 0
   painelOpcoes: {fileID: 426820373}
   botoesOpcao:
   - {fileID: 1962221501}
@@ -8852,12 +8858,16 @@ MonoBehaviour:
     resposta:
     - quem: 0
       texto: "Todo mundo est\xE1 perdido aqui, meu filho."
+      daItemDepois: 0
     - quem: 0
       texto: "N\xE3o posso te ajudar agora. por\xE9m..."
+      daItemDepois: 0
     - quem: 0
       texto: "Toma cuidado com quem voc\xEA anda"
+      daItemDepois: 0
     - quem: 0
       texto: Aqui um presente de boas vindas
+      daItemDepois: 1
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
@@ -8865,6 +8875,7 @@ MonoBehaviour:
     resposta:
     - quem: 0
       texto: "Hmmm...\nEntendi, Desculpa o inc\xF4modo"
+      daItemDepois: 0
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
@@ -8874,24 +8885,33 @@ MonoBehaviour:
       texto: 'Many???
 
         De Many??'
+      daItemDepois: 0
     - quem: 0
       texto: "Ha Ha Ha... acho que voc\xEA est\xE1 meio enganado querido."
+      daItemDepois: 0
     - quem: 0
       texto: "Ningu\xE9m de Mani pisaria aqui.."
+      daItemDepois: 0
     - quem: 1
       texto: 'Porque?
 
 '
+      daItemDepois: 0
     - quem: 1
       texto: Mas qual o nome desta cidade?
+      daItemDepois: 0
     - quem: 0
       texto: "Voc\xEA est\xE1 em old kiri."
+      daItemDepois: 0
     - quem: 1
       texto: Old kiri?
+      daItemDepois: 0
     - quem: 0
       texto: 'Sim! '
+      daItemDepois: 0
     - quem: 0
       texto: "Voc\xEA n\xE3o conhece n\xE9? toma ai, vai te ajudar"
+      daItemDepois: 1
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
@@ -8908,6 +8928,8 @@ MonoBehaviour:
   espacoEntreOpcoes: 15
   margemDoXomi: 40
   tamanhoFonteOpcao: 28
+  itemParaDar: {fileID: 3831644615354365279, guid: 1b8792f2243728f40a4616bc6dbde252, type: 3}
+  inventario: {fileID: 0}
 --- !u!95 &1684075338
 Animator:
   serializedVersion: 7

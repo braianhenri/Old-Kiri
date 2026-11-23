@@ -1,0 +1,10 @@
+BACKUP - estado ANTES do presente da Tulipa (lata +20 de vida)
+Criado em: 23/11/2026 20:08:53
+
+Para voltar como estava:
+- Scripts: copie cada .cs.txt para o lugar original e tire o .txt do nome
+  (Item, IventarioJogador, DialogoTulipa -> Assets/Codigos/MenuScripts ; BarraHP -> Assets/Codigos/BatalhaScripts).
+  Depois apague VidaJogador.cs (Assets/Codigos/Jogador) e PopupItemRecebido.cs (Assets/Codigos/MenuScripts).
+- Prefab da lata: Item_LataVermelha_ANTES.prefab tem os valores antigos (descricao com 10 pontos).
+- Cena: cena_teste_ANTES.unity e a copia da cena como estava (abra e use File > Save As... como 'cena teste').
+Ou peca para o Claude voltar tudo.

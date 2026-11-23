@@ -26,9 +26,34 @@ public class BarraHP : MonoBehaviour
         }
 
         vidaMaxima = atributosJogador.VidaMaxima();
-        vidaAtual = vidaMaxima;
-        vidaVisualAtual = 1f;
 
+        // vida global: continua valendo entre cenas (cura de itens, dano da batalha)
+        VidaJogador.DefinirMaxima(vidaMaxima);
+        if (VidaJogador.Atual <= 0) VidaJogador.Definir(vidaMaxima); // nova batalha depois de derrota: volta cheio
+        vidaAtual = VidaJogador.Atual;
+        vidaVisualAtual = (float)vidaAtual / vidaMaxima;
+
+        AtualizarHUD();
+    }
+
+    private void OnEnable()
+    {
+        VidaJogador.OnMudou += AoVidaGlobalMudar;
+    }
+
+    private void OnDisable()
+    {
+        VidaJogador.OnMudou -= AoVidaGlobalMudar;
+    }
+
+    // Alguem mudou a vida fora daqui (ex: item de cura): acompanha.
+    private void AoVidaGlobalMudar(int atual, int maxima)
+    {
+        if (vidaMaxima <= 0) return; // ainda nao iniciou
+        if (atual == vidaAtual && maxima == vidaMaxima) return;
+
+        vidaMaxima = maxima;
+        vidaAtual = atual;
         AtualizarHUD();
     }
 
@@ -62,6 +87,7 @@ public class BarraHP : MonoBehaviour
             vidaAtual = 0;
 
         AtualizarHUD();
+        VidaJogador.Definir(vidaAtual);
         Debug.Log($"Jogador recebeu {quantidade} de dano! Vida: {vidaAtual}");
     }
 
@@ -75,6 +101,7 @@ public class BarraHP : MonoBehaviour
             vidaAtual = vidaMaxima;
 
         AtualizarHUD();
+        VidaJogador.Definir(vidaAtual);
         Debug.Log($"Jogador foi curado em {quantidade}! Vida: {vidaAtual}");
     }
 
@@ -84,6 +111,7 @@ public class BarraHP : MonoBehaviour
     public void Restaurar()
     {
         vidaAtual = vidaMaxima;
+        VidaJogador.Definir(vidaAtual);
         AtualizarHUD();
     }
 

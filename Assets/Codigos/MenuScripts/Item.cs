@@ -20,6 +20,16 @@ public class Item : MonoBehaviour
         get { return descricaoItem; }
     }
 
+    [Header("Efeito ao usar")]
+    [Tooltip("Quanto de vida o item recupera quando e usado (0 = nao cura)")]
+    [SerializeField]
+    private int curaVida;
+
+    public int CuraVida
+    {
+        get { return curaVida; }
+    }
+
     private IventarioJogador inventarioJogador;
     private bool jogadorPerto;
 

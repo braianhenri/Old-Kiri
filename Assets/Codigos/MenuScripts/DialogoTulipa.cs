@@ -16,6 +16,10 @@ public class Fala
 {
     public Quem quem;
     [TextArea(3, 5)] public string texto;
+
+    [Tooltip("Marque para o Xomi receber o item (campo 'Item Para Dar' do dialogo) assim que esta fala terminar")]
+    public bool daItemDepois;
+
 }
 
 [System.Serializable]
@@ -79,6 +83,12 @@ public class DialogoTulipa : MonoBehaviour
     public float espacoEntreOpcoes = 15f;
     public float margemDoXomi = 40f;
     public int tamanhoFonteOpcao = 28;
+
+    [Header("Item entregue pela Tulipa")]
+    public Item itemParaDar;
+    [Tooltip("Opcional: se ficar vazio, procura o inventario no Xomi")]
+    public IventarioJogador inventario;
+
 
     private bool mostrandoOpcoes = false;
     private Transform xomi;
@@ -347,5 +357,39 @@ public class DialogoTulipa : MonoBehaviour
         if (faces.Length > 0 && rostoImagem != null) rostoImagem.sprite = faces[0];
 
         yield return new WaitForSeconds(tempoEntreFalas);
+
+        if (fala.daItemDepois) DarItem();
+
+    }
+
+
+void DarItem()
+    {
+        if (itemParaDar == null)
+        {
+            Debug.LogWarning("DialogoTulipa: uma fala esta marcada para dar item, mas 'Item Para Dar' esta vazio.", this);
+            return;
+        }
+
+        if (inventario == null)
+        {
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null) inventario = p.GetComponentInParent<IventarioJogador>();
+            if (inventario == null) inventario = FindFirstObjectByType<IventarioJogador>();
+        }
+
+        if (inventario == null)
+        {
+            Debug.LogWarning("DialogoTulipa: nao achei o IventarioJogador para entregar o item.", this);
+            return;
+        }
+
+        if (inventario.AdicionarItem(itemParaDar))
+        {
+            // aviso na tela: desenho do item + quantidade (ex: lata 1x)
+            Canvas canvasAviso = caixaDialogo != null ? caixaDialogo.GetComponentInParent<Canvas>() : null;
+            TMP_FontAsset fonteAviso = textoFala != null ? textoFala.font : null;
+            PopupItemRecebido.Mostrar(itemParaDar.SpriteItem, 1, canvasAviso, fonteAviso);
+        }
     }
 }
