@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7153508742831092891}
   - component: {fileID: 1384983315949033200}
   m_Layer: 3
-  m_Name: 'Xomi '
+  m_Name: Xomi
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
