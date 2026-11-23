@@ -1,0 +1,665 @@
+using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+/// <summary>
+/// Liga o menu de batalha existente (Navegacao), o GerenciadorBatalha (turnos), o InimigoBatalha
+/// (regioes, dano, animacoes) e a vida do jogador (BarraHP). NAO cuida de como a batalha comeca:
+/// a entrada no combate fica a cargo da integracao com o mapa. Para testar a cena sozinha,
+/// "iniciarAutomaticamente" comeca a batalha ao apertar Play.
+/// Teclas: setas + Enter/Espaco no menu; na escolha de regiao setas, Enter/Espaco (ou mouse) e
+/// Esc/Backspace para voltar; F5 reinicia a batalha de teste.
+/// </summary>
+public class ControladorCombate : MonoBehaviour
+{
+    private enum Fase { Aguardando, Menu, EscolhendoRegiao, Resolvendo, Fim }
+
+    [Header("Referencias")]
+    [SerializeField] private GerenciadorBatalha gerenciador;
+    [SerializeField] private InimigoBatalha inimigo;
+    [SerializeField] private Navegacao navegacao;
+    [SerializeField] private BarraHP barraHPJogador;
+    [SerializeField] private AtributosJogador atributosJogador;
+    [SerializeField] private Camera cameraBatalha;
+
+    [Header("Interface")]
+    [SerializeField] private TMP_Text textoMensagem;
+    [SerializeField] private RectTransform preenchimentoVidaInimigo;
+    [SerializeField] private TMP_Text textoNomeInimigo;
+    [SerializeField] private RectTransform fundoBatalha;
+    [SerializeField] private Image flashDano;
+
+    [Header("Teste da cena")]
+    [SerializeField] private bool iniciarAutomaticamente = true;
+
+    [Header("Regras")]
+    [SerializeField] private int curativosIniciais = 3;
+    [SerializeField] private int curaPorCurativo = 30;
+    [SerializeField] private float chanceFuga = 0.6f;
+    [SerializeField] private float chanceCritico = 0.1f;
+    [SerializeField] private float multiplicadorCritico = 1.5f;
+
+    [Header("Timing do ataque")]
+    [Tooltip("Liga a barra de timing no ataque do jogador. Desligado volta ao sorteio de precisao antigo.")]
+    [SerializeField] private bool usarTimingNoAtaque = true;
+    [Tooltip("Multiplicador de dano quando o timing cai so na zona fraca.")]
+    [SerializeField] private float multiplicadorGolpeFraco = 0.6f;
+    [Tooltip("Multiplica o dano da faca. Com a faca na mão o Taison bate forte; ao perder o braço armado ele passa a usar a investida.")]
+    [SerializeField] private float multiplicadorDanoFaca = 2f;
+    [Tooltip("Multiplica o dano da investida (sem faca). 1 = valor original.")]
+    [SerializeField] private float multiplicadorDanoInvestida = 1.2f;
+
+
+
+    [Header("Abertura (falas antes da luta)")]
+    [TextArea(2, 4)]
+    [SerializeField] private string[] falasIntro =
+    {
+        "Olha só... um playboy num lugar que nem conhece e já veio pedindo coisa.",
+        "Mandaram você aqui, é? Então vem. Quero ver se aguenta."
+    };
+
+    private Fase fase = Fase.Aguardando;
+    private int curativos;
+    private bool inimigoCalmo;
+    private bool janelaDesvioAberta;
+    private bool desvioFeito;
+    private bool bonusContraAtaque;
+    private TipoRegiao selecionada = TipoRegiao.Tronco;
+    private int frameDeEntrada;
+    private Vector3 ultimoMouse;
+    private float vidaInimigoExibida = 1f;
+    private float vidaInimigoAlvo = 1f;
+    private Vector2 fundoPosOriginal;
+    private TimingAtaque timing;
+    private SomBatalha som;
+
+
+    // ================= ciclo de vida =================
+
+    private void OnEnable()
+    {
+        GerenciadorBatalha.OnTurnoMudou += AoTurnoDoJogador;
+        GerenciadorBatalha.OnAcaoInimiga += AoTurnoDoInimigo;
+        GerenciadorBatalha.OnBatalhaTerminou += AoBatalhaTerminar;
+    }
+
+    private void OnDisable()
+    {
+        GerenciadorBatalha.OnTurnoMudou -= AoTurnoDoJogador;
+        GerenciadorBatalha.OnAcaoInimiga -= AoTurnoDoInimigo;
+        GerenciadorBatalha.OnBatalhaTerminou -= AoBatalhaTerminar;
+    }
+
+private void Tocar(SomBatalha.Evento evento)
+    {
+        if (som != null) som.Tocar(evento);
+    }
+
+
+    private void Start()
+    {
+        if (gerenciador == null) gerenciador = GerenciadorBatalha.Instancia;
+        if (gerenciador == null || inimigo == null || navegacao == null)
+        {
+            Debug.LogError("ControladorCombate: faltam referencias (gerenciador, inimigo ou navegacao).", this);
+            enabled = false;
+            return;
+        }
+
+        if (fundoBatalha != null) fundoPosOriginal = fundoBatalha.anchoredPosition;
+        if (flashDano != null) flashDano.color = new Color(flashDano.color.r, flashDano.color.g, flashDano.color.b, 0f);
+        if (textoNomeInimigo != null) textoNomeInimigo.text = inimigo.Nome;
+
+        navegacao.OnOpcaoConfirmada += AoConfirmarOpcao;
+        inimigo.OnVidaMudou += AoVidaInimigoMudar;
+
+        curativos = curativosIniciais;
+        AoVidaInimigoMudar(inimigo.VidaAtual, inimigo.VidaMaxima);
+        vidaInimigoExibida = vidaInimigoAlvo;
+        navegacao.entradaAtiva = false;
+
+        StartCoroutine(IniciarBatalhaDeTeste());
+    }
+
+    private void OnDestroy()
+    {
+        if (navegacao != null) navegacao.OnOpcaoConfirmada -= AoConfirmarOpcao;
+        if (inimigo != null) inimigo.OnVidaMudou -= AoVidaInimigoMudar;
+    }
+
+    private IEnumerator IniciarBatalhaDeTeste()
+    {
+        yield return null;
+        if (!iniciarAutomaticamente || gerenciador.ObterEstadoAtual() != GerenciadorBatalha.EstadoBatalha.Inativo)
+            yield break;
+
+        if (falasIntro != null)
+        {
+            for (int i = 0; i < falasIntro.Length; i++)
+            {
+                Mensagem(inimigo.Nome + ":\n" + falasIntro[i]);
+                float t = 0f;
+                while (t < 3.4f)
+                {
+                    t += Time.deltaTime;
+                    if (t > 0.5f && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))) break;
+                    yield return null;
+                }
+            }
+        }
+
+        yield return null;
+        gerenciador.AtivarBatalha();
+    }
+
+    private void Update()
+    {
+        // barra de vida do inimigo suave
+        if (preenchimentoVidaInimigo != null)
+        {
+            vidaInimigoExibida = Mathf.MoveTowards(vidaInimigoExibida, vidaInimigoAlvo, Time.deltaTime * 0.8f);
+            preenchimentoVidaInimigo.localScale = new Vector3(vidaInimigoExibida, 1f, 1f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            ReiniciarTeste();
+            return;
+        }
+
+        // desvio do ataque do inimigo (so vale dentro da janela)
+        if (janelaDesvioAberta && !desvioFeito)
+        {
+            bool esq = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
+            bool dir = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
+            bool outro = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift);
+            if (esq || dir || outro)
+            {
+                desvioFeito = true;
+                StartCoroutine(PulsoDeDesvio(esq ? -1f : 1f));
+                Tocar(SomBatalha.Evento.Desvio);
+
+            }
+        }
+
+        if (fase != Fase.EscolhendoRegiao || Time.frameCount == frameDeEntrada) return;
+
+        // mouse: passar por cima seleciona, clicar confirma
+        if (cameraBatalha != null && Input.mousePosition != ultimoMouse)
+        {
+            ultimoMouse = Input.mousePosition;
+            TipoRegiao sob;
+            if (inimigo.TentarObterRegiaoNoPonto(cameraBatalha.ScreenToWorldPoint(ultimoMouse), out sob))
+                Selecionar(sob);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) Mover(Vector2.left);
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) Mover(Vector2.right);
+        else if (Input.GetKeyDown(KeyCode.UpArrow)) Mover(Vector2.up);
+        else if (Input.GetKeyDown(KeyCode.DownArrow)) Mover(Vector2.down);
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace))
+        {
+            CancelarEscolhaRegiao();
+        }
+        else if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space))
+        {
+            ConfirmarRegiao();
+        }
+        else if (Input.GetMouseButtonDown(0) && cameraBatalha != null)
+        {
+            TipoRegiao clicada;
+            if (inimigo.TentarObterRegiaoNoPonto(cameraBatalha.ScreenToWorldPoint(Input.mousePosition), out clicada))
+            {
+                Selecionar(clicada);
+                ConfirmarRegiao();
+            }
+        }
+    }
+
+    // ================= turno do jogador =================
+
+    private void AoTurnoDoJogador(int turno)
+    {
+        if (inimigo.Derrotado) return;
+        fase = Fase.Menu;
+        navegacao.entradaAtiva = true;
+        Mensagem("Turno " + turno + ": o que Xomi vai fazer?");
+    }
+
+    // ordem do menu: Atacar, Items, Conversar, Fugir
+    private void AoConfirmarOpcao(int indice)
+    {
+        if (fase != Fase.Menu) return;
+
+        switch (indice)
+        {
+            case 0: EntrarEscolhaRegiao(); break;
+            case 1: UsarItem(); break;
+            case 2: StartCoroutine(Conversar()); break;
+            case 3: StartCoroutine(TentarFugir()); break;
+        }
+    }
+
+    // ---------- atacar ----------
+
+    private void EntrarEscolhaRegiao()
+    {
+        fase = Fase.EscolhendoRegiao;
+        frameDeEntrada = Time.frameCount;
+        navegacao.entradaAtiva = false;
+        ultimoMouse = Input.mousePosition;
+
+        TipoRegiao inicial = TipoRegiao.Tronco;
+        if (inimigo.EstaPerdida(inicial))
+        {
+            foreach (RegiaoCorpo r in inimigo.Regioes)
+            {
+                if (!r.perdida) { inicial = r.tipo; break; }
+            }
+        }
+        Selecionar(inicial);
+    }
+
+    private void Selecionar(TipoRegiao tipo)
+    {
+        RegiaoCorpo r = inimigo.Obter(tipo);
+        if (r == null || r.perdida) return;
+
+        if (tipo != selecionada) Tocar(SomBatalha.Evento.Selecionar);
+        selecionada = tipo;
+        inimigo.MostrarRealce(tipo);
+        Mensagem(r.nome + "  |  dano x" + r.multiplicadorDano.ToString("0.0#") + "  |  precisão " + Mathf.RoundToInt(PrecisaoDoJogador(r) * 100f) + "%  |  " + r.vidaAtual + "/" + r.vidaMaxima
+                 + "\nSetas: escolher   Enter: atacar   Esc: voltar");
+    }
+
+    private void Mover(Vector2 direcao)
+    {
+        Vector3 atual = inimigo.PontoRegiaoMundo(selecionada);
+        float melhor = float.MaxValue;
+        bool achou = false;
+        TipoRegiao alvo = selecionada;
+
+        foreach (RegiaoCorpo r in inimigo.Regioes)
+        {
+            if (r.perdida || r.tipo == selecionada) continue;
+            Vector2 d = inimigo.PontoRegiaoMundo(r.tipo) - atual;
+            float dist = d.magnitude;
+            if (dist < 0.01f) continue;
+            float cos = Vector2.Dot(d / dist, direcao);
+            if (cos < 0.35f) continue;
+            float pontuacao = dist / cos;
+            if (pontuacao < melhor)
+            {
+                melhor = pontuacao;
+                alvo = r.tipo;
+                achou = true;
+            }
+        }
+
+        if (achou) Selecionar(alvo);
+    }
+
+    private void CancelarEscolhaRegiao()
+    {
+        inimigo.MostrarRealce(null);
+        fase = Fase.Menu;
+        navegacao.entradaAtiva = true;
+        Mensagem("O que Xomi vai fazer?");
+    }
+
+    private void ConfirmarRegiao()
+    {
+        fase = Fase.Resolvendo;
+        inimigo.MostrarRealce(null);
+        Tocar(SomBatalha.Evento.Confirmar);
+        StartCoroutine(ResolverAtaque(selecionada));
+    }
+
+    private float PrecisaoDoJogador(RegiaoCorpo r)
+    {
+        float sorte = (atributosJogador != null && atributosJogador.atributos != null) ? atributosJogador.atributos.sorte : 0f;
+        return Mathf.Clamp01(r.precisao + sorte * 0.01f + (bonusContraAtaque ? 0.15f : 0f));
+    }
+
+private IEnumerator ResolverAtaque(TipoRegiao tipo)
+    {
+        RegiaoCorpo r = inimigo.Obter(tipo);
+        Mensagem("Xomi ataca: " + r.nome + "!");
+        yield return new WaitForSeconds(0.5f);
+
+        float sorte = (atributosJogador != null && atributosJogador.atributos != null) ? atributosJogador.atributos.sorte : 0f;
+        bool errou;
+        bool perfeito = false;
+        float fatorTiming = 1f;
+
+        if (usarTimingNoAtaque)
+        {
+            if (timing == null)
+            {
+                timing = GetComponent<TimingAtaque>();
+                if (timing == null) timing = gameObject.AddComponent<TimingAtaque>();
+                timing.Configurar(textoMensagem);
+            }
+
+            // sorte e o contra-ataque depois de um desvio deixam a zona de acerto mais larga
+            float bonusLargura = sorte * 0.005f + (bonusContraAtaque ? 0.08f : 0f);
+            bonusContraAtaque = false;
+
+            yield return timing.Executar(r.precisao, bonusLargura);
+
+            errou = timing.Resultado == ResultadoTiming.Erro;
+            perfeito = timing.Resultado == ResultadoTiming.Perfeito;
+            if (perfeito) Tocar(SomBatalha.Evento.TimingPerfeito);
+            else if (errou) Tocar(SomBatalha.Evento.TimingErro);
+
+            if (timing.Resultado == ResultadoTiming.Fraco) fatorTiming = multiplicadorGolpeFraco;
+        }
+        else
+        {
+            errou = Random.value > PrecisaoDoJogador(r);
+            bonusContraAtaque = false;
+        }
+
+        if (errou)
+        {
+            Mensagem("Errou! Taison desviou.");
+            Tocar(SomBatalha.Evento.Esquiva);
+
+            yield return StartCoroutine(inimigo.AnimarEsquiva());
+            yield return new WaitForSeconds(0.4f);
+            gerenciador.FinalizarTurnoJogador();
+            yield break;
+        }
+
+        int ataque = atributosJogador != null ? atributosJogador.Ataque() : 10;
+        float dano = ataque * r.multiplicadorDano * Random.Range(0.9f, 1.1f) * fatorTiming;
+        bool critico = perfeito || (fatorTiming >= 1f && Random.value < chanceCritico + sorte * 0.02f);
+        if (critico) dano *= multiplicadorCritico;
+        int danoFinal = Mathf.Max(1, Mathf.RoundToInt(dano));
+
+        InimigoBatalha.ResultadoDano res = inimigo.ReceberDano(tipo, danoFinal);
+        Tocar(critico ? SomBatalha.Evento.GolpeCritico : SomBatalha.Evento.Golpe);
+        if (res.partePerdida) Tocar(SomBatalha.Evento.ParteDestruida);
+        if (res.atordoou) Tocar(SomBatalha.Evento.Atordoar);
+
+
+        string prefixo = perfeito ? "Golpe perfeito! " : (critico ? "Golpe crítico! " : (fatorTiming < 1f ? "Golpe fraco. " : ""));
+        string msg = prefixo + "Acertou " + r.nome + ": " + res.danoAplicado + " de dano.";
+        if (res.partePerdida) msg += "\n" + r.nome + " foi destruído(a)!";
+        if (res.atordoou) msg += "\nTaison ficou tonto.";
+        Mensagem(msg);
+
+        yield return StartCoroutine(inimigo.AguardarLivre());
+        yield return new WaitForSeconds(0.4f);
+
+        if (res.derrotou)
+        {
+            gerenciador.FinalizarBatalha(true);
+            yield break;
+        }
+
+        gerenciador.FinalizarTurnoJogador();
+    }
+
+    // ---------- itens ----------
+
+    private void UsarItem()
+    {
+        if (curativos <= 0)
+        {
+            Mensagem("Xomi não tem mais curativos.");
+            return;
+        }
+
+        if (barraHPJogador != null && barraHPJogador.ObterVidaAtual() >= barraHPJogador.ObterVidaMaxima())
+        {
+            Mensagem("A vida de Xomi já está cheia.");
+            return;
+        }
+
+        fase = Fase.Resolvendo;
+        navegacao.entradaAtiva = false;
+        StartCoroutine(UsarCurativo());
+    }
+
+    private IEnumerator UsarCurativo()
+    {
+        curativos--;
+        gerenciador.CurarJogador(curaPorCurativo);
+        Tocar(SomBatalha.Evento.Curar);
+
+        Mensagem("Xomi usa um curativo e recupera " + curaPorCurativo + " de vida.\nCurativos restantes: " + curativos);
+        yield return new WaitForSeconds(1.1f);
+        gerenciador.FinalizarTurnoJogador();
+    }
+
+    // ---------- conversar ----------
+
+    private IEnumerator Conversar()
+    {
+        fase = Fase.Resolvendo;
+        navegacao.entradaAtiva = false;
+        inimigoCalmo = true;
+        Mensagem("Xomi abaixa a guarda e tenta falar com Taison...\nEle hesita por um instante.");
+        yield return new WaitForSeconds(1.4f);
+        gerenciador.FinalizarTurnoJogador();
+    }
+
+    // ---------- fugir ----------
+
+    private IEnumerator TentarFugir()
+    {
+        fase = Fase.Resolvendo;
+        navegacao.entradaAtiva = false;
+        Mensagem("Xomi tenta fugir...");
+        yield return new WaitForSeconds(0.8f);
+
+        if (Random.value < chanceFuga)
+        {
+            gerenciador.FugirDaBatalha();
+        }
+        else
+        {
+            Mensagem("Não deu certo! Taison bloqueou o caminho.");
+            yield return new WaitForSeconds(1f);
+            gerenciador.FinalizarTurnoJogador();
+        }
+    }
+
+    // ================= turno do inimigo =================
+
+    private void AoTurnoDoInimigo()
+    {
+        StartCoroutine(TurnoDoInimigo());
+    }
+
+    private IEnumerator TurnoDoInimigo()
+    {
+        fase = Fase.Resolvendo;
+        navegacao.entradaAtiva = false;
+        if (inimigo.Derrotado) yield break;
+
+        if (inimigo.ConsumirAtordoamento())
+        {
+            Mensagem("Taison está tonto e perde o turno.");
+            yield return new WaitForSeconds(1.2f);
+            gerenciador.TerminarTurnoInimigo();
+            yield break;
+        }
+
+        if (!inimigo.PodeAtacar)
+        {
+            Mensagem("Taison tenta se levantar, mas não consegue atacar.");
+            yield return new WaitForSeconds(1.2f);
+            gerenciador.TerminarTurnoInimigo();
+            yield break;
+        }
+
+        bool calmo = inimigoCalmo;
+        inimigoCalmo = false;
+        if (calmo && Random.value < 0.4f)
+        {
+            Mensagem("Taison hesita e não ataca desta vez.");
+            yield return new WaitForSeconds(1.2f);
+            gerenciador.TerminarTurnoInimigo();
+            yield break;
+        }
+
+        bool faca = inimigo.PodeAtacarComFaca;
+        Mensagem(faca ? "Taison saca a faca!" : "Taison avança sobre Xomi!");
+        Tocar(faca ? SomBatalha.Evento.FacaSaca : SomBatalha.Evento.Investida);
+
+        yield return new WaitForSeconds(0.5f);
+
+        float precisao = inimigo.PrecisaoAtaque * (calmo ? 0.7f : 1f);
+        desvioFeito = false;
+        yield return StartCoroutine(inimigo.AnimarAtaque(faca, AbrirJanelaDeDesvio, () => AplicarAtaqueNoJogador(faca, precisao, calmo)));
+        janelaDesvioAberta = false;
+        yield return new WaitForSeconds(0.7f);
+
+        if (gerenciador.ObterEstadoAtual() == GerenciadorBatalha.EstadoBatalha.Derrota) yield break;
+        gerenciador.TerminarTurnoInimigo();
+    }
+
+    private void AplicarAtaqueNoJogador(bool faca, float precisao, bool calmo)
+    {
+        bool desviou = desvioFeito;
+        janelaDesvioAberta = false;
+        desvioFeito = false;
+        if (desviou)
+        {
+            bonusContraAtaque = true;
+            Mensagem("Xomi desviou do golpe de " + inimigo.Nome + "!\nBoa brecha: o próximo ataque erra menos.");
+            return;
+        }
+
+        if (Random.value > precisao)
+        {
+            Mensagem("Xomi desviou do ataque!");
+            return;
+        }
+
+        int dano = faca ? inimigo.DanoFaca : inimigo.DanoInvestida;
+        dano = Mathf.RoundToInt(dano * (faca ? multiplicadorDanoFaca : multiplicadorDanoInvestida));
+
+        if (calmo) dano = Mathf.RoundToInt(dano * 0.5f);
+        int defesa = (atributosJogador != null && atributosJogador.atributos != null) ? atributosJogador.atributos.defesa : 0;
+        dano = Mathf.Max(1, dano - defesa);
+
+        Mensagem((faca ? "A faca acerta Xomi!" : "O empurrão acerta Xomi!") + " -" + dano + " de vida.");
+        gerenciador.AplicarDanoJogador(dano);
+        Tocar(faca ? SomBatalha.Evento.CorteRecebido : SomBatalha.Evento.ImpactoRecebido);
+
+        StartCoroutine(PulsoDeDano());
+    }
+
+    private void AbrirJanelaDeDesvio()
+    {
+        janelaDesvioAberta = true;
+        Tocar(SomBatalha.Evento.AvisoDesvio);
+
+        desvioFeito = false;
+        Mensagem(inimigo.Nome + " vai atacar!\nDESVIE agora: aperte uma seta ou Espaço.");
+    }
+
+    private IEnumerator PulsoDeDesvio(float lado)
+    {
+        float tempo = 0f;
+        const float duracao = 0.35f;
+        while (tempo < duracao)
+        {
+            tempo += Time.deltaTime;
+            float k = Mathf.Sin(Mathf.Clamp01(tempo / duracao) * Mathf.PI);
+            if (fundoBatalha != null) fundoBatalha.anchoredPosition = fundoPosOriginal + new Vector2(-lado * 36f * k, 0f);
+            yield return null;
+        }
+        if (fundoBatalha != null) fundoBatalha.anchoredPosition = fundoPosOriginal;
+    }
+
+    private IEnumerator PulsoDeDano()
+    {
+        float tempo = 0f;
+        const float duracao = 0.3f;
+        while (tempo < duracao)
+        {
+            tempo += Time.deltaTime;
+            float k = 1f - tempo / duracao;
+            if (flashDano != null) flashDano.color = new Color(0.7f, 0.1f, 0.25f, 0.45f * k);
+            if (fundoBatalha != null)
+                fundoBatalha.anchoredPosition = fundoPosOriginal + new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * 10f * k;
+            yield return null;
+        }
+        if (flashDano != null) flashDano.color = new Color(0.7f, 0.1f, 0.25f, 0f);
+        if (fundoBatalha != null) fundoBatalha.anchoredPosition = fundoPosOriginal;
+    }
+
+    // ================= fim e reinicio =================
+
+    private void AoBatalhaTerminar()
+    {
+        fase = Fase.Fim;
+        navegacao.entradaAtiva = false;
+        inimigo.MostrarRealce(null);
+
+        Tocar(gerenciador.ObterEstadoAtual() == GerenciadorBatalha.EstadoBatalha.Vitoria ? SomBatalha.Evento.Vitoria
+            : gerenciador.ObterEstadoAtual() == GerenciadorBatalha.EstadoBatalha.Derrota ? SomBatalha.Evento.Derrota
+            : SomBatalha.Evento.Fuga);
+
+        switch (gerenciador.ObterEstadoAtual())
+        {
+            case GerenciadorBatalha.EstadoBatalha.Vitoria: Mensagem("Taison caiu. Vitória!\nF5: recomeçar o teste"); break;
+            case GerenciadorBatalha.EstadoBatalha.Derrota: Mensagem("Xomi desabou... Derrota.\nF5: recomeçar o teste"); break;
+            case GerenciadorBatalha.EstadoBatalha.Fuga: Mensagem("Xomi fugiu do beco.\nF5: recomeçar o teste"); break;
+        }
+    }
+
+    private void ReiniciarTeste()
+    {
+        StopAllCoroutines();
+        if (timing != null) timing.Esconder();
+        if (som != null) som.RecomecarMusica();
+
+
+        if (flashDano != null) flashDano.color = new Color(0.7f, 0.1f, 0.25f, 0f);
+        if (fundoBatalha != null) fundoBatalha.anchoredPosition = fundoPosOriginal;
+
+        inimigo.Resetar();
+        if (barraHPJogador != null) barraHPJogador.Restaurar();
+        gerenciador.ReiniciarParaTeste();
+
+        curativos = curativosIniciais;
+        inimigoCalmo = false;
+        janelaDesvioAberta = false;
+        desvioFeito = false;
+        bonusContraAtaque = false;
+        fase = Fase.Aguardando;
+        navegacao.entradaAtiva = false;
+        vidaInimigoExibida = 1f;
+        vidaInimigoAlvo = 1f;
+
+        StartCoroutine(IniciarBatalhaDeTeste());
+    }
+
+    // ================= interface =================
+
+    private void AoVidaInimigoMudar(int atual, int maxima)
+    {
+        vidaInimigoAlvo = maxima > 0 ? Mathf.Clamp01((float)atual / maxima) : 0f;
+    }
+
+    private void Mensagem(string texto)
+    {
+        if (textoMensagem != null) textoMensagem.text = texto;
+    }
+
+
+private void Awake()
+    {
+        // usa um SomBatalha ja colocado no Inspector (com seus clips) ou cria um com sons gerados
+        som = GetComponent<SomBatalha>();
+        if (som == null) som = gameObject.AddComponent<SomBatalha>();
+    }
+}
