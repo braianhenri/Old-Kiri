@@ -132,10 +132,10 @@ TextureImporter:
       name: npc1_suspeito_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 78
-        width: 18
-        height: 33
+        x: 116
+        y: 677
+        width: 332
+        height: 420
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: npc1_suspeito_1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 14
-        width: 18
-        height: 33
+        x: 73
+        y: 58
+        width: 411
+        height: 464
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 215e81919c2522b45849f5cf1262d3e0
     internalID: 0
     vertices: []
     indices: 
