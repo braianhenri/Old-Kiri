@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_0
+      name: MARTA_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 263
-        width: 45
-        height: 43
+        x: 0
+        y: 512
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ae2cf76a29b01a4d8dc24387f742598
-      internalID: -400212328
+      spriteID: dab58f694a5c3874ab2efe39bb3a1f3c
+      internalID: -975328852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_1
+      name: MARTA_1
       rect:
         serializedVersion: 2
-        x: 77
-        y: 257
-        width: 40
-        height: 50
+        x: 128
+        y: 512
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8df1b7dbafb68644a1aebca61ab307d
-      internalID: 247834475
+      spriteID: c796f0446e867b94ca4bf910ddfa7016
+      internalID: -114657685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_2
+      name: MARTA_2
       rect:
         serializedVersion: 2
-        x: 139
-        y: 255
-        width: 51
-        height: 54
+        x: 256
+        y: 512
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,167 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e450b312b80d9ed4295bbfad3c94cc1a
-      internalID: 821064332
+      spriteID: 703ac5b5752188d45b88f4ddf0bffba8
+      internalID: -787950310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_3
+      name: MARTA_3
       rect:
         serializedVersion: 2
-        x: 202
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a5a50074ec8e941974190d700f1350
+      internalID: -1657133477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MARTA_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d948fad0b09d94b8d9b36558fb0ff4
+      internalID: -2051892895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MARTA_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd7fe30b5aec3843a593c09301f72ef
+      internalID: 1903786475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MARTA_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fec61dcff27bc4cab91fdea2c00c14
+      internalID: -1490860465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MARTA_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220ebb621647a684c86326459548c90e
+      internalID: -1573332434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MARTA_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5851c842fe5f28641ab9e641e806f8b0
+      internalID: -1414710267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MARTA_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615eceda1624b094392a44a535a2d30a
+      internalID: 95306163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MARTA_10
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 256
-        width: 44
-        height: 56
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b96c240efe42394e966ad69f5b8e187
-      internalID: -1242157914
+      spriteID: db122c4fd5e108248ab0254f481380e2
+      internalID: -345474392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_4
+      name: MARTA_11
       rect:
         serializedVersion: 2
-        x: 263
-        y: 257
-        width: 49
-        height: 53
+        x: 128
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e78aa497cc309864e90e62bc8d6c454a
-      internalID: 1676551892
+      spriteID: 07cd4903ef16c1b4da3256afce67d8f3
+      internalID: -1674243341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_5
+      name: MARTA_12
       rect:
         serializedVersion: 2
-        x: 10
-        y: 198
-        width: 43
-        height: 47
+        x: 256
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +389,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 455e932897b7dec479fed0fb9aa461cc
-      internalID: 471969823
+      spriteID: 762cf44e033ecd84aa82d02aa651bc3a
+      internalID: -1472376053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_6
+      name: MARTA_13
       rect:
         serializedVersion: 2
-        x: 74
-        y: 195
-        width: 42
-        height: 47
+        x: 384
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +410,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c94fe0afc6471644790a866ec370ab42
-      internalID: -1902781033
+      spriteID: cb781b26d73ce3d4db9df441401d1743
+      internalID: -323798524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_7
+      name: MARTA_14
       rect:
         serializedVersion: 2
-        x: 137
-        y: 192
-        width: 44
-        height: 51
+        x: 512
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +431,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ebd68bc3d59a1342a4cc63f0738aa68
-      internalID: -312500549
+      spriteID: 965fb5b885f093346869bcb8282db4f5
+      internalID: -990082463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_8
+      name: MARTA_15
       rect:
         serializedVersion: 2
-        x: 200
-        y: 190
-        width: 42
-        height: 52
+        x: 0
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +452,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c75d4b2741ba414f988700f3d193c5f
-      internalID: -268855713
+      spriteID: 72b34ab72fdd8bb4ca9f2180c81dd0ef
+      internalID: -705470967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_9
+      name: MARTA_16
       rect:
         serializedVersion: 2
-        x: 265
-        y: 192
-        width: 40
-        height: 52
+        x: 128
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +473,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dc9e623ec6bf524786e5cfd04006eae
-      internalID: -918850962
+      spriteID: c071ef6a4aff7e94785d17bf53905c12
+      internalID: -2080162458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_10
+      name: MARTA_17
       rect:
         serializedVersion: 2
-        x: 18
-        y: 127
-        width: 32
-        height: 51
+        x: 256
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +494,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 294eec5f64b866945911bdca6bb3a717
-      internalID: 162601379
+      spriteID: 0480bf617d18575408a70283e744d634
+      internalID: -1654873263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_11
+      name: MARTA_18
       rect:
         serializedVersion: 2
-        x: 74
-        y: 124
-        width: 41
-        height: 59
+        x: 384
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +515,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 338693688e8590d4bb1ef71064d90e17
-      internalID: 851428462
+      spriteID: 85d53e1ea06b8ab44a94e868ffa435c1
+      internalID: 24657513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_12
+      name: MARTA_19
       rect:
         serializedVersion: 2
-        x: 141
-        y: 125
-        width: 37
-        height: 53
+        x: 512
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,188 +536,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3684e3e78ac826d499197aa20b46c0ae
-      internalID: 1119205762
+      spriteID: 6b86d08fd063cc84a8d20a1c75f51a34
+      internalID: 203540014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_13
+      name: MARTA_20
       rect:
         serializedVersion: 2
-        x: 198
-        y: 125
-        width: 53
-        height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d7c6428f6b3be54cb20dd6a40f809fc
-      internalID: 11062266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_14
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 127
-        width: 46
-        height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 538171879684b0e43bcc1eccde2fe449
-      internalID: -1349066206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_15
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 67
-        width: 47
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1b704a860e4d58438714d0429594203
-      internalID: -978837239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_16
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 65
-        width: 47
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97593a54f1a3b6641be87bb6f3613559
-      internalID: -913119144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_17
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 63
-        width: 48
-        height: 55
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9378df59a3d3e7345b45b603bed1411d
-      internalID: -1671970747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_18
-      rect:
-        serializedVersion: 2
-        x: 202
-        y: 61
-        width: 46
-        height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bcf2e784cc18fc4aab41dd19878109f
-      internalID: 361935679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_19
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 61
-        width: 51
-        height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 395b06b7b6f5406449031b79d0a1f96c
-      internalID: 139128853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_20
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 3
-        width: 45
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 674e0910b6af424429b8e1d7b6d36e4d
-      internalID: 1860848204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_21
-      rect:
-        serializedVersion: 2
-        x: 76
+        x: 0
         y: 0
-        width: 37
-        height: 51
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -578,20 +557,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d8be6a5c4ab42d4fb9691ea5840acfa
-      internalID: -1100481915
+      spriteID: 42964eb10cd1f2d4eaa90ab546bda2cf
+      internalID: -1232769338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BASE PERSONAGEM FEMININA_22
+      name: MARTA_21
       rect:
         serializedVersion: 2
-        x: 140
+        x: 128
         y: 0
-        width: 39
-        height: 52
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,8 +578,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e186a34f60826428a02065a26be0ef
-      internalID: 200453484
+      spriteID: eebbc17c52875834f811dc07d48fd218
+      internalID: 2126815733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MARTA_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282562b4874567b4da830b29d6088727
+      internalID: -801752570
       vertices: []
       indices: 
       edges: []
@@ -639,6 +639,29 @@ TextureImporter:
       BASE PERSONAGEM FEMININA_7: -312500549
       BASE PERSONAGEM FEMININA_8: -268855713
       BASE PERSONAGEM FEMININA_9: -918850962
+      MARTA_0: -1472376053
+      MARTA_1: -975328852
+      MARTA_10: 95306163
+      MARTA_11: -345474392
+      MARTA_12: -1674243341
+      MARTA_13: -323798524
+      MARTA_14: -990082463
+      MARTA_15: -705470967
+      MARTA_16: -2080162458
+      MARTA_17: -1654873263
+      MARTA_18: 24657513
+      MARTA_19: 203540014
+      MARTA_2: -114657685
+      MARTA_20: -1232769338
+      MARTA_21: 2126815733
+      MARTA_22: -801752570
+      MARTA_3: -787950310
+      MARTA_4: -1657133477
+      MARTA_5: -2051892895
+      MARTA_6: 1903786475
+      MARTA_7: -1490860465
+      MARTA_8: -1573332434
+      MARTA_9: -1414710267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2905,7 +2905,7 @@ Transform:
   m_GameObject: {fileID: 617658129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1042136, y: -31.580976, z: -10}
+  m_LocalPosition: {x: 1.1042136, y: -31.580833, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3496,6 +3496,7 @@ GameObject:
   - component: {fileID: 769978371}
   - component: {fileID: 769978373}
   - component: {fileID: 769978372}
+  - component: {fileID: 769978374}
   m_Layer: 0
   m_Name: Taison
   m_TagString: Untagged
@@ -3644,8 +3645,10 @@ MonoBehaviour:
   falasIniciais:
   - quem: 1
     texto: "Com licen\xE7a... Por acaso voc\xEA \xE9 o Taison?"
+    daItemDepois: 0
   - quem: 2
     texto: Quem pergunta...Burp!
+    daItemDepois: 0
   painelOpcoes: {fileID: 1193064385}
   botoesOpcao:
   - {fileID: 130478842}
@@ -3661,6 +3664,7 @@ MonoBehaviour:
     - quem: 2
       texto: "P#@a que p@#iu mas agora ele tem capangas... voc\xEA \xE9 a P@#$a de
         um Minion \xE9?"
+      daItemDepois: 0
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
@@ -3673,6 +3677,7 @@ MonoBehaviour:
     resposta:
     - quem: 2
       texto: "C\xEA \xE9 estranho ein mlk, rala daqui"
+      daItemDepois: 0
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
@@ -3680,8 +3685,8 @@ MonoBehaviour:
   velocidadeTexto: 0.05
   tempoCadaSprite: 0.25
   tempoEntreFalas: 1.5
-  audioSource: {fileID: 0}
-  somTeclado: {fileID: 0}
+  audioSource: {fileID: 769978374}
+  somTeclado: {fileID: 8300000, guid: 31b7be92693c4b74e812f289bb95fc68, type: 3}
   intervaloSom: 0.08
   scriptMovimento: {fileID: 0}
   larguraOpcao: 800
@@ -3696,8 +3701,10 @@ MonoBehaviour:
       resposta:
       - quem: 2
         texto: "Hmmm.. Tu quer dinheiro n\xE9? saiba que dinheiro nao cai em \xE1rvore"
+        daItemDepois: 0
       - quem: 2
         texto: Vai ter que conquistar...
+        daItemDepois: 0
       aoEscolher:
         m_PersistentCalls:
           m_Calls:
@@ -3724,8 +3731,10 @@ MonoBehaviour:
         texto: "Hmmmm, C\xEA quer diheiro n\xE9 mlk? saiba que dinheiro n\xE3o da
           em \xE1rvore, aqui n\xE3o \xE9 uma cidade rica, de onde voce parece ter
           sa\xEDdo."
+        daItemDepois: 0
       - quem: 2
         texto: Vai ter que onquistar...
+        daItemDepois: 0
       aoEscolher:
         m_PersistentCalls:
           m_Calls: []
@@ -3765,6 +3774,103 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.4342931}
   m_Radius: 2.5342932
+--- !u!82 &769978374
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769978368}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 984fb21ffdae1c646a28ba6c0c4ab26d, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &773267348
 GameObject:
   m_ObjectHideFlags: 0
@@ -9531,6 +9637,9 @@ MonoBehaviour:
   - {fileID: 2107778000}
   - {fileID: 1457990156}
   textoInventario: {fileID: 0}
+  tamanhoFonteQuantidade: 30
+  deslocamentoQuantidade: {x: -79, y: 0}
+  larguraQuantidade: 36
 --- !u!1 &2080435501
 GameObject:
   m_ObjectHideFlags: 0

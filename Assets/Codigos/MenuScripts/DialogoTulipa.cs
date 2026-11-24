@@ -77,6 +77,9 @@ public class DialogoTulipa : MonoBehaviour
 
     [Header("Travar o jogador")]
     public MonoBehaviour scriptMovimento;
+    [Tooltip("Opcional: outros scripts de movimento do jogador que tambem devem travar durante a conversa")]
+    public MonoBehaviour[] scriptsExtrasTravar;
+
     [Header("Posicao das opcoes (ao lado do Xomi)")]
     public float larguraOpcao = 800f;
     public float alturaOpcao = 80f;
@@ -104,18 +107,23 @@ public class DialogoTulipa : MonoBehaviour
         if (painelOpcoes != null) painelOpcoes.SetActive(false);
     }
 
-    void OnTriggerEnter2D(Collider2D outro)
+void OnTriggerEnter2D(Collider2D outro)
     {
-        if (outro.CompareTag("Player") && !jaFalou)
-        {
-            jaFalou = true;
-            StartCoroutine(Dialogo());
-        }
+        if (outro.CompareTag("Player")) Iniciar();
+    }
+
+    // Pode ser chamado por outros scripts (ex: Marta ao chegar) para comecar a conversa
+    public void Iniciar()
+    {
+        if (jaFalou) return;
+        jaFalou = true;
+        StartCoroutine(Dialogo());
     }
 
     IEnumerator Dialogo()
     {
         if (scriptMovimento != null) scriptMovimento.enabled = false;
+        if (scriptsExtrasTravar != null) foreach (var s in scriptsExtrasTravar) if (s != null) s.enabled = false;
         caixaDialogo.SetActive(true);
 
         // Conversa antes da escolha
@@ -196,6 +204,7 @@ public class DialogoTulipa : MonoBehaviour
 
         caixaDialogo.SetActive(false);
         if (scriptMovimento != null) scriptMovimento.enabled = true;
+        if (scriptsExtrasTravar != null) foreach (var s in scriptsExtrasTravar) if (s != null) s.enabled = true;
     }
 
     void LateUpdate()
