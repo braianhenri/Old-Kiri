@@ -1,21 +1,25 @@
 using System.Collections;
 using UnityEngine;
 
-// Marta aparece no topo da tela, corre ate o Xomi, para e inicia o dialogo (DialogoTulipa).
+// Marta aparece no topo da tela correndo, para perto do Xomi so pra avisar (2 falas, sem escolhas),
+// sai correndo pra baixo e libera o senhorio (SenhorioAbordagem). O Xomi nao interage com ela.
 public class MartaCorrida : MonoBehaviour
 {
     public DialogoTulipa dialogo;
+    [Tooltip("O senhorio so aparece depois que a Marta termina e sai")]
+    public SenhorioAbordagem senhorio;
     public float atrasoInicio = 1f;
     public float velocidade = 7f;
     [Tooltip("Distancia vertical em que ela para, de frente pro Xomi")]
-    public float distanciaParada = 3.8f;
+    public float distanciaParada = 4.4f;
     public string parametroCorrendo = "Correndo";
+    [Tooltip("Altura (Y) abaixo da tela onde ela some ao sair")]
+    public float yDeSaida = -44f;
 
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
     Transform xomi;
-    bool correndo;
 
     void Awake()
     {
@@ -27,52 +31,60 @@ public class MartaCorrida : MonoBehaviour
 
     IEnumerator Start()
     {
-        GameObject p = GameObject.FindGameObjectWithTag("Player");
-        if (p == null) yield break;
-        xomi = p.transform;
+        xomi = CutsceneUtil.AcharXomi();
+        if (xomi == null) yield break;
 
-        // Marta nao empurra o Xomi
-        Collider2D meu = GetComponent<Collider2D>();
-        foreach (Collider2D c in p.GetComponents<Collider2D>())
-            Physics2D.IgnoreCollision(meu, c);
+        // Marta e so um "efeito": sem colisao, nao empurra nem e empurrada
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+        rb.gravityScale = 0f;
 
         yield return new WaitForSeconds(atrasoInicio);
 
         // Nasce logo acima da borda de cima da tela e corre pra dentro
         Camera cam = Camera.main;
-        float y = cam.transform.position.y + cam.orthographicSize + 2f;
+        float y = Mathf.Min(cam.transform.position.y + cam.orthographicSize + 2f, 37f);
         float x = Mathf.Clamp(xomi.position.x + 3f, -9f, 9f);
-        rb.position = new Vector2(x, Mathf.Min(y, 37f));
+        rb.position = new Vector2(x, y);
+        transform.position = new Vector3(x, y, transform.position.z);
         sr.enabled = true;
-        correndo = true;
         anim.SetBool(parametroCorrendo, true);
+
+        yield return StartCoroutine(IrPara(() => new Vector2(xomi.position.x, xomi.position.y + distanciaParada), 0.2f));
+
+        // chegou: para, Xomi olha pra ela e ela diz as duas falas
+        anim.SetBool(parametroCorrendo, false);
+        CutsceneUtil.XomiOlhar(true);
+        if (dialogo != null)
+        {
+            CutsceneUtil.TravarXomi(true);
+            dialogo.Iniciar();
+            yield return null;
+            while (dialogo.caixaDialogo != null && dialogo.caixaDialogo.activeSelf) yield return null;
+            CutsceneUtil.TravarXomi(false);
+        }
+
+        // sai correndo ("ali embaixo"), passando ao lado do Xomi
+        anim.SetBool(parametroCorrendo, true);
+        float lado = rb.position.x >= xomi.position.x ? 1f : -1f;
+        Vector2 saida = new Vector2(Mathf.Clamp(xomi.position.x + 6f * lado, -9f, 9f), yDeSaida);
+        yield return StartCoroutine(IrPara(() => saida, 0.5f));
+
+        anim.SetBool(parametroCorrendo, false);
+        sr.enabled = false;
+        if (senhorio != null) senhorio.Armar();
+        gameObject.SetActive(false);
     }
 
-    void FixedUpdate()
+    IEnumerator IrPara(System.Func<Vector2> alvo, float tolerancia)
     {
-        if (!correndo) return;
-
-        Vector2 alvo = new Vector2(xomi.position.x, xomi.position.y + distanciaParada);
-        Vector2 falta = alvo - rb.position;
-        if (falta.magnitude < 0.2f) { Chegou(); return; }
-        rb.velocity = falta.normalized * velocidade;
-    }
-
-    void Chegou()
-    {
-        correndo = false;
+        while (true)
+        {
+            Vector2 falta = alvo() - rb.position;
+            if (falta.magnitude < tolerancia) break;
+            rb.velocity = falta.normalized * velocidade;
+            yield return new WaitForFixedUpdate();
+        }
         rb.velocity = Vector2.zero;
-        anim.SetBool(parametroCorrendo, false); // estado parado
-
-        // Xomi olha pra ela
-        Animator ax = xomi.GetComponent<Animator>();
-        if (ax != null) { ax.SetBool("Cima", true); ax.SetBool("Baixo", false); }
-
-        if (dialogo != null) dialogo.Iniciar();
-
-        // trava o Xomi no lugar (o dialogo ja desligou os scripts de movimento)
-        Rigidbody2D rbx = xomi.GetComponent<Rigidbody2D>();
-        if (rbx != null) rbx.velocity = Vector2.zero;
-        if (ax != null) { ax.SetBool("Andando", false); ax.SetBool("Lado", false); }
     }
 }

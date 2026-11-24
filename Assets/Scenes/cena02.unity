@@ -1033,6 +1033,72 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &159869171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159869173}
+  - component: {fileID: 159869172}
+  m_Layer: 0
+  m_Name: IntroCena02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &159869172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159869171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66a548319b1a7f4080d7770425036e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  caixaDialogo: {fileID: 2137057615}
+  textoFala: {fileID: 1030946302}
+  rostoImagem: {fileID: 1425976093}
+  rostosSenhorio:
+  - {fileID: -7687176350720134886, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  - {fileID: 6915634480131399596, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  - {fileID: 2654244543786052108, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  - {fileID: 6692384826971430146, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  - {fileID: 3563409259696629795, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  falas:
+  - "Xomi, escuta bem. O Taison, aquele do fundo da rua, est\xE1 com o aluguel atrasado."
+  - "V\xE1 at\xE9 ele e cobre. N\xE3o precisa pensar muito, rapaz... s\xF3 estender
+    a m\xE3o e voltar com o dinheiro."
+  - "Pensar \xE9 comigo. O resto, deixa que eu cuido."
+  velocidadeTexto: 0.05
+  tempoCadaSprite: 0.25
+  tempoEntreFalas: 1.5
+  audioSource: {fileID: 769978374}
+  somTeclado: {fileID: 8300000, guid: 31b7be92693c4b74e812f289bb95fc68, type: 3}
+  intervaloSom: 0.08
+  tempoFade: 1
+  esperaAposFade: 0.4
+--- !u!4 &159869173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159869171}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &161309028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10419,3 +10485,4 @@ SceneRoots:
   - {fileID: 1625897256}
   - {fileID: 1746365988}
   - {fileID: 370509587}
+  - {fileID: 159869173}

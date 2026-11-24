@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/cena teste.unity
     guid: 12eaa34c1de2cb747ab28749b6c48269
+  - enabled: 1
+    path: Assets/Scenes/cena03.unity
+    guid: 664af0ffe9c476741bd4bf484bb49ad9
+  - enabled: 1
+    path: Assets/Scenes/cena02.unity
+    guid: ae0d5427f26cda442a244ee55a35e329
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

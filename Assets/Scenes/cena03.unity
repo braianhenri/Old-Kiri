@@ -3283,7 +3283,7 @@ Transform:
   m_GameObject: {fileID: 617658129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -30.400002, z: -10}
+  m_LocalPosition: {x: -0.0000009536743, y: -30.400002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6782,6 +6782,197 @@ Material:
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!1 &1239753001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1239753004}
+  - component: {fileID: 1239753003}
+  - component: {fileID: 1239753002}
+  m_Layer: 0
+  m_Name: Senhorio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1239753002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239753001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0116642de67de6147a98f78148e28847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armado: 0
+  yGatilho: -27
+  distanciaSpawn: 11
+  velocidadeChegada: 6
+  distanciaConversa: 3.6
+  parado: {fileID: 4896420409836494301, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  andandoBaixo:
+  - {fileID: 4896420409836494301, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: 725671857154171407, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: 6287834310592575106, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: -3109274619338886324, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: 1888889701394432063, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: -2162532274511931176, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  andandoCima:
+  - {fileID: -46030269037410020, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: -7760139803107387068, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: 3811313717145957824, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: 971750341468704691, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: 1866221953052950835, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  - {fileID: 3064971778177636635, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  tempoFrame: 0.12
+  caixaDialogo: {fileID: 2137057615}
+  textoFala: {fileID: 1030946302}
+  rostoImagem: {fileID: 1425976093}
+  rostosSenhorio:
+  - {fileID: -7687176350720134886, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  - {fileID: 6915634480131399596, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  - {fileID: 2654244543786052108, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  - {fileID: 6692384826971430146, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  - {fileID: 3563409259696629795, guid: 9ea0fcadcde495140a38e374fa724caa, type: 3}
+  rostosJogador:
+  - {fileID: 2100582690, guid: 60bff770bf696324db38b17a23de0f47, type: 3}
+  - {fileID: -642972993, guid: 60bff770bf696324db38b17a23de0f47, type: 3}
+  - {fileID: -1662922078, guid: 60bff770bf696324db38b17a23de0f47, type: 3}
+  - {fileID: 527800740, guid: 60bff770bf696324db38b17a23de0f47, type: 3}
+  falasChegada:
+  - jogador: 0
+    texto: "Opa, opa... n\xE3o conhe\xE7o essa cara. Quem \xE9 voc\xEA, rapaz?"
+  - jogador: 0
+    texto: "Deixa, nem precisa responder. Hoje eu estou de bom humor, e bom humor
+      \xE9 raridade por aqui."
+  - jogador: 0
+    texto: "Tenho uma oportunidade de emprego pra voc\xEA. Servi\xE7o leve, pagamento
+      certo. Gente na sua situa\xE7\xE3o costuma aceitar de primeira."
+  textosOpcoes:
+  - Sou o Xomi. Que tipo de emprego?
+  - "Agrade\xE7o, mas prefiro procurar outra coisa."
+  - "E quem \xE9 o senhor, afinal?"
+  interromperNaOpcao: 2
+  letrasAntesDeInterromper: 14
+  falasInterrupcao:
+  - jogador: 0
+    texto: "Calma, calma. N\xE3o precisa se esfor\xE7ar tanto pra escolher."
+  - jogador: 0
+    texto: "Eu escolho por voc\xEA. Fica mais r\xE1pido, e a gente evita mal-entendido."
+  - jogador: 0
+    texto: "\xC9 simples: voc\xEA cobra o aluguel de quem anda me devendo. Bate na
+      porta, estende a m\xE3o e n\xE3o volta sem o dinheiro."
+  - jogador: 0
+    texto: "Eles j\xE1 se acostumaram com a minha cara. Uma cara nova ajuda."
+  - jogador: 1
+    texto: Mas eu nem disse que aceitava...
+  - jogador: 0
+    texto: "Ora, rapaz... e voc\xEA tinha algo melhor pra fazer hoje? Foi o que pensei."
+  - jogador: 0
+    texto: "Me d\xE1 a m\xE3o e fica perto. Esse bairro \xE9 complicado pra quem
+      n\xE3o sabe andar sozinho."
+  painelOpcoes: {fileID: 1193064385}
+  botoesOpcao:
+  - {fileID: 130478842}
+  - {fileID: 1826850450}
+  - {fileID: 517664544}
+  textosOpcao:
+  - {fileID: 259548100}
+  - {fileID: 625323621}
+  - {fileID: 1912017674}
+  larguraOpcao: 800
+  alturaOpcao: 80
+  espacoEntreOpcoes: 15
+  margemDoXomi: 40
+  tamanhoFonteOpcao: 28
+  velocidadeTexto: 0.05
+  tempoCadaSprite: 0.25
+  tempoEntreFalas: 1.5
+  audioSource: {fileID: 2120857260}
+  somTeclado: {fileID: 8300000, guid: 31b7be92693c4b74e812f289bb95fc68, type: 3}
+  intervaloSom: 0.08
+  velocidadeLevar: 7
+  yTopo: 34
+  posicaoXomiAoLado: {x: -1.9, y: -0.2}
+  cenaDestino: cena02
+  tempoFade: 1
+--- !u!212 &1239753003
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239753001}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1928358627
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 4896420409836494301, guid: 7c222c607d41090468897003ef87d598, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.18, y: 0.34}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1239753004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239753001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -15, z: 0}
+  m_LocalScale: {x: 10.5, y: 10.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1273620020
 GameObject:
   m_ObjectHideFlags: 0
@@ -8712,134 +8903,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.6, y: 12.2}
   m_EdgeRadius: 0
---- !u!1 &1585669100
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1585669103}
-  - component: {fileID: 1585669102}
-  - component: {fileID: 1585669101}
-  m_Layer: 0
-  m_Name: TmpCam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1585669101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585669100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
---- !u!20 &1585669102
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585669100}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 0, b: 1, a: 1}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 11
-  m_Depth: 50
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1585669103
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585669100}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.2, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622834455
 GameObject:
   m_ObjectHideFlags: 0
@@ -12275,10 +12338,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogo: {fileID: 2120857259}
+  senhorio: {fileID: 1239753002}
   atrasoInicio: 1
   velocidade: 7
   distanciaParada: 4.4
   parametroCorrendo: Correndo
+  yDeSaida: -44
 --- !u!114 &2120857259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12310,19 +12375,10 @@ MonoBehaviour:
   nomeJogador: Xomi
   falasIniciais:
   - quem: 0
-    texto: "Ei! Ei, voc\xEA a\xED! Sai da frente, por favor... ufa. Desculpa o susto."
+    texto: "Licen\xE7a, mo\xE7o! Cortaram a \xE1gua do bairro de novo."
     daItemDepois: 0
   - quem: 0
-    texto: "Cortaram a \xE1gua do bairro de novo. O caminh\xE3o-pipa para na esquina
-      s\xF3 uns minutinhos, e quem chega atrasado volta pra casa com o balde vazio."
-    daItemDepois: 0
-  - quem: 0
-    texto: "A dona Cida mal consegue andar e o neto dela est\xE1 com febre. Se eu
-      n\xE3o avisar, ela fica sem nada."
-    daItemDepois: 0
-  - quem: 0
-    texto: "Voc\xEA n\xE3o \xE9 daqui, n\xE9? Essas roupas limpas... L\xE1 em cima
-      a \xE1gua nunca falta. Aqui, \xE9 a primeira coisa que some."
+    texto: "Vou ali embaixo avisar a dona Cida que o caminh\xE3o-pipa t\xE1 chegando!"
     daItemDepois: 0
   painelOpcoes: {fileID: 1193064385}
   botoesOpcao:
@@ -12333,80 +12389,7 @@ MonoBehaviour:
   - {fileID: 259548100}
   - {fileID: 625323621}
   - {fileID: 1912017674}
-  opcoes:
-  - textoOpcao: "Eu ajudo. Me leva at\xE9 a dona Cida."
-    resposta:
-    - quem: 0
-      texto: "S\xE9rio? Quase ningu\xE9m de fora oferece ajuda... Eu sou a Marta,
-        ali\xE1s. Obrigada por n\xE3o virar o rosto."
-      daItemDepois: 0
-    - quem: 0
-      texto: "Mas se quer entender esse lugar de verdade, procura o Taison. Ele j\xE1
-        consertou cano, telhado e muita promessa quebrada por aqui, sem cobrar nada."
-      daItemDepois: 0
-    - quem: 0
-      texto: "Ele conhece cada rua daqui e cada fam\xEDlia do outro lado tamb\xE9m.
-        Se algu\xE9m sabe de onde voc\xEA veio, \xE9 ele."
-      daItemDepois: 0
-    - quem: 1
-      texto: "Taison... Eu vou encontr\xE1-lo."
-      daItemDepois: 0
-    aoEscolher:
-      m_PersistentCalls:
-        m_Calls: []
-  - textoOpcao: "Talvez o problema seja como voc\xEAs se organizam."
-    resposta:
-    - quem: 0
-      texto: "Como a gente se organiza? A gente divide balde, divide p\xE3o e divide
-        a \xE1gua que sobra. O que a gente n\xE3o divide \xE9 o corte que vem sem
-        aviso."
-      daItemDepois: 0
-    - quem: 0
-      texto: "\xC9 sempre assim. Quem tem tudo acha que quem n\xE3o tem fez algo
-        errado. Eu corri pra salvar uma vizinha, n\xE3o pra ouvir serm\xE3o."
-      daItemDepois: 0
-    - quem: 0
-      texto: "Se quer falar isso na cara de algu\xE9m, fala com o Taison. Ele vive
-        aqui, briga por esse bairro e j\xE1 ouviu coisa pior. S\xF3 n\xE3o espera
-        que ele seja t\xE3o calmo quanto eu."
-      daItemDepois: 0
-    - quem: 1
-      texto: "Quem \xE9 esse Taison, afinal?"
-      daItemDepois: 0
-    - quem: 0
-      texto: "Vai descobrir sozinho. Mas escuta antes de julgar, t\xE1?"
-      daItemDepois: 0
-    aoEscolher:
-      m_PersistentCalls:
-        m_Calls: []
-  - textoOpcao: "Por que cortaram a \xE1gua? \xC9 s\xF3 aqui?"
-    resposta:
-    - quem: 0
-      texto: "Boa pergunta. A companhia diz que o bairro est\xE1 devendo. Mas como
-        cobrar de quem mal tem o que comer?"
-      daItemDepois: 0
-    - quem: 0
-      texto: "Nas ruas l\xE1 de cima ningu\xE9m \xE9 cortado. Aqui, atrasou, cortou.
-        Ningu\xE9m explica nada, s\xF3 avisam quando j\xE1 aconteceu."
-      daItemDepois: 0
-    - quem: 0
-      texto: "Voc\xEA pergunta como quem quer entender, n\xE3o como quem quer julgar.
-        Gostei disso."
-      daItemDepois: 0
-    - quem: 0
-      texto: "O Taison guarda todos os pap\xE9is das contas do bairro e j\xE1 foi
-        bater na porta da companhia. Se quer saber mais, fala com ele."
-      daItemDepois: 0
-    - quem: 1
-      texto: E onde eu encontro esse Taison?
-      daItemDepois: 0
-    - quem: 0
-      texto: "Do outro lado do bairro. Ele nunca est\xE1 longe de onde tem gente
-        precisando."
-      daItemDepois: 0
-    aoEscolher:
-      m_PersistentCalls:
-        m_Calls: []
+  opcoes: []
   jogadorFalaAOpcao: 1
   velocidadeTexto: 0.05
   tempoCadaSprite: 0.25
@@ -12875,4 +12858,4 @@ SceneRoots:
   - {fileID: 1746365988}
   - {fileID: 671518813}
   - {fileID: 2120857265}
-  - {fileID: 1585669103}
+  - {fileID: 1239753004}
