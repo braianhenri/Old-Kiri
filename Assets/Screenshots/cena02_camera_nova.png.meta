@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cena02_camera_nova_0: -1921054605768881863
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

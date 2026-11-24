@@ -194,6 +194,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6201671}
   m_CullTransparentMesh: 1
+--- !u!1 &14650494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14650497}
+  - component: {fileID: 14650496}
+  - component: {fileID: 14650495}
+  m_Layer: 0
+  m_Name: TransicaoCena03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &14650495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14650494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a200812b12f77f54b86e7ee58c9c8cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomeDaCena: cena03
+--- !u!61 &14650496
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14650494}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 43, y: 2.4}
+  m_EdgeRadius: 0
+--- !u!4 &14650497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14650494}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 37.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &25872126
 GameObject:
   m_ObjectHideFlags: 0
@@ -7985,7 +8077,7 @@ Transform:
   m_GameObject: {fileID: 1544411878}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000003799796, y: -30.38, z: -10}
+  m_LocalPosition: {x: -0.099998094, y: -30.380001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8838,12 +8930,15 @@ MonoBehaviour:
   - quem: 0
     texto: "Ei... voc\xEA n\xE3o \xE9 daqui, n\xE9?"
     daItemDepois: 0
+    iniciaBatalhaDepois: 0
   - quem: 0
     texto: "Ningu\xE9m por aqui anda com essa cara de perdido."
     daItemDepois: 0
+    iniciaBatalhaDepois: 0
   - quem: 0
     texto: Veio de onde?
     daItemDepois: 0
+    iniciaBatalhaDepois: 0
   painelOpcoes: {fileID: 426820373}
   botoesOpcao:
   - {fileID: 1962221501}
@@ -8859,26 +8954,33 @@ MonoBehaviour:
     - quem: 0
       texto: "Todo mundo est\xE1 perdido aqui, meu filho."
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 0
       texto: "N\xE3o posso te ajudar agora. por\xE9m..."
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 0
       texto: "Toma cuidado com quem voc\xEA anda"
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 0
       texto: Aqui um presente de boas vindas
       daItemDepois: 1
+      iniciaBatalhaDepois: 0
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
+    iniciaBatalhaAoEscolher: 0
   - textoOpcao: Claro que eu sei onde eu to! ta achando que eu sou oq?
     resposta:
     - quem: 0
       texto: "Hmmm...\nEntendi, Desculpa o inc\xF4modo"
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
+    iniciaBatalhaAoEscolher: 0
   - textoOpcao: Eu vim de Mani
     resposta:
     - quem: 0
@@ -8886,35 +8988,45 @@ MonoBehaviour:
 
         De Many??'
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 0
       texto: "Ha Ha Ha... acho que voc\xEA est\xE1 meio enganado querido."
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 0
       texto: "Ningu\xE9m de Mani pisaria aqui.."
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 1
       texto: 'Porque?
 
 '
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 1
       texto: Mas qual o nome desta cidade?
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 0
       texto: "Voc\xEA est\xE1 em old kiri."
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 1
       texto: Old kiri?
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 0
       texto: 'Sim! '
       daItemDepois: 0
+      iniciaBatalhaDepois: 0
     - quem: 0
       texto: "Voc\xEA n\xE3o conhece n\xE9? toma ai, vai te ajudar"
       daItemDepois: 1
+      iniciaBatalhaDepois: 0
     aoEscolher:
       m_PersistentCalls:
         m_Calls: []
+    iniciaBatalhaAoEscolher: 0
   jogadorFalaAOpcao: 1
   velocidadeTexto: 0.05
   tempoCadaSprite: 0.25
@@ -8923,6 +9035,7 @@ MonoBehaviour:
   somTeclado: {fileID: 8300000, guid: 31b7be92693c4b74e812f289bb95fc68, type: 3}
   intervaloSom: 0.08
   scriptMovimento: {fileID: 0}
+  scriptsExtrasTravar: []
   larguraOpcao: 800
   alturaOpcao: 80
   espacoEntreOpcoes: 15
@@ -11898,6 +12011,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7153508742831092891, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
+      propertyPath: velocidade
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7704073302070396272, guid: da90b94afb9957f42bb3b8807f1870af, type: 3}
       propertyPath: m_Name
       value: 'Xomi '
@@ -11934,3 +12051,4 @@ SceneRoots:
   - {fileID: 377971557}
   - {fileID: 1412660094}
   - {fileID: 1360162200}
+  - {fileID: 14650497}

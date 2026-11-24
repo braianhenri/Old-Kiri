@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      modo_batalha_apos_fade_0: -1723438222215656478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

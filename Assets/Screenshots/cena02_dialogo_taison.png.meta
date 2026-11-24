@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cena02_dialogo_taison_0: -8544580761530195199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
