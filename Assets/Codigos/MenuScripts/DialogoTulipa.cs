@@ -20,6 +20,9 @@ public class Fala
     [Tooltip("Marque para o Xomi receber o item (campo 'Item Para Dar' do dialogo) assim que esta fala terminar")]
     public bool daItemDepois;
 
+    [Tooltip("Marque para comecar a batalha (fade + cena ModoBatalha) assim que esta fala terminar. Usado pelo DialogoTaison.")]
+    public bool iniciaBatalhaDepois;
+
 }
 
 [System.Serializable]
@@ -33,6 +36,9 @@ public class OpcaoDialogo
 
     [Tooltip("Opcional: ligue aqui o que deve acontecer ao escolher (dar item, etc)")]
     public UnityEvent aoEscolher;
+
+    [Tooltip("Marque para comecar a batalha (fade + cena ModoBatalha) assim que o jogador falar esta opcao. Usado pelo DialogoTaison.")]
+    public bool iniciaBatalhaAoEscolher;
 }
 
 public class DialogoTulipa : MonoBehaviour

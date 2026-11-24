@@ -3283,7 +3283,7 @@ Transform:
   m_GameObject: {fileID: 617658129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000019073486, y: -30.400002, z: -10}
+  m_LocalPosition: {x: 0.0000009536743, y: -30.400002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5828,10 +5828,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2137057619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: 57.413}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 79, y: 0}
+  m_SizeDelta: {x: -242, y: -76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030946302
 MonoBehaviour:
@@ -5853,7 +5853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Texto da fala
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5918,7 +5918,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -265.8756, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6849,13 +6849,11 @@ MonoBehaviour:
   - {fileID: 527800740, guid: 60bff770bf696324db38b17a23de0f47, type: 3}
   falasChegada:
   - jogador: 0
-    texto: "Opa, opa... n\xE3o conhe\xE7o essa cara. Quem \xE9 voc\xEA, rapaz?"
+    texto: "Opa... n\xE3o conhe\xE7o essa cara. Quem \xE9 voc\xEA, rapaz?"
   - jogador: 0
-    texto: "Deixa, nem precisa responder. Hoje eu estou de bom humor, e bom humor
-      \xE9 raridade por aqui."
+    texto: "Deixa, nem responde. Hoje estou de bom humor, e isso \xE9 raridade."
   - jogador: 0
-    texto: "Tenho uma oportunidade de emprego pra voc\xEA. Servi\xE7o leve, pagamento
-      certo. Gente na sua situa\xE7\xE3o costuma aceitar de primeira."
+    texto: "Tenho um emprego pra voc\xEA. Servi\xE7o leve, pagamento certo."
   textosOpcoes:
   - Sou o Xomi. Que tipo de emprego?
   - "Agrade\xE7o, mas prefiro procurar outra coisa."
@@ -6864,21 +6862,17 @@ MonoBehaviour:
   letrasAntesDeInterromper: 14
   falasInterrupcao:
   - jogador: 0
-    texto: "Calma, calma. N\xE3o precisa se esfor\xE7ar tanto pra escolher."
+    texto: "Calma, calma. Eu escolho por voc\xEA, fica mais r\xE1pido."
   - jogador: 0
-    texto: "Eu escolho por voc\xEA. Fica mais r\xE1pido, e a gente evita mal-entendido."
+    texto: "\xC9 simples: cobre o aluguel de quem me deve e n\xE3o volte sem o dinheiro."
   - jogador: 0
-    texto: "\xC9 simples: voc\xEA cobra o aluguel de quem anda me devendo. Bate na
-      porta, estende a m\xE3o e n\xE3o volta sem o dinheiro."
-  - jogador: 0
-    texto: "Eles j\xE1 se acostumaram com a minha cara. Uma cara nova ajuda."
+    texto: "Eles j\xE1 conhecem a minha cara. Uma cara nova ajuda."
   - jogador: 1
     texto: Mas eu nem disse que aceitava...
   - jogador: 0
-    texto: "Ora, rapaz... e voc\xEA tinha algo melhor pra fazer hoje? Foi o que pensei."
+    texto: E tinha algo melhor pra fazer hoje, rapaz? Foi o que pensei.
   - jogador: 0
-    texto: "Me d\xE1 a m\xE3o e fica perto. Esse bairro \xE9 complicado pra quem
-      n\xE3o sabe andar sozinho."
+    texto: "Me d\xE1 a m\xE3o e fica perto. Esse bairro \xE9 complicado."
   painelOpcoes: {fileID: 1193064385}
   botoesOpcao:
   - {fileID: 130478842}
@@ -12377,9 +12371,11 @@ MonoBehaviour:
   - quem: 0
     texto: "Licen\xE7a, mo\xE7o! Cortaram a \xE1gua do bairro de novo."
     daItemDepois: 0
+    iniciaBatalhaDepois: 0
   - quem: 0
-    texto: "Vou ali embaixo avisar a dona Cida que o caminh\xE3o-pipa t\xE1 chegando!"
+    texto: "Vou avisar a dona Cida que o caminh\xE3o-pipa t\xE1 chegando!"
     daItemDepois: 0
+    iniciaBatalhaDepois: 0
   painelOpcoes: {fileID: 1193064385}
   botoesOpcao:
   - {fileID: 130478842}

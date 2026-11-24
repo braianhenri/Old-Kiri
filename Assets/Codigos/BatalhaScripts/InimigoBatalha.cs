@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 /// <summary>
@@ -35,14 +36,29 @@ public class InimigoBatalha : MonoBehaviour
     [SerializeField] private int pixelsPorUnidade = 100;
     [SerializeField] private int ordemDeDesenho = 5;
 
+    [Header("Forca (define a vida e a chance de acertar)")]
+    [Tooltip("Quanto MAIOR a forca, MAIOR a vida e MENOR a chance de o inimigo errar o ataque. Quanto menor, o contrario.")]
+    [Range(1, 20)]
+    [SerializeField] private int forca = 10;
+    [Tooltip("Forca de referencia: com a forca igual a este valor, a vida e a precisao ficam exatamente nos valores base.")]
+    [SerializeField] private int forcaReferencia = 10;
+
     [Header("Vida e regioes")]
-    [SerializeField] private int vidaTotalMaxima = 90;
+    [Tooltip("VIDA do inimigo (pode mexer aqui, inclusive durante o Play). Vida maxima real = vida x forca / forca de referencia.")]
+    [FormerlySerializedAs("vidaTotalMaxima")]
+    [SerializeField] private int vidaBase = 90;
     [SerializeField] private List<RegiaoCorpo> regioes = new List<RegiaoCorpo>();
 
     [Header("Ataque do inimigo")]
     [SerializeField] private int danoFaca = 14;
     [SerializeField] private int danoInvestida = 7;
-    [SerializeField] private float precisaoBase = 0.8f;
+    [Tooltip("Chance de ACERTAR o ataque quando a forca e igual a forca de referencia.")]
+    [Range(0f, 1f)]
+    [SerializeField] private float precisaoNaForcaReferencia = 0.9f;
+    [Tooltip("Quanto a chance de acertar sobe (ou desce) a cada ponto de forca acima (ou abaixo) da referencia.")]
+    [SerializeField] private float precisaoPorPontoDeForca = 0.02f;
+    [Range(0f, 1f)] [SerializeField] private float precisaoMinima = 0.35f;
+    [Range(0f, 1f)] [SerializeField] private float precisaoMaxima = 0.99f;
     [SerializeField] private float penalidadePorPerna = 0.2f;
     [Tooltip("Ponto do ombro do braco armado no sprite do corpo (pixels).")]
     [SerializeField] private Vector2Int ombroBracoArmado = new Vector2Int(13, 85);
@@ -59,6 +75,7 @@ public class InimigoBatalha : MonoBehaviour
 
     // ---- estado ----
     private int vidaAtual;
+    private int vidaMaximaConhecida;
     private bool derrotado;
     private bool atordoado;
     private EstadoInimigo estado = EstadoInimigo.Parado;
@@ -114,7 +131,46 @@ public class InimigoBatalha : MonoBehaviour
 
     // ================= propriedades publicas =================
 
+    // vida maxima real: vida base escalada pela forca
+    private int vidaTotalMaxima { get { return CalcularVidaMaxima(); } }
+
     public string Nome { get { return nomeInimigo; } }
+
+    public int Forca
+    {
+        get { return forca; }
+        set
+        {
+            forca = Mathf.Max(1, value);
+            if (Application.isPlaying && materialSprite != null) AplicarNovaVidaMaxima();
+        }
+    }
+
+    public int VidaBase
+    {
+        get { return vidaBase; }
+        set
+        {
+            vidaBase = Mathf.Max(1, value);
+            if (Application.isPlaying && materialSprite != null) AplicarNovaVidaMaxima();
+        }
+    }
+
+    public int CalcularVidaMaxima()
+    {
+        float fator = forcaReferencia > 0 ? (float)forca / forcaReferencia : 1f;
+        return Mathf.Max(1, Mathf.RoundToInt(vidaBase * fator));
+    }
+
+    /// <summary>Chance de acertar que vem so da forca (sem penalidades de pernas).</summary>
+    public float PrecisaoDaForca
+    {
+        get
+        {
+            float p = precisaoNaForcaReferencia + (forca - forcaReferencia) * precisaoPorPontoDeForca;
+            return Mathf.Clamp(p, precisaoMinima, precisaoMaxima);
+        }
+    }
     public int VidaAtual { get { return vidaAtual; } }
     public int VidaMaxima { get { return vidaTotalMaxima; } }
     public bool Derrotado { get { return derrotado; } }
@@ -131,7 +187,7 @@ public class InimigoBatalha : MonoBehaviour
         get
         {
             int pernas = (EstaPerdida(TipoRegiao.PernaEsquerda) ? 1 : 0) + (EstaPerdida(TipoRegiao.PernaDireita) ? 1 : 0);
-            return Mathf.Clamp01(precisaoBase - pernas * penalidadePorPerna);
+            return Mathf.Clamp01(PrecisaoDaForca - pernas * penalidadePorPerna);
         }
     }
 
@@ -202,6 +258,29 @@ public class InimigoBatalha : MonoBehaviour
             proximaEstrela = Time.time + 0.28f;
             EmitirParticulas(PontoRegiaoMundo(TipoRegiao.Cabeca) + Vector3.up * 0.9f, 2, new Color(1f, 0.92f, 0.5f, 1f), 0.4f, 1.2f, -1f, 0.07f, 0.12f, 0.7f);
         }
+    }
+
+    private void OnValidate()
+    {
+        forca = Mathf.Max(1, forca);
+        forcaReferencia = Mathf.Max(1, forcaReferencia);
+        vidaBase = Mathf.Max(1, vidaBase);
+        if (!Application.isPlaying || materialSprite == null) return;
+        AplicarNovaVidaMaxima();
+    }
+
+    // reaplica a vida maxima (forca ou vida base mudaram), mantendo a proporcao da vida atual
+    private void AplicarNovaVidaMaxima()
+    {
+        int nova = vidaTotalMaxima;
+        if (nova == vidaMaximaConhecida) return;
+        if (!derrotado)
+        {
+            float proporcao = vidaMaximaConhecida > 0 ? (float)vidaAtual / vidaMaximaConhecida : 1f;
+            vidaAtual = Mathf.Clamp(Mathf.RoundToInt(nova * proporcao), 1, nova);
+        }
+        vidaMaximaConhecida = nova;
+        if (OnVidaMudou != null) OnVidaMudou.Invoke(vidaAtual, nova);
     }
 
     // ================= configuracao =================
@@ -344,7 +423,16 @@ public class InimigoBatalha : MonoBehaviour
 
         res.partePerdida = perdeu;
         res.derrotou = morreu;
-        if (morreu) derrotado = true;
+        if (morreu)
+        {
+            derrotado = true;
+            if (vidaAtual > 0)
+            {
+                // cabeca ou tronco destruidos: a barra de vida acaba junto
+                vidaAtual = 0;
+                if (OnVidaMudou != null) OnVidaMudou.Invoke(vidaAtual, vidaTotalMaxima);
+            }
+        }
 
         Color corNumero = perdeu ? new Color(1f, 0.55f, 0.55f, 1f) : Color.white;
         MostrarTextoFlutuante(dano.ToString(), PontoRegiaoMundo(tipo) + new Vector3(0.4f, 0.3f, 0f), corNumero);
@@ -485,6 +573,7 @@ public class InimigoBatalha : MonoBehaviour
     private void ZerarEstado()
     {
         vidaAtual = vidaTotalMaxima;
+        vidaMaximaConhecida = vidaTotalMaxima;
         derrotado = false;
         atordoado = false;
         estado = EstadoInimigo.Parado;

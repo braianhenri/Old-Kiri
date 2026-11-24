@@ -1,7 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 // Este script reutiliza Quem, Fala e OpcaoDialogo do DialogoTulipa.cs.
 // No DialogoTulipa.cs, adicione "Taison" no FINAL do enum Quem:
@@ -63,6 +64,12 @@ public class DialogoTaison : MonoBehaviour
     public float espacoEntreOpcoes = 15f;
     public float margemDoXomi = 40f;
     public int tamanhoFonteOpcao = 28;
+
+    [Header("Batalha (transicao com fade)")]
+    [Tooltip("Nome da cena de batalha (precisa estar no Build Settings)")]
+    public string cenaBatalha = "ModoBatalha";
+    public float tempoFadeBatalha = 1f;
+    private bool batalhaIniciada;
 
     [System.Serializable]
     public class EscolhaSeguinte
@@ -133,9 +140,17 @@ public class DialogoTaison : MonoBehaviour
 
         // Conversa antes da escolha
         foreach (Fala fala in falasIniciais)
+        {
             yield return StartCoroutine(DigitarTexto(fala));
+            if (fala.iniciaBatalhaDepois)
+            {
+                yield return StartCoroutine(IniciarBatalha());
+                yield break;
+            }
+        }
 
         yield return StartCoroutine(Escolher(opcoes));
+        if (batalhaIniciada) yield break; // a cena de batalha ja esta carregando
 
         caixaDialogo.SetActive(false);
         if (scriptMovimento != null) scriptMovimento.enabled = true;
@@ -215,9 +230,23 @@ public class DialogoTaison : MonoBehaviour
             // Dispara o evento da opcao (dar item, etc)
             escolhida.aoEscolher?.Invoke();
 
+            // Opcao que leva direto para a batalha (ex: "E te interessa?")
+            if (escolhida.iniciaBatalhaAoEscolher)
+            {
+                yield return StartCoroutine(IniciarBatalha());
+                yield break;
+            }
+
             // Resposta especifica dessa escolha
             foreach (Fala fala in escolhida.resposta)
+            {
                 yield return StartCoroutine(DigitarTexto(fala));
+                if (fala.iniciaBatalhaDepois)
+                {
+                    yield return StartCoroutine(IniciarBatalha());
+                    yield break;
+                }
+            }
 
             // Escolha seguinte: depois dessa resposta, o jogador escolhe de novo
             if (lista == opcoes)
@@ -228,6 +257,20 @@ public class DialogoTaison : MonoBehaviour
                         break;
                     }
         }
+    }
+
+    // Fade leve para preto e troca para a cena de batalha. Roda uma unica vez.
+    IEnumerator IniciarBatalha()
+    {
+        if (batalhaIniciada) yield break;
+        batalhaIniciada = true;
+
+        CutsceneUtil.TravarXomi(true);
+        TelaFade fade = TelaFade.Criar(0f);
+        yield return StartCoroutine(fade.Animar(1f, tempoFadeBatalha));
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(cenaBatalha);
     }
 
     void LateUpdate()
