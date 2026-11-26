@@ -2501,7 +2501,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452116649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 574cab3db327a9d42983779d30120878, type: 2}
   m_CullingMode: 0
@@ -2599,7 +2599,7 @@ MonoBehaviour:
   distanciaInteracao: 2.6
   teclaInteracao: 101
   iconeInteracao: {fileID: 1716617595}
-  imagemAmpliada: {fileID: 0}
+  imagemAmpliada: {fileID: 5498006383096492565, guid: fe2425305d48c8549bb9982ac75b63e9, type: 3}
   tamanhoNaTela: 0.9
   textoDica: E para fechar
   travarJogadorLendo: 1
@@ -8206,7 +8206,7 @@ Transform:
   m_GameObject: {fileID: 1544411878}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.099998094, y: -30.380001, z: -10}
+  m_LocalPosition: {x: -0.1, y: -30.380001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
