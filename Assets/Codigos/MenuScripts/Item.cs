@@ -1,8 +1,19 @@
-using UnityEngine;
+﻿using UnityEngine;
+
+// Os numeros sao salvos nos prefabs: novas opcoes devem entrar no final.
+public enum CaracteristicaItem
+{
+    [InspectorName("Nenhuma (não pode ser usado)")] Nenhuma = 0,
+    [InspectorName("Recuperar vida (cura)")] RecuperarVida = 1,
+    [InspectorName("Atributo Vida")] Vida = 2,
+    [InspectorName("Atributo Força")] Forca = 3,
+    [InspectorName("Atributo Defesa")] Defesa = 4,
+    [InspectorName("Atributo Sorte")] Sorte = 5
+}
 
 public class Item : MonoBehaviour
 {
-    [Header("Informa��es do item")]
+    [Header("Informações do item")]
     [SerializeField]
     private Sprite spriteItem;
 
@@ -21,17 +32,38 @@ public class Item : MonoBehaviour
     }
 
     [Header("Efeito ao usar")]
-    [Tooltip("Quanto de vida o item recupera quando e usado (0 = nao cura)")]
+    [Tooltip("O que este item muda no Xomi quando é usado")]
     [SerializeField]
-    private int curaVida;
+    private CaracteristicaItem caracteristica = CaracteristicaItem.Nenhuma;
 
-    public int CuraVida
+    [Tooltip("Quanto o item adiciona na característica escolhida")]
+    [SerializeField]
+    private int valor;
+
+    public CaracteristicaItem Caracteristica
     {
-        get { return curaVida; }
+        get { return caracteristica; }
+    }
+
+    public int Valor
+    {
+        get { return valor; }
     }
 
     private IventarioJogador inventarioJogador;
     private bool jogadorPerto;
+    private string idNaCena;
+
+    private void Awake()
+    {
+        // Item que ja foi pego nao reaparece quando o Xomi volta para a cena.
+        idNaCena = gameObject.scene.name + "/" + name + "@" + transform.position.ToString("F2");
+
+        if (EstadoXomi.FoiColetado(idNaCena))
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     private void Update()
     {
@@ -45,6 +77,7 @@ public class Item : MonoBehaviour
             if (inventarioJogador != null &&
                 inventarioJogador.AdicionarItem(this))
             {
+                EstadoXomi.MarcarColetado(idNaCena);
                 gameObject.SetActive(false);
             }
         }

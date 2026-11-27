@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -3924811623454302015, guid: de1c93121bacb5240a29de46a14badc0, type: 3}
+      propertyPath: valor
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -3924811623454302015, guid: de1c93121bacb5240a29de46a14badc0, type: 3}
       propertyPath: curaVida
       value: 20
       objectReference: {fileID: 0}
@@ -20,6 +24,10 @@ PrefabInstance:
       propertyPath: descricaoItem
       value: "uma lata vermelha escrito temi... Deve se gostoso\n(Ao beber voc\xEA
         aumenta sua vida em 20 pontos)"
+      objectReference: {fileID: 0}
+    - target: {fileID: -3924811623454302015, guid: de1c93121bacb5240a29de46a14badc0, type: 3}
+      propertyPath: caracteristica
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2001505553669481361, guid: de1c93121bacb5240a29de46a14badc0, type: 3}
       propertyPath: m_Sprite

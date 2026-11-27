@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,19 +18,19 @@ public class AtributosJogador : MonoBehaviour
     private void AtualizarCache()
     {
         vidaMaximaCache = 100 + atributos.vida * 5;
-        ataqueCache = 10 + atributos.força * 2;
-        ataqueCriticoCache = atributos.força * 10;
+        ataqueCache = 10 + atributos.forÃ§a * 2;
+        ataqueCriticoCache = atributos.forÃ§a * 10;
     }
 
     public int VidaMaxima()
     {
-        if (vidaMaximaCache == 0) AtualizarCache();
+        AtualizarCache();
         return vidaMaximaCache;
     }
 
     public int Ataque()
     {
-        if (ataqueCache == 0) AtualizarCache();
+        AtualizarCache();
         return ataqueCache;
     }
 

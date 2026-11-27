@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -29,6 +29,10 @@ public class IventarioJogador : MonoBehaviour
     [SerializeField]
     private GameObject textoInventario;
 
+    [Header("Botão para usar o item selecionado")]
+    [SerializeField]
+    private Button botaoUsar;
+
     [Header("Quantidade (ex: 1x) ao lado de cada item")]
     [SerializeField]
     private float tamanhoFonteQuantidade = 30f;
@@ -42,11 +46,13 @@ public class IventarioJogador : MonoBehaviour
 
     private const int LimitePilha = 99;
 
-    private Item[] itensInventario = new Item[10];
-    private int[] quantidadesInventario = new int[10];
+    // Os itens ficam no EstadoXomi para continuarem iguais em todas as cenas.
+    private DadosItem[] itensInventario { get { return EstadoXomi.Itens; } }
+    private int[] quantidadesInventario { get { return EstadoXomi.Quantidades; } }
     private TMP_Text[] textosQuantidade;
     private Coroutine mensagemAtual;
     private Coroutine descricaoAtual;
+    private int itemSelecionado = -1;
     private float escalaTempoAnterior = 1f;
 
     private void Start()
@@ -75,6 +81,13 @@ public class IventarioJogador : MonoBehaviour
         CriarTextosQuantidade();
         RegistrarEventosDosItens();
         OcultarItensNaTela();
+
+        if (botaoUsar != null)
+        {
+            botaoUsar.onClick.AddListener(UsarItemSelecionado);
+        }
+
+        LimparSelecao();
     }
 
     private void Update()
@@ -123,7 +136,7 @@ public class IventarioJogador : MonoBehaviour
         {
             if (itensInventario[i] == null)
             {
-                itensInventario[i] = item;
+                itensInventario[i] = new DadosItem(item);
                 quantidadesInventario[i] = 1;
 
                 MostrarMensagem("Item pego");
@@ -137,16 +150,13 @@ public class IventarioJogador : MonoBehaviour
         return false;
     }
 
-    private static bool MesmoTipo(Item a, Item b)
+    private static bool MesmoTipo(DadosItem a, Item b)
     {
-        if (a == b)
-        {
-            return true;
-        }
-
-        return a.SpriteItem != null &&
+        return (a.SpriteItem != null || a.Nome == b.name) &&
                a.SpriteItem == b.SpriteItem &&
-               a.DescricaoItem == b.DescricaoItem;
+               a.DescricaoItem == b.DescricaoItem &&
+               a.Caracteristica == b.Caracteristica &&
+               a.Valor == b.Valor;
     }
 
     private void AlternarInventario()
@@ -165,6 +175,7 @@ public class IventarioJogador : MonoBehaviour
             painelInventario.SetActive(false);
             OcultarItensNaTela();
             OcultarDescricao();
+            LimparSelecao();
 
             Time.timeScale = escalaTempoAnterior;
             return;
@@ -174,6 +185,7 @@ public class IventarioJogador : MonoBehaviour
         Time.timeScale = 0f;
 
         painelInventario.SetActive(true);
+        LimparSelecao();
         AtualizarInventarioNaTela();
     }
 
@@ -211,7 +223,7 @@ public class IventarioJogador : MonoBehaviour
                 break;
             }
 
-            Item item = itensInventario[i];
+            DadosItem item = itensInventario[i];
             bool possuiItem = item != null;
 
             if (imagensItens[i] == null)
@@ -339,28 +351,17 @@ public class IventarioJogador : MonoBehaviour
             return;
         }
 
-        Item item = itensInventario[posicao];
+        DadosItem item = itensInventario[posicao];
 
         if (item == null)
         {
             return;
         }
 
-        // Item de cura: recupera vida (nao gasta o item se a vida ja esta cheia)
-        if (item.CuraVida > 0)
+        // Se o item nao teve efeito, ele nao e gasto.
+        if (!AplicarEfeito(item))
         {
-            if (VidaJogador.EstaCheia)
-            {
-                MostrarMensagem("Sua vida j\u00e1 est\u00e1 cheia (" + VidaJogador.Atual + "/" + VidaJogador.Maxima + ")");
-                return;
-            }
-
-            int curou = VidaJogador.Curar(item.CuraVida);
-            MostrarMensagem("Usou " + NomeDoItem(item) + ": +" + curou + " de vida (" + VidaJogador.Atual + "/" + VidaJogador.Maxima + ")");
-        }
-        else
-        {
-            MostrarMensagem("Usou item " + item.name);
+            return;
         }
 
         quantidadesInventario[posicao]--;
@@ -370,15 +371,74 @@ public class IventarioJogador : MonoBehaviour
             quantidadesInventario[posicao] = 0;
             itensInventario[posicao] = null;
             OcultarDescricao();
+
+            if (itemSelecionado == posicao)
+            {
+                LimparSelecao();
+            }
         }
 
         AtualizarInventarioNaTela();
     }
 
-    // Nome para mostrar (ex: Item_LataVermelha vira Lata Vermelha)
-    private static string NomeDoItem(Item item)
+    private bool AplicarEfeito(DadosItem item)
     {
-        string nome = item.name.Replace("(Clone)", "").Trim();
+        if (item.Caracteristica == CaracteristicaItem.Nenhuma || item.Valor == 0)
+        {
+            MostrarMensagem(NomeDoItem(item) + " não pode ser usado");
+            return false;
+        }
+
+        if (item.Caracteristica == CaracteristicaItem.RecuperarVida)
+        {
+            if (VidaJogador.EstaCheia)
+            {
+                MostrarMensagem("Sua vida já está cheia (" + VidaJogador.Atual + "/" + VidaJogador.Maxima + ")");
+                return false;
+            }
+
+            int curou = VidaJogador.Curar(item.Valor);
+            MostrarMensagem("Usou " + NomeDoItem(item) + ": +" + curou + " de vida (" + VidaJogador.Atual + "/" + VidaJogador.Maxima + ")");
+            return true;
+        }
+
+        Atributos atributos = GetComponent<Atributos>();
+
+        if (atributos == null)
+        {
+            Debug.LogError("IventarioJogador: o Xomi está sem o componente Atributos.", this);
+            return false;
+        }
+
+        int total = atributos.Somar(item.Caracteristica, item.Valor);
+        string nomeAtributo = item.Caracteristica == CaracteristicaItem.Forca
+            ? "Força"
+            : item.Caracteristica.ToString();
+
+        MostrarMensagem("Usou " + NomeDoItem(item) + ": " + item.Valor.ToString("+#;-#") + " em " + nomeAtributo + " (agora " + total + ")");
+        return true;
+    }
+
+    private void UsarItemSelecionado()
+    {
+        UsarItemNaPosicao(itemSelecionado);
+    }
+
+    // Sem item selecionado o botao Usar fica desativado.
+    private void LimparSelecao()
+    {
+        itemSelecionado = -1;
+
+        if (botaoUsar != null)
+        {
+            botaoUsar.interactable = false;
+        }
+    }
+
+    // Nome para mostrar (ex: Item_LataVermelha vira Lata Vermelha)
+    private static string NomeDoItem(DadosItem item)
+    {
+        string nome = item.Nome.Replace("(Clone)", "").Trim();
 
         if (nome.StartsWith("Item_", System.StringComparison.OrdinalIgnoreCase))
         {
@@ -457,11 +517,18 @@ public class IventarioJogador : MonoBehaviour
             return;
         }
 
-        Item item = itensInventario[indice];
+        DadosItem item = itensInventario[indice];
 
         if (item == null)
         {
             return;
+        }
+
+        itemSelecionado = indice;
+
+        if (botaoUsar != null)
+        {
+            botaoUsar.interactable = true;
         }
 
         if (descricaoAtual != null)
